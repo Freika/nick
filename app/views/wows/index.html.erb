@@ -1,0 +1,37 @@
+<h1>Listing wows</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Game</th>
+      <th>Racename</th>
+      <th>Pagename</th>
+      <th>Title</th>
+      <th>Desc</th>
+      <th>Customcode</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wows.each do |wow| %>
+      <tr>
+        <td><%= wow.game %></td>
+        <td><%= wow.racename %></td>
+        <td><%= wow.pagename %></td>
+        <td><%= wow.title %></td>
+        <td><%= wow.desc %></td>
+        <td><%= wow.customcode %></td>
+        <td><%= link_to 'Show', wow %></td>
+        <td><%= link_to 'Edit', edit_wow_path(wow) %></td>
+        <td><%= link_to 'Destroy', wow, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wow', new_wow_path %>

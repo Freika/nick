@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @wow.game %>
+</p>
+
+<p>
+  <strong>Racename:</strong>
+  <%= @wow.racename %>
+</p>
+
+<p>
+  <strong>Pagename:</strong>
+  <%= @wow.pagename %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @wow.title %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @wow.desc %>
+</p>
+
+<p>
+  <strong>Customcode:</strong>
+  <%= @wow.customcode %>
+</p>
+
+
+<div id="buttons">
+<%= link_to 'Male', '#', :name => 'male', remote: true%>
+<%= link_to 'Female', '#', :name => 'female', remote: true%></div>
+
+<div data-pjax-container id="nick"></div>
+
+
+<%= render 'nav' %>
+
+<%= javascript_tag do %>
+race = "<%=j @wow.racename %>";
+<% end %>
+
+<%= link_to 'Edit', edit_wow_path(@wow) %> |
+<%= link_to 'Back', wows_path %>

@@ -1,0 +1,37 @@
+<h1>Listing samps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Game</th>
+      <th>Racename</th>
+      <th>Pagename</th>
+      <th>Title</th>
+      <th>Desc</th>
+      <th>Customcode</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @samps.each do |samp| %>
+      <tr>
+        <td><%= samp.game %></td>
+        <td><%= samp.racename %></td>
+        <td><%= samp.pagename %></td>
+        <td><%= samp.title %></td>
+        <td><%= samp.desc %></td>
+        <td><%= samp.customcode %></td>
+        <td><%= link_to 'Show', samp %></td>
+        <td><%= link_to 'Edit', edit_samp_path(samp) %></td>
+        <td><%= link_to 'Destroy', samp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Samp', new_samp_path %>

@@ -1,0 +1,37 @@
+<h1>Listing gw2s</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Game</th>
+      <th>Racename</th>
+      <th>Pagename</th>
+      <th>Title</th>
+      <th>Desc</th>
+      <th>Customcode</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gw2s.each do |gw2| %>
+      <tr>
+        <td><%= gw2.game %></td>
+        <td><%= gw2.racename %></td>
+        <td><%= gw2.pagename %></td>
+        <td><%= gw2.title %></td>
+        <td><%= gw2.desc %></td>
+        <td><%= gw2.customcode %></td>
+        <td><%= link_to 'Show', gw2 %></td>
+        <td><%= link_to 'Edit', edit_gw2_path(gw2) %></td>
+        <td><%= link_to 'Destroy', gw2, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gw2', new_gw2_path %>

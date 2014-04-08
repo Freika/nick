@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @syllable.game %>
+</p>
+
+<p>
+  <strong>Race:</strong>
+  <%= @syllable.race %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @syllable.sex %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @syllable.position %>
+</p>
+
+<p>
+  <strong>Syllable:</strong>
+  <%= @syllable.syllable %>
+</p>
+
+<p>
+  <strong>Namepart:</strong>
+  <%= @syllable.namepart %>
+</p>
+
+<%= link_to 'Edit', edit_syllable_path(@syllable) %> |
+<%= link_to 'Back', syllables_path %>

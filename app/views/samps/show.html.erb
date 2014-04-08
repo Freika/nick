@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @samp.game %>
+</p>
+
+<p>
+  <strong>Racename:</strong>
+  <%= @samp.racename %>
+</p>
+
+<p>
+  <strong>Pagename:</strong>
+  <%= @samp.pagename %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @samp.title %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @samp.desc %>
+</p>
+
+<p>
+  <strong>Customcode:</strong>
+  <%= @samp.customcode %>
+</p>
+
+<%= link_to 'Edit', edit_samp_path(@samp) %> |
+<%= link_to 'Back', samps_path %>
