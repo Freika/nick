@@ -31,6 +31,25 @@
 </p>
 
 
+
+
+<%= javascript_tag do %>
+$( document ).ready(function() {
+    jQuery(function($) {
+  $('#buttons a').click( function () {
+    var sex = $(this).attr("name");
+    $.ajax({
+      url: '/api/wow/' + race + '/' + sex,
+      success: function(html) {
+        $('#nick').html(html);
+      }
+    });
+  });
+});
+
+});
+
+<% end %>
 <div id="buttons">
 <%= link_to 'Male', '#', :name => 'male', remote: true%>
 <%= link_to 'Female', '#', :name => 'female', remote: true%></div>
