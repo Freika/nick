@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @statistic.game %>
+</p>
+
+<p>
+  <strong>Race:</strong>
+  <%= @statistic.race %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @statistic.sex %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @statistic.name %>
+</p>
+
+<%= link_to 'Edit', edit_statistic_path(@statistic) %> |
+<%= link_to 'Back', statistics_path %>

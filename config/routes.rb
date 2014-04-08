@@ -1,4 +1,6 @@
 Nick::Application.routes.draw do
+  resources :statistics
+
   resources :syllables
 
   devise_for :admin_users, ActiveAdmin::Devise.config

@@ -69,6 +69,7 @@ def human_male
   name = name_start.sample + name_middle.sample + name_end.sample
   @name = name
   render :json => @name.to_json
+  Statistic.create(game: 'wow', race: 'human', sex: 'male', name: name)
 end
 
   def human_female
@@ -78,6 +79,8 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'human', sex: 'female', name: name)
+
 end
 
   def dwarf_male
@@ -87,6 +90,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'dwarf', sex: 'male', name: name)
 end
 
   def dwarf_female
@@ -96,6 +100,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'dwarf', sex: 'female', name: name)
 end
 
   def gnome_male
@@ -105,6 +110,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'gnome', sex: 'male', name: name)
 end
 
   def gnome_female
@@ -114,6 +120,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'gnome', sex: 'female', name: name)
 end
 
   def nightelf_male
@@ -123,6 +130,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'nightelf', sex: 'male', name: name)
 end
 
   def nightelf_female
@@ -132,6 +140,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'nightelf', sex: 'female', name: name)
 end
 
   def draenei_male
@@ -141,6 +150,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'draenei', sex: 'male', name: name)
 end
 
   def draenei_female
@@ -150,6 +160,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'draenei', sex: 'female', name: name)
 end
 
   def worgen_male
@@ -159,6 +170,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'worgen', sex: 'male', name: name)
 end
 
   def worgen_female
@@ -168,6 +180,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'worgen', sex: 'female', name: name)
 end
 
   def orc_male
@@ -177,6 +190,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'orc', sex: 'male', name: name)
 end
 
   def orc_female
@@ -186,6 +200,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'orc', sex: 'female', name: name)
 end
 
   def troll_male
@@ -195,6 +210,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'troll', sex: 'male', name: name)
 end
 
   def troll_female
@@ -204,6 +220,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'troll', sex: 'female', name: name)
 end
 
   def tauren_male
@@ -213,6 +230,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'tauren', sex: 'male', name: name)
 end
 
   def tauren_female
@@ -222,6 +240,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'tauren', sex: 'female', name: name)
 end
 
   def undead_male
@@ -231,6 +250,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'undead', sex: 'male', name: name)
 end
 
   def undead_female
@@ -240,6 +260,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'undead', sex: 'female', name: name)
 end
 
   def bloodelf_male
@@ -249,6 +270,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'bloodelf', sex: 'male', name: name)
 end
 
   def bloodelf_female
@@ -258,6 +280,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'bloodelf', sex: 'female', name: name)
 end
 
   def goblin_male
@@ -267,6 +290,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'goblin', sex: 'male', name: name)
 end
 
   def goblin_female
@@ -276,6 +300,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'goblin', sex: 'female', name: name)
 end
 
   def pandaren_male
@@ -284,6 +309,7 @@ end
   name = name_start.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'pandaren', sex: 'male', name: name)
 end
 
   def pandaren_female
@@ -293,6 +319,7 @@ end
   name = name_start.sample+name_middle.sample+name_end.sample
   @name = name
   render :json => @name.to_json
+Statistic.create(game: 'wow', race: 'pandaren', sex: 'female', name: name)
 end
 
 
