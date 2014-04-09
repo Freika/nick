@@ -12,21 +12,20 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
 
-// $( document ).ready(function() {
-//     jQuery(function($) {
-// 	$('#buttons a').click( function () {
-// 		var sex = $(this).attr("name");
-// 		$.ajax({
-// 			url: '/api/wow/' + race + '/' + sex,
-// 			success: function(html) {
-// 				$('#nick').html(html);
-// 			}
-// 		});
-// 	});
-// });
+$( document ).ready(function() {
+    jQuery(function($) {
+	$('#buttons a').click( function () {
+		var sex = $(this).attr("name");
+		$.ajax({
+			url: '/api/wow/' + race + '/' + sex,
+			success: function(html) {
+				$('#nick').html(html);
+			}
+		});
+	});
+});
 
-// });
+});
