@@ -11,6 +11,8 @@ Nick::Application.routes.draw do
 
   resources :wows, :path =>'wow'
 
+#WoW
+
 get 'api/wow/human/male' => 'wows#human_male'
 get 'api/wow/dwarf/male' => 'wows#dwarf_male'
 get 'api/wow/gnome/male' => 'wows#gnome_male'
@@ -38,6 +40,34 @@ get 'api/wow/goblin/female' => 'wows#goblin_female'
 get 'api/wow/bloodelf/female' => 'wows#bloodelf_female'
 get 'api/wow/undead/female' => 'wows#undead_female'
 get 'api/wow/pandaren/female' => 'wows#pandaren_female'
+
+#GW2
+get 'api/gw2/charr/male' => 'gw2s#charr_male'
+get 'api/gw2/charr/female' => 'gw2s#charr_female'
+get 'api/gw2/human/male' => 'gw2s#human_male'
+get 'api/gw2/human/female' => 'gw2s#human_female'
+get 'api/gw2/norn/male' => 'gw2s#norn_male'
+get 'api/gw2/norn/female' => 'gw2s#norn_female'
+get 'api/gw2/asura/male' => 'gw2s#asura_male'
+get 'api/gw2/asura/female' => 'gw2s#asura_female'
+get 'api/gw2/sylvari/male' => 'gw2s#sylvari_male'
+get 'api/gw2/sylvari/female' => 'gw2s#sylvari_female'
+
+#SAMP
+get 'api/samp/english/male' => 'samps#english_male'
+get 'api/samp/english/female' => 'samps#english_female'
+get 'api/samp/swedish/male' => 'samps#swedish_male'
+get 'api/samp/swedish/female' => 'samps#swedish_female'
+get 'api/samp/french/male' => 'samps#french_male'
+get 'api/samp/french/female' => 'samps#french_female'
+get 'api/samp/italian/male' => 'samps#italian_male'
+get 'api/samp/italian/female' => 'samps#italian_female'
+get 'api/samp/german/male' => 'samps#german_male'
+get 'api/samp/german/female' => 'samps#german_female'
+get 'api/samp/spanish/male' => 'samps#spanish_male'
+get 'api/samp/spanish/female' => 'samps#spanish_female'
+get 'api/samp/danish/male' => 'samps#danish_male'
+get 'api/samp/danish/female' => 'samps#danish_female'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

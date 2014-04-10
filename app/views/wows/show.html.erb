@@ -45,6 +45,7 @@
 
 <%= javascript_tag do %>
 race = "<%=j @wow.racename %>";
+game = "<%=j @wow.game %>"
 <% end %>
 
 <%= link_to 'Edit', edit_wow_path(@wow) %> |

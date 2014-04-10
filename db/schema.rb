@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140408165324) do
+ActiveRecord::Schema.define(version: 20140410123836) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -55,7 +55,10 @@ ActiveRecord::Schema.define(version: 20140408165324) do
     t.string   "customcode"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "gw2s", ["slug"], name: "index_gw2s_on_slug"
 
   create_table "samps", force: true do |t|
     t.string   "game"
@@ -66,7 +69,10 @@ ActiveRecord::Schema.define(version: 20140408165324) do
     t.string   "customcode"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "samps", ["slug"], name: "index_samps_on_slug"
 
   create_table "statistics", force: true do |t|
     t.string   "game"

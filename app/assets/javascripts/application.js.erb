@@ -21,7 +21,7 @@ $( document ).ready(function() {
 	$('#buttons a').click( function () {
 		var sex = $(this).attr("name");
 		$.ajax({
-			url: '/api/wow/' + race + '/' + sex,
+			url: '/api/' + game + '/' + race + '/' + sex,
 			success: function(html) {
 				$('#nick').html(html);
 			}
