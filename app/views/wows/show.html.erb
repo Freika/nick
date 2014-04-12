@@ -1,4 +1,12 @@
-<p id="notice"><%= notice %></p>
+<div class="">
+<%= javascript_tag do %>
+race = "<%=j @wow.racename %>";
+game = "<%=j @wow.game %>"
+<% end %>
+<%= render "wows/nickbox" %>
+<%= render "wows/aboutrace" %>
+</div>
+<!--p id="notice"><%= notice %></p>
 
 <p>
   <strong>Game:</strong>
@@ -25,28 +33,9 @@
   <%= @wow.desc %>
 </p>
 
+<%= @wow.game%>-<%= @wow.racename%>
+
 <p>
   <strong>Customcode:</strong>
   <%= @wow.customcode %>
-</p>
-
-
-<%= @sessid = request.session_options[:id] %>
-
-
-<div id="buttons">
-<%= link_to 'Male', '#', :name => 'male', remote: true%>
-<%= link_to 'Female', '#', :name => 'female', remote: true%></div>
-
-<div data-pjax-container id="nick"></div>
-
-
-<%= render 'nav' %>
-
-<%= javascript_tag do %>
-race = "<%=j @wow.racename %>";
-game = "<%=j @wow.game %>"
-<% end %>
-
-<%= link_to 'Edit', edit_wow_path(@wow) %> |
-<%= link_to 'Back', wows_path %>
+</p-->

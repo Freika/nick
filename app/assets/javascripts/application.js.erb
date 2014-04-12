@@ -13,20 +13,25 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap.min
 //= require_tree .
 
 
 $( document ).ready(function() {
     jQuery(function($) {
-	$('#buttons a').click( function () {
+    	$('.thecontent').addClass(game+'-'+race+'-bg');
+
+
+	$('#sexybuttons a').click( function () {
 		var sex = $(this).attr("name");
 		$.ajax({
 			url: '/api/' + game + '/' + race + '/' + sex,
 			success: function(html) {
-				$('#nick').html(html);
+				$('#yournameishere').html(html);
 			}
 		});
 	});
 });
 
 });
+

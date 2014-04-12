@@ -11,6 +11,9 @@ Nick::Application.routes.draw do
 
   resources :wows, :path =>'wow'
 
+  root 'wows#index'
+
+
 #WoW
 
 get 'api/wow/human/male' => 'wows#human_male'

@@ -1,0 +1,45 @@
+<div class="races">
+         <div class="tab-pane active" id="wow">
+         <ul class="wow">
+             <li>
+          <%= link_to(image_tag("wow_human.png"), "/wow/human", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_orc.png"), "/wow/orc", data: {no_turbolink: true}) %>
+             </li>
+             <li>
+          <%= link_to(image_tag("wow_gnome.png"), "/wow/gnome", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_troll.png"), "/wow/troll", data: {no_turbolink: true}) %>
+             </li>
+             <li>
+          <%= link_to(image_tag("wow_dwarf.png"), "/wow/dwarf", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_tauren.png"), "/wow/tauren", data: {no_turbolink: true}) %>
+             </li>
+             <li>
+          <%= link_to(image_tag("wow_nightelf.png"), "/wow/nightelf", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_undead.png"), "/wow/undead", data: {no_turbolink: true}) %>
+             </li>
+             <li>
+          <%= link_to(image_tag("wow_draenei.png"), "/wow/draenei", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_bloodelf.png"), "/wow/bloodelf", data: {no_turbolink: true}) %>
+             </li>
+             <li>
+          <%= link_to(image_tag("wow_worgen.png"), "/wow/worgen", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_goblin.png"), "/wow/goblin", data: {no_turbolink: true}) %>
+             </li>
+             <li>
+          <%= link_to(image_tag("wow_a_pandaren.png"), "/wow/pandaren", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_h_pandaren.png"), "/wow/pandaren", data: {no_turbolink: true}) %>
+             </li>
+         </ul>
+         </div>
+         <div class="tab-pane" id="gw2">
+            <ul class="gw2">
+            <% Gw2.all.each do |race| %>
+            <li>
+                <%= link_to(image_tag(race.racename + ".png"), "/gw2/" + race.racename, data: {no_turbolink: true}) %>
+            </li>
+                <% end %>
+            </ul>
+         </div>
+         <div class="tab-pane" id="samp">
+             <ul class="samp">
+             <% Samp.all.each do |race| %>
+             <li>
+                <%= link_to(image_tag(race.racename + ".png"), "/samp/" + race.racename, data: {no_turbolink: true}) %>
+             </li>
+             <% end %>
+             </ul>
+         </div>
+        </div>
