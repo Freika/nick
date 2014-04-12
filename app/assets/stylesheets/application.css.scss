@@ -151,6 +151,7 @@ footer {
 	background-color: rgba(0, 0, 0, 0.5);
 	margin-top: 130px;
 	text-align: center;
+	color: #dedede;
 }
 
 .nickbox {
@@ -176,6 +177,7 @@ footer {
 	margin-top: 20px;
 	height: 100px;
 	padding: 0;
+	color: #adadad;
 	img {
 	float: left;
 	margin-right: 5px;
@@ -185,6 +187,7 @@ footer {
 	h1 {
 	font-size: 20px;
 	margin-top: -10px;
+	color: #adadad;
 	}
 }
 
@@ -240,7 +243,10 @@ footer {
 .tab-pane ul.samp li a img,
 .tab-pane ul.gw2 li a img{
 	padding: 5px;
-	opacity: .9;
+	opacity: .7;
+	&:hover {
+		opacity: 1;
+	}
 }
 
 
@@ -262,22 +268,19 @@ footer {
   margin-top: 20px;
 }
 
-.tabs-left > .the-tabs > li > a {
-  margin-right: -1px;
-  -webkit-border-radius: 4px 0 0 4px;
-     -moz-border-radius: 4px 0 0 4px;
-          border-radius: 4px 0 0 4px;
-}
-
 .tabs-left > .the-tabs > li > a:hover,
 .tabs-left > .the-tabs > li > a:focus {
   border-color: #eeeeee #dddddd #eeeeee #eeeeee;
 }
 
+.tabs-left > .the-tabs .active {
+//  background-color: black;
+}
+
+
+
 .tabs-left > .the-tabs .active > a > img,
 .tabs-left > .the-tabs .active > a:hover > img,
 .tabs-left > .the-tabs .active > a:focus > img {
-  border: 3px solid green;
-  border-radius: 9999px;
-  box-sizing: border-box;
+  background-color: black;
 }
