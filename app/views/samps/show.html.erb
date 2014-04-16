@@ -2,5 +2,6 @@
 race = "<%=j @samp.racename %>";
 game = "<%=j @samp.game %>"
 <% end %>
+<% content_for :title do %><%= @samp.title %><% end %>
 <%= render "samps/nickbox" %>
 <%= render "samps/aboutrace" %>
