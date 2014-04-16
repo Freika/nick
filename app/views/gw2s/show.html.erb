@@ -1,34 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Game:</strong>
-  <%= @gw2.game %>
-</p>
-
-<p>
-  <strong>Racename:</strong>
-  <%= @gw2.racename %>
-</p>
-
-<p>
-  <strong>Pagename:</strong>
-  <%= @gw2.pagename %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @gw2.title %>
-</p>
-
-<p>
-  <strong>Desc:</strong>
-  <%= @gw2.desc %>
-</p>
-
-<p>
-  <strong>Customcode:</strong>
-  <%= @gw2.customcode %>
-</p>
-
-<%= link_to 'Edit', edit_gw2_path(@gw2) %> |
-<%= link_to 'Back', gw2s_path %>
+<%= javascript_tag do %>
+race = "<%=j @gw2.racename %>";
+game = "<%=j @gw2.game %>"
+<% end %>
+<%= render "gw2s/nickbox" %>
+<%= render "gw2s/aboutrace" %>
