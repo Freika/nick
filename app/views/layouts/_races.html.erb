@@ -2,25 +2,25 @@
          <div class="tab-pane <%= 'active' if params[:controller] == 'wows' %>" id="wow">
          <ul class="wow">
              <li>
-          <%= link_to(image_tag("wow_human.png", :alt => "Человек"), "/wow/human", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_orc.png", :alt => "Орк"), "/wow/orc", data: {no_turbolink: true}) %>
+          <%= link_to(image_tag("wow_human.png", :alt => "Человек"), "/wow/human", :class => "alliance", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_orc.png", :alt => "Орк"), "/wow/orc", :class => "horde", data: {no_turbolink: true}) %>
              </li>
              <li>
-          <%= link_to(image_tag("wow_gnome.png", :alt => "Гном"), "/wow/gnome", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_troll.png", :alt => "Тролль"), "/wow/troll", data: {no_turbolink: true}) %>
+          <%= link_to(image_tag("wow_gnome.png", :alt => "Гном"), "/wow/gnome", :class => "alliance", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_troll.png", :alt => "Тролль"), "/wow/troll", :class => "horde", data: {no_turbolink: true}) %>
              </li>
              <li>
-          <%= link_to(image_tag("wow_dwarf.png", :alt => "Дворф"), "/wow/dwarf", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_tauren.png", :alt => "Таурен"), "/wow/tauren", data: {no_turbolink: true}) %>
+          <%= link_to(image_tag("wow_dwarf.png", :alt => "Дворф"), "/wow/dwarf", :class => "alliance", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_tauren.png", :alt => "Таурен"), "/wow/tauren", :class => "horde", data: {no_turbolink: true}) %>
              </li>
              <li>
-          <%= link_to(image_tag("wow_nightelf.png", :alt => "Ночной эльф"), "/wow/nightelf", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_undead.png", :alt => "Нежить"), "/wow/undead", data: {no_turbolink: true}) %>
+          <%= link_to(image_tag("wow_nightelf.png", :alt => "Ночной эльф"), "/wow/nightelf", :class => "alliance", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_undead.png", :alt => "Нежить"), "/wow/undead", :class => "horde", data: {no_turbolink: true}) %>
              </li>
              <li>
-          <%= link_to(image_tag("wow_draenei.png", :alt => "Дреней"), "/wow/draenei", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_bloodelf.png", :alt => "Блад эльф"), "/wow/bloodelf", data: {no_turbolink: true}) %>
+          <%= link_to(image_tag("wow_draenei.png", :alt => "Дреней"), "/wow/draenei", :class => "alliance", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_bloodelf.png", :alt => "Блад эльф"), "/wow/bloodelf", :class => "horde", data: {no_turbolink: true}) %>
              </li>
              <li>
-          <%= link_to(image_tag("wow_worgen.png", :alt => "Ворген"), "/wow/worgen", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_goblin.png", :alt => "Гоблин"), "/wow/goblin", data: {no_turbolink: true}) %>
+          <%= link_to(image_tag("wow_worgen.png", :alt => "Ворген"), "/wow/worgen", :class => "alliance", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_goblin.png", :alt => "Гоблин"), "/wow/goblin", :class => "horde", data: {no_turbolink: true}) %>
              </li>
              <li>
-          <%= link_to(image_tag("wow_a_pandaren.png", :alt => "Пандарен"), "/wow/pandaren", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_h_pandaren.png", :alt => "Пандарен"), "/wow/pandaren", data: {no_turbolink: true}) %>
+          <%= link_to(image_tag("wow_pandaren.png", :alt => "Пандарен"), "/wow/pandaren", :class => "alliance", data: {no_turbolink: true}) %><%= link_to(image_tag("wow_pandaren.png", :alt => "Пандарен"), "/wow/pandaren", :class => "horde", data: {no_turbolink: true}) %>
              </li>
          </ul>
          </div>
