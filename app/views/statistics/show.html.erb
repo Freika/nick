@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
-
+<%= javascript_tag do %>
+race = "<%=j @statistic.racename %>";
+game = "<%=j @statistic.game %>"
+<% end %>
 <p>
   <strong>Game:</strong>
   <%= @statistic.game %>

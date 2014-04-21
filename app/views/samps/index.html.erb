@@ -1,37 +1,8 @@
-<h1>Listing samps</h1>
+Игровой мир GTA San Andreas Multiplayer основан на реальных городах, в которых живут реальные люди множества различных национальностей. Здесь есть немцы, французы, итальянцы и, конечно же, американцы. Для полного погружения в атмосферу игры вам потребуется ролевой (РП) ник для GTA SAMP. Здесь вы сможете сгенерировать себе красивое имя для любой национальности. Создавайте себе мужские и женские имена и фамилии для ваших персонажей!
 
-<table>
-  <thead>
-    <tr>
-      <th>Game</th>
-      <th>Racename</th>
-      <th>Pagename</th>
-      <th>Title</th>
-      <th>Desc</th>
-      <th>Customcode</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @samps.each do |samp| %>
-      <tr>
-        <td><%= samp.game %></td>
-        <td><%= samp.racename %></td>
-        <td><%= samp.pagename %></td>
-        <td><%= samp.title %></td>
-        <td><%= samp.desc %></td>
-        <td><%= samp.customcode %></td>
-        <td><%= link_to 'Show', samp %></td>
-        <td><%= link_to 'Edit', edit_samp_path(samp) %></td>
-        <td><%= link_to 'Destroy', samp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
 
 <%= link_to 'New Samp', new_samp_path %>
+
+<script>
+	    	$('.the-tabs li.samp').addClass('active');
+</script>
