@@ -184,6 +184,7 @@ DEPENDENCIES
   activeadmin!
   capistrano
   coffee-rails (~> 4.0.0)
+  devise
   jbuilder (~> 1.2)
   jquery-rails
   rails (= 4.0.4)
