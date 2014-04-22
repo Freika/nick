@@ -1,13 +1,11 @@
 Nick::Application.routes.draw do
+  #devise_for :admins
   resources :statistics
 
   resources :syllables
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
   resources :samps, :path => 'samp'
 
-  resources :gw2s, :path => 'gw2'
+  resources :gw2s, :path => 'gw2' 
 
   resources :wows, :path =>'wow'
 

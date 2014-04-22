@@ -296,8 +296,9 @@ end
   def goblin_female
   name_start = Syllable.where(game: 'wow', race: 'goblin', sex: 'female', position: 'start', namepart: 'name').pluck(:syllable)
   name_middle = Syllable.where(game: 'wow', race: 'goblin', sex: 'female', position: 'middle', namepart: 'name').pluck(:syllable)
-  name_end = Syllable.where(game: 'wow', race: 'goblin', sex: 'female', position: 'end', namepart: 'name').pluck(:syllable)
-  name = name_start.sample+name_middle.sample+name_end.sample
+  #name_end = Syllable.where(game: 'wow', race: 'goblin', sex: 'female', position: 'end', namepart: 'name').pluck(:syllable)
+  name = name_start.sample+name_middle.sample#+name_end.sample
+  #perhaps there is an error in database with goblin name_end
   @name = name
   render :json => @name.to_json
 Statistic.create(game: 'wow', race: 'goblin', sex: 'female', name: name)
