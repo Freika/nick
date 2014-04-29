@@ -33,5 +33,6 @@
 </table>
 
 <br>
-
+<% if user_signed_in? %>
 <%= link_to 'New Syllable', new_syllable_path %>
+<% end %>

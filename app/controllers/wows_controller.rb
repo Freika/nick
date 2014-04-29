@@ -1,4 +1,6 @@
 class WowsController < ApplicationController
+      before_action :authenticate_user!, except: [:index, :show]
+
   before_action :set_wow, only: [:show, :edit, :update, :destroy]
 
   # GET /wows

@@ -1,5 +1,8 @@
 <footer>
 <div class="col-sm-4 col-md-4 col-lg-4">
 	<a href="http://frey.su/">Frey</a>
+      <% if user_signed_in? %>
+      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+      <% end %>
 </div>
 </footer>

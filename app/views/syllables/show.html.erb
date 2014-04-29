@@ -29,6 +29,7 @@
   <strong>Namepart:</strong>
   <%= @syllable.namepart %>
 </p>
-
+<% if user_signed_in? %>
 <%= link_to 'Edit', edit_syllable_path(@syllable) %> |
 <%= link_to 'Back', syllables_path %>
+<% end %>

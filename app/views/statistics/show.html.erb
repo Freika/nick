@@ -22,6 +22,7 @@ game = "<%=j @statistic.game %>"
   <strong>Name:</strong>
   <%= @statistic.name %>
 </p>
-
+<% if user_signed_in? %>
 <%= link_to 'Edit', edit_statistic_path(@statistic) %> |
 <%= link_to 'Back', statistics_path %>
+<% end %>

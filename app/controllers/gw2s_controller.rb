@@ -1,5 +1,7 @@
 class Gw2sController < ApplicationController
-  before_action :set_gw2, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!, except: [:index, :show]
+
+    before_action :set_gw2, only: [:show, :edit, :update, :destroy]
 
   # GET /gw2s
   # GET /gw2s.json
