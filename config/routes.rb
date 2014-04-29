@@ -70,58 +70,36 @@ get 'api/samp/spanish/female' => 'samps#spanish_female'
 get 'api/samp/danish/male' => 'samps#danish_male'
 get 'api/samp/danish/female' => 'samps#danish_female'
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+#old routes
+get 'wow/orcs.php' => redirect('wow/orc')
+get 'wow/trolls.php' => redirect('wow/troll')
+get 'wow/taurens.php' => redirect('wow/tauren')
+get 'wow/goblins.php' => redirect('wow/goblin')
+get 'wow/blood_elves.php' => redirect('wow/bloodelf')
+get 'wow/undeads.php' => redirect('wow/undead')
+get 'wow/pandarens.php' => redirect('wow/pandaren')
+get 'wow/humans.php' => redirect('wow/human')
+get 'wow/gnomes.php' => redirect('wow/gnome')
+get 'wow/dwarves.php' => redirect('wow/dwarf')
+get 'wow/draeneis.php' => redirect('wow/draenei')
+get 'wow/night_elves.php' => redirect('wow/nightelf')
+get 'wow/worgens.php' => redirect('wow/worgen')
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+get 'gw2/human.php' => redirect('gw2/human')
+get 'gw2/asura.php' => redirect('gw2/asura')
+get 'gw2/norn.php' => redirect('gw2/norn')
+get 'gw2/charr.php' => redirect('gw2/charr')
+get 'gw2/sylvari.php' => redirect('gw2/sylvari')
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+get 'samp/english.php' => redirect('samp/english')
+get 'samp/german.php' => redirect('samp/german')
+get 'samp/french.php' => redirect('samp/french')
+get 'samp/italian.php' => redirect('samp/italian')
+get 'samp/danish.php' => redirect('samp/danish')
+get 'samp/spanish.php' => redirect('samp/spanish')
+get 'samp/swedish.php' => redirect('samp/swedish')
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end
