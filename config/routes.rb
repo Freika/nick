@@ -1,12 +1,48 @@
 Nick::Application.routes.draw do
-  devise_for :users
-  resources :statistics
 
+
+
+  devise_for :users
+
+
+  resources :statistics
+  
   resources :syllables
+
+  #old routes
+  get 'wow/orcs.php' => redirect('wow/orc')
+  get 'wow/trolls.php' => redirect('wow/troll')
+  get 'wow/taurens.php' => redirect('wow/tauren')
+  get 'wow/goblins.php' => redirect('wow/goblin')
+  get 'wow/blood_elves.php' => redirect('wow/bloodelf')
+  get 'wow/undeads.php' => redirect('wow/undead')
+  get 'wow/pandarens.php' => redirect('wow/pandaren')
+  get 'wow/humans.php' => redirect('wow/human')
+  get 'wow/gnomes.php' => redirect('wow/gnome')
+  get 'wow/dwarves.php' => redirect('wow/dwarf')
+  get 'wow/draeneis.php' => redirect('wow/draenei')
+  get 'wow/night_elves.php' => redirect('wow/nightelf')
+  get 'wow/worgens.php' => redirect('wow/worgen')
+
+  get 'gw2/human.php' => redirect('gw2/human')
+  get 'gw2/asura.php' => redirect('gw2/asura')
+  get 'gw2/norn.php' => redirect('gw2/norn')
+  get 'gw2/charr.php' => redirect('gw2/charr')
+  get 'gw2/sylvari.php' => redirect('gw2/sylvari')
+
+  get 'samp/english.php' => redirect('samp/english')
+  get 'samp/german.php' => redirect('samp/german')
+  get 'samp/french.php' => redirect('samp/french')
+  get 'samp/italian.php' => redirect('samp/italian')
+  get 'samp/danish.php' => redirect('samp/danish')
+  get 'samp/spanish.php' => redirect('samp/spanish')
+  get 'samp/swedish.php' => redirect('samp/swedish')
+
   resources :samps, :path => 'samp'
 
   resources :gw2s, :path => 'gw2' 
 
+  # get 'wow/orcs.php', to: redirect('wow/orc')
   resources :wows, :path =>'wow'
 
   root 'wows#index'
@@ -69,37 +105,5 @@ get 'api/samp/spanish/male' => 'samps#spanish_male'
 get 'api/samp/spanish/female' => 'samps#spanish_female'
 get 'api/samp/danish/male' => 'samps#danish_male'
 get 'api/samp/danish/female' => 'samps#danish_female'
-
-#old routes
-get 'wow/orcs.php' => redirect('wow/orc')
-get 'wow/trolls.php' => redirect('wow/troll')
-get 'wow/taurens.php' => redirect('wow/tauren')
-get 'wow/goblins.php' => redirect('wow/goblin')
-get 'wow/blood_elves.php' => redirect('wow/bloodelf')
-get 'wow/undeads.php' => redirect('wow/undead')
-get 'wow/pandarens.php' => redirect('wow/pandaren')
-get 'wow/humans.php' => redirect('wow/human')
-get 'wow/gnomes.php' => redirect('wow/gnome')
-get 'wow/dwarves.php' => redirect('wow/dwarf')
-get 'wow/draeneis.php' => redirect('wow/draenei')
-get 'wow/night_elves.php' => redirect('wow/nightelf')
-get 'wow/worgens.php' => redirect('wow/worgen')
-
-get 'gw2/human.php' => redirect('gw2/human')
-get 'gw2/asura.php' => redirect('gw2/asura')
-get 'gw2/norn.php' => redirect('gw2/norn')
-get 'gw2/charr.php' => redirect('gw2/charr')
-get 'gw2/sylvari.php' => redirect('gw2/sylvari')
-
-get 'samp/english.php' => redirect('samp/english')
-get 'samp/german.php' => redirect('samp/german')
-get 'samp/french.php' => redirect('samp/french')
-get 'samp/italian.php' => redirect('samp/italian')
-get 'samp/danish.php' => redirect('samp/danish')
-get 'samp/spanish.php' => redirect('samp/spanish')
-get 'samp/swedish.php' => redirect('samp/swedish')
-
-
-
 
 end
