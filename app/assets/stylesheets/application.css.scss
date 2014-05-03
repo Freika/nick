@@ -113,9 +113,23 @@ footer {
 	margin: 20px 0;
 	border-radius: 10px;
 	position: relative;
-	padding: 10px;
+	padding: 8px;
 	background-color: rgba(0, 0, 0, 0.7);
 	border: 1px solid rgba(0, 0, 0, 0.5);
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		list-style-type: none;
+		margin:0;
+		a {
+			&:hover {
+				color: white!important;
+			}
+		}
+	}
+
 
 
 }
@@ -279,20 +293,23 @@ header a {
 	margin-top: 10px;
 		a {
 		padding: 7px;
-background: rgb(56,51,51);
-background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzM4MzMzMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-background: -moz-linear-gradient(top,  rgba(56,51,51,1) 0%, rgba(0,0,0,1) 100%);
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(56,51,51,1)), color-stop(100%,rgba(0,0,0,1)));
-background: -webkit-linear-gradient(top,  rgba(56,51,51,1) 0%,rgba(0,0,0,1) 100%);
-background: -o-linear-gradient(top,  rgba(56,51,51,1) 0%,rgba(0,0,0,1) 100%);
-background: -ms-linear-gradient(top,  rgba(56,51,51,1) 0%,rgba(0,0,0,1) 100%);
-background: linear-gradient(to bottom,  rgba(56,51,51,1) 0%,rgba(0,0,0,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#383333', endColorstr='#000000',GradientType=0 );
+		background: rgb(56,51,51);
+		background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzM4MzMzMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+		background: -moz-linear-gradient(top,  rgba(56,51,51,1) 0%, rgba(0,0,0,1) 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(56,51,51,1)), color-stop(100%,rgba(0,0,0,1)));
+		background: -webkit-linear-gradient(top,  rgba(56,51,51,1) 0%,rgba(0,0,0,1) 100%);
+		background: -o-linear-gradient(top,  rgba(56,51,51,1) 0%,rgba(0,0,0,1) 100%);
+		background: -ms-linear-gradient(top,  rgba(56,51,51,1) 0%,rgba(0,0,0,1) 100%);
+		background: linear-gradient(to bottom,  rgba(56,51,51,1) 0%,rgba(0,0,0,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#383333', endColorstr='#000000',GradientType=0 );
 
-border-radius: 5px;
-color: white;
+		border-radius: 5px;
+		color: white;
 		margin: 5px;
 		text-decoration: none;
+		&:hover {
+			color: white!important;
+		}
 		}
 	}
 }
@@ -304,12 +321,6 @@ color: white;
 	padding: 0;
 	color: #adadad;
 	font-size: 14px;
-	img {
-	float: left;
-	margin-right: 5px;
-	border: 3px solid red;
-	border-radius: 99px
-	}
 	h1 {
 	font-size: 20px;
 	margin-top: -10px;
@@ -376,6 +387,8 @@ color: white;
 	opacity: .7;
 	width: 52px;
 	height: 52px;
+	margin-top: 2px;
+	margin-bottom: 2px;
 
 	&:hover {
 		opacity: 1;
@@ -465,7 +478,7 @@ a.alliance {
 
 .tabs-left > .the-tabs > li > a:hover,
 .tabs-left > .the-tabs > li > a:focus {
-  border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+  border-color: #d3d3d3 #dddddd #eeeeee #eeeeee;
 }
 
 .tabs-left > .the-tabs .active {
@@ -483,4 +496,19 @@ box-shadow:        inset  0  5px 5px -5px #000,
 .tabs-left > .the-tabs .active > a:hover > img,
 .tabs-left > .the-tabs .active > a:focus > img {
 
+}
+
+.index {
+	h1 {
+		font-size: 24px;
+		margin-left: 10px;
+	}
+	margin-top: 30px;
+	font-size: 16px;
+	line-height: 18px;
+	color: #afafaf;
+	p {
+		text-indent: 20px;
+		margin-left: 10px;
+	}
 }

@@ -1,5 +1,5 @@
 class SampsController < ApplicationController
-      before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
 
   before_action :set_samp, only: [:show, :edit, :update, :destroy]
 
