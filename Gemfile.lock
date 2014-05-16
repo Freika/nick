@@ -28,10 +28,12 @@ GEM
     arel (4.0.2)
     bcrypt (3.1.7)
     builder (3.1.4)
-    capistrano (2.0.0)
-      highline (> 0.0.0)
-      net-sftp (>= 1.1.0)
-      net-ssh (>= 1.0.10)
+    capistrano (2.15.0)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -64,9 +66,13 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.9.3)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
+    net-ssh-gateway (1.2.0)
+      net-ssh (>= 2.6.5)
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyglot (0.3.4)
@@ -132,7 +138,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capistrano (= 2)
+  capistrano (= 2.15)
   coffee-rails (~> 4.0.0)
   devise
   jbuilder (~> 1.2)
