@@ -30,8 +30,6 @@ require 'bundler/capistrano'
 # Если вы не используете assets pipelining в своем проекте,
 # или у вас старая версия rails, закомментируйте эту строку.
 load 'deploy/assets'
-config.assets.prefix = "/dev-assets"
-config.assets.compile = true
 
 # Для удобства работы мы рекомендуем вам настроить авторизацию
 # SSH по ключу. При работе capistrano будет использоваться
