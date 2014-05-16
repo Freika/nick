@@ -16,11 +16,11 @@ require 'bundler/capistrano'
 ## dayabase.yml в shared-каталог проекта на сервере и раскомментируйте
 ## следующие строки.
 
-# after "deploy:update_code", :copy_database_config
-# task :copy_database_config, roles => :app do
-#   db_config = "#{shared_path}/database.yml"
-#   run "cp #{db_config} #{release_path}/config/database.yml"
-# end
+after "deploy:update_code", :copy_database_config
+task :copy_database_config, roles => :app do
+  db_config = "#{shared_path}/database.yml"
+  run "cp #{db_config} #{release_path}/config/database.yml"
+end
 
 # В rails 3 по умолчанию включена функция assets pipelining,
 # которая позволяет значительно уменьшить размер статических
@@ -74,10 +74,10 @@ set :scm,             :git
 # домашнем каталоге в подкаталоге git/<имя проекта>.git.
 # Подробнее о создании репозитория читайте в нашем блоге
 # http://locum.ru/blog/hosting/git-on-locum
-set :repository,      "ssh://#{user}@#{deploy_server}/home/#{user}/git/#{application}.git"
+#set :repository,      "ssh://#{user}@#{deploy_server}/home/#{user}/git/#{application}.git"
 
 ## Если ваш репозиторий в GitHub, используйте такую конфигурацию
-# set :repository,    "git@github.com:username/project.git"
+ set :repository,    "git@github.com:Freika/nick.git"
 
 ## --- Ниже этого места ничего менять скорее всего не нужно ---
 

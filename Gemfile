@@ -5,6 +5,7 @@ gem 'rails', '4.0.4'
 gem 'devise'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
@@ -30,7 +31,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 group :production do
-	gem 'capistrano'
+	gem 'capistrano', '2'
 	gem 'unicorn'
 end
 
