@@ -16,11 +16,11 @@ require 'bundler/capistrano'
 ## dayabase.yml в shared-каталог проекта на сервере и раскомментируйте
 ## следующие строки.
 
-after "deploy:update_code", :copy_database_config
-task :copy_database_config, roles => :app do
-  db_config = "#{shared_path}/database.yml"
-  run "cp #{db_config} #{release_path}/config/database.yml"
-end
+# after "deploy:update_code", :copy_database_config
+# task :copy_database_config, roles => :app do
+#   db_config = "#{shared_path}/database.yml"
+#   run "cp #{db_config} #{release_path}/config/database.yml"
+# end
 
 # В rails 3 по умолчанию включена функция assets pipelining,
 # которая позволяет значительно уменьшить размер статических
@@ -41,7 +41,7 @@ ssh_options[:forward_agent] = true
 
 # Имя вашего проекта в панели управления.
 # Не меняйте это значение без необходимости, оно используется дальше.
-set :application,     "nickshaker"
+set :application,     "nick"
 
 # Сервер размещения проекта.
 set :deploy_server,   "phosphorus.locum.ru"
@@ -61,7 +61,7 @@ role :app,            deploy_server
 role :db,             deploy_server, :primary => true
 
 # Следующие строки необходимы, т.к. ваш проект использует rvm.
-set :rvm_ruby_string, "2.1.0"
+set :rvm_ruby_string, "2.1.1"
 set :rake,            "rvm use #{rvm_ruby_string} do bundle exec rake" 
 set :bundle_cmd,      "rvm use #{rvm_ruby_string} do bundle"
 
@@ -77,6 +77,7 @@ set :scm,             :git
 #set :repository,      "ssh://#{user}@#{deploy_server}/home/#{user}/git/#{application}.git"
 
 ## Если ваш репозиторий в GitHub, используйте такую конфигурацию
+# set :repository,    "git@github.com:username/project.git"
  set :repository,    "git@github.com:Freika/nick.git"
 
 ## --- Ниже этого места ничего менять скорее всего не нужно ---
