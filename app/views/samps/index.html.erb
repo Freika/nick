@@ -5,7 +5,9 @@
 </p>
 
 
+<% if user_signed_in? %>
 <%= link_to 'New Samp', new_samp_path %>
+<% end %>
 
 <script>
 	    	$('.the-tabs li.samp').addClass('active');
