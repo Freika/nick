@@ -8,8 +8,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title><%= yield :title %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.ico' %>
   <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="description" content="Генератор ников">
@@ -33,7 +33,11 @@
   </div>
 </div>
     <div class="col-sm-3 col-md-3 col-lg-3">
-        <div class="sidebar">Рьеклама</div>
+        <div class="sidebar">
+<script language="JavaScript" type="text/javascript">
+(function() {var d=document; var s=d.createElement('script'); var id = Math.floor(Math.random()*999);d.write('<div id="x'+id+'"></div>');s.type = 'text/javascript';s.async = true;s.src = '//cityads.ru/service/promo/?bid=2142&size=240x400&cid=fa8019281a92f5e4bf56c4838b8eba13&sa=&dv='+id; var x=d.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); })();
+</script>
+        </div>
     </div>
 </div>
 <div class="container">
@@ -41,5 +45,8 @@
         <%= render "layouts/footer" %>
     </div>
 </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
     </body>
 </html>

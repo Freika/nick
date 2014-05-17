@@ -1,9 +1,6 @@
 Nick::Application.routes.draw do
 
-
-
   devise_for :users
-
 
   resources :statistics
   
@@ -42,11 +39,9 @@ Nick::Application.routes.draw do
 
   resources :gw2s, :path => 'gw2' 
 
-  # get 'wow/orcs.php', to: redirect('wow/orc')
   resources :wows, :path =>'wow'
 
   root 'wows#index'
-
 
 #WoW
 

@@ -28,7 +28,7 @@
 
 
 body {
-	background-image: image-url("Weathered_Texture_by_greyghostXXX.jpg")!important;
+	background-image: image-url("background.jpg")!important;
 	color: white;
 	-webkit-background-size: cover!important;
 	background-size: cover!important;
@@ -281,6 +281,10 @@ header a {
 	color: #dedede;
 }
 
+.sharebuttons {
+	margin-top: 23px;
+}
+
 .nickbox {
 	 #yournameishere {
 	font-size: 24px;
@@ -290,7 +294,7 @@ header a {
 	margin-bottom: 10px;
 	}
 	#sexybuttons {
-	margin-top: 10px;
+	margin-top: 15px;
 		a {
 		padding: 7px;
 		background: rgb(56,51,51);
