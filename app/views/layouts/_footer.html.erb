@@ -1,32 +1,24 @@
 <footer>
-<div class="col-sm-4 col-md-4 col-lg-4">
-<ul>
-  <li><a href="http://generatornikov.reformal.ru" onclick="Reformal.widgetOpen();return false;" onmouseover="Reformal.widgetPreload();">Oтзывы и предложения</a></li>
+<div class="col-sm-3 col-md-3 col-lg-3">
+<ul>  
+  <li><a href="http://madhat.ru/" title="Дизайнер">Мэдя</a></li>
+  <li><a href="http://frey.su/" title="Разработчик">Frey</a></li>
 </ul>
-  <script type="text/javascript">
-    var reformalOptions = {
-        project_id: 195468,
-        show_tab: false,
-        project_host: "generatornikov.reformal.ru"
-    };
-    
-    (function() {
-        var script = document.createElement('script');
-        script.type = 'text/javascript'; script.async = true;
-        script.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'media.reformal.ru/widgets/v3/reformal.js';
-        document.getElementsByTagName('head')[0].appendChild(script);
-    })();
-</script><noscript><a href="http://reformal.ru"><img src="http://media.reformal.ru/reformal.png" /></a><a href="http://generatornikov.reformal.ru">Oтзывы и предложения для Генератор ников</a></noscript>
-  <li><a href="http://frey.su/">Frey</a></li>
-
       <% if user_signed_in? %>
       <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
       <% end %>
 </div>
-<div class="col-sm-4 col-md-4 col-lg-4">
+<div class="col-sm-3 col-md-3 col-lg-3">
   
 </div>
-<div class="col-sm-4 col-md-4 col-lg-4">
+<div class="col-sm-3 col-md-3 col-lg-3">
+</div>
+<div class="col-sm-3 col-md-3 col-lg-3 right">
+    <ul>
+        <li>
+            <a href="http://generatornikov.reformal.ru" onclick="Reformal.widgetOpen();return false;" onmouseover="Reformal.widgetPreload();">Oтзывы и предложения</a>
+        </li>
+    </ul>
 </div>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -55,4 +47,20 @@
 </script>
 <noscript><div><img src="//mc.yandex.ru/watch/20295631" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
+
+<script type="text/javascript">
+    var reformalOptions = {
+        project_id: 195468,
+        show_tab: false,
+        project_host: "generatornikov.reformal.ru"
+    };
+    
+    (function() {
+        var script = document.createElement('script');
+        script.type = 'text/javascript'; script.async = true;
+        script.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'media.reformal.ru/widgets/v3/reformal.js';
+        document.getElementsByTagName('head')[0].appendChild(script);
+    })();
+</script><noscript><a href="http://reformal.ru"><img src="http://media.reformal.ru/reformal.png" /></a><a href="http://generatornikov.reformal.ru">Oтзывы и предложения для Генератор ников</a></noscript>
+
 </footer>

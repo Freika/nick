@@ -61,7 +61,7 @@ body {
 header {
 	margin-top: 20px;
 	margin-bottom:  20px;
-	height: 150px;
+	height: 105px;
 	display: block;
 	border-radius: 10px;
 	padding: 10px 20px;
@@ -116,6 +116,9 @@ footer {
 	padding: 8px;
 	background-color: rgba(0, 0, 0, 0.7);
 	border: 1px solid rgba(0, 0, 0, 0.5);
+	.right {
+		text-align: right;
+	}
 	ul {
 		margin: 0;
 		padding: 0;
@@ -146,7 +149,7 @@ header a {
 }
 
 .highgarden {
-	margin-top: 105px;
+	margin-top: 65px;
 	margin-bottom: 20px;
 }
 
