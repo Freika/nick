@@ -7,21 +7,21 @@
 <div class="col-sm-4 col-md-4 col-lg-4">
   <h3>World of Warcraft</h3>
   Создано ников:
-  <%= @statistics.where(:game => "wow").count %>
+  <%= number_with_delimiter(@statistics.where(:game => "wow").count, delimiter: " ") %>
   <hr>
 </div>
 
 <div class="col-sm-4 col-md-4 col-lg-4">
   <h3>San Andreas</h3>
   Создано ников:
-  <%= @statistics.where(:game => "samp").count %>
+  <%= number_with_delimiter(@statistics.where(:game => "samp").count, delimiter: " ") %>
   <hr>
 </div>
 
 <div class="col-sm-4 col-md-4 col-lg-4">
   <h3>Guild Wars 2</h3>
     Создано ников:
-  <%= @statistics.where(:game => "gw2").count %>
+  <%= number_with_delimiter(@statistics.where(:game => "gw2").count, delimiter: " ") %>
   <hr>
 </div>
 
