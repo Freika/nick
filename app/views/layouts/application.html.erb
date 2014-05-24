@@ -79,7 +79,8 @@ j.type="text/javascript";j.src=s;(d.getElementsByTagName("head")[0]).appendChild
         <%= render "layouts/footer" %>
     </div>
 </div>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= jquery_include_tag :google %>
+  <%= javascript_include_tag 'application' %>
 
     </body>
 </html>
