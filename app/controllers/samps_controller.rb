@@ -228,7 +228,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def samp_params
-      params.require(:samp).permit(:game, :racename, :pagename, :title, :desc, :customcode)
+      params.require(:samp).permit(:game, :racename, :pagename, :title, :desc, :customcode, :seo_description)
     end
 
 

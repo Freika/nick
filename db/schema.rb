@@ -11,84 +11,103 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429162134) do
+ActiveRecord::Schema.define(version: 20140524140047) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "friendly_id_slugs", force: true do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "gw2s", force: true do |t|
-    t.string   "game"
-    t.string   "racename"
-    t.string   "pagename"
-    t.string   "title"
-    t.string   "desc"
-    t.string   "customcode"
+    t.text     "game"
+    t.text     "racename"
+    t.text     "pagename"
+    t.text     "title"
+    t.text     "desc"
+    t.text     "customcode"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "slug"
+    t.text     "slug"
+    t.string   "seo_description"
   end
 
-  add_index "gw2s", ["slug"], name: "index_gw2s_on_slug"
+  add_index "gw2s", ["slug"], name: "index_gw2s_on_slug", using: :btree
 
   create_table "samps", force: true do |t|
-    t.string   "game"
-    t.string   "racename"
-    t.string   "pagename"
-    t.string   "title"
-    t.string   "desc"
-    t.string   "customcode"
+    t.text     "game"
+    t.text     "racename"
+    t.text     "pagename"
+    t.text     "title"
+    t.text     "desc"
+    t.text     "customcode"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "slug"
+    t.text     "slug"
+    t.string   "seo_description"
   end
 
-  add_index "samps", ["slug"], name: "index_samps_on_slug"
+  add_index "samps", ["slug"], name: "index_samps_on_slug", using: :btree
 
   create_table "statistics", force: true do |t|
-    t.string   "game"
-    t.string   "race"
-    t.string   "sex"
-    t.string   "name"
+    t.text     "game"
+    t.text     "race"
+    t.text     "sex"
+    t.text     "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "syllables", force: true do |t|
-    t.string   "game"
-    t.string   "race"
-    t.string   "sex"
-    t.string   "position"
-    t.string   "syllable"
-    t.string   "namepart"
+    t.text     "game"
+    t.text     "race"
+    t.text     "sex"
+    t.text     "position"
+    t.text     "syllable"
+    t.text     "namepart"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+    t.text     "email",                  default: "", null: false
+    t.text     "encrypted_password",     default: "", null: false
+    t.text     "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+    t.text     "current_sign_in_ip"
+    t.text     "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "wows", force: true do |t|
-    t.string   "game"
-    t.string   "racename"
-    t.string   "pagename"
-    t.string   "title"
-    t.string   "desc"
-    t.string   "customcode"
+    t.text     "game"
+    t.text     "racename"
+    t.text     "pagename"
+    t.text     "title"
+    t.text     "desc"
+    t.text     "customcode"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "slug"
+    t.text     "slug"
+    t.string   "seo_description"
   end
 
 end

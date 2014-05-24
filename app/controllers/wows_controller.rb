@@ -340,6 +340,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wow_params
-      params.require(:wow).permit(:game, :racename, :pagename, :title, :desc, :customcode)
+      params.require(:wow).permit(:game, :racename, :pagename, :title, :desc, :customcode, :seo_description)
     end
 end

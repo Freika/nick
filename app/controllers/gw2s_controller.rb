@@ -233,6 +233,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gw2_params
-      params.require(:gw2).permit(:game, :racename, :pagename, :title, :desc, :customcode)
+      params.require(:gw2).permit(:game, :racename, :pagename, :title, :desc, :customcode, :seo_description)
     end
 end

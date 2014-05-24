@@ -1,14 +1,6 @@
 class Gw2 < ActiveRecord::Base
-validates :slug, uniqueness: true, presence: true
+extend FriendlyId
 
-before_validation :generate_slug
+  friendly_id :racename
 
-def to_param
-	slug	
-end
-
-def generate_slug
-	self.slug ||= racename.parameterize
-	
-end
 end
