@@ -17,3 +17,4 @@
 
 /config/initializers/devise.rb
 /config/database.yml
+/config/initializers/social_poster.rb
