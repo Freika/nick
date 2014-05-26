@@ -6,7 +6,7 @@ class Statistic < ActiveRecord::Base
     elsif nick.game == "wow"
       game = "WorldofWarcraft"
     else
-      game = "Guild Wars 2"
+      game = "GuildWars2"
   end
 
   if nick.race ==  "human"
