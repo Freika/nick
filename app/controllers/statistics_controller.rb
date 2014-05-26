@@ -5,4 +5,8 @@ class StatisticsController < ApplicationController
     @statistics = Statistic.all
   end
 
+  def new
+    @statistic = Statistic.new
+  end
+
 end
