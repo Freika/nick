@@ -81,10 +81,6 @@ set :scm,             :git
 ## Если ваш репозиторий в GitHub, используйте такую конфигурацию
 # set :repository,    "git@github.com:username/project.git"
  set :repository,    "git@github.com:Freika/nick.git"
- 
-
- set :whenever_command, "rvm use #{rvm_ruby_string} do bundle exec whenever"
- after 'deploy:update_code','whenever:update_crontab'
 ## --- Ниже этого места ничего менять скорее всего не нужно ---
 
 before 'deploy:finalize_update', 'set_current_release'
