@@ -70,4 +70,34 @@ if nick.sex == "male"
     #SocialPoster.write(:vk, "Ник для #{race}-#{sex}: #{nick.name} #ник #nickname ##{game}", nil, owner_id: '3642778')
 
   end
+
+  def self.top20wow
+    top = Statistic.select(:name).group(:name).having("count(*)>1").where(game: "wow").count
+    top_array = []
+    top.each_key do |name|
+      top_array << name
+    end
+
+    top_array
+  end
+
+    def self.top20samp
+    top = Statistic.select(:name).group(:name).having("count(*)>1").where(game: "samp").count
+    top_array = []
+    top.each_key do |name|
+      top_array << name
+    end
+
+    top_array
+  end
+
+    def self.top20gw2
+    top = Statistic.select(:name).group(:name).having("count(*)>1").where(game: "gw2").count
+    top_array = []
+    top.each_key do |name|
+      top_array << name
+    end
+
+    top_array
+  end
 end

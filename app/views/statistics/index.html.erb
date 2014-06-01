@@ -28,23 +28,23 @@
 
 <div class="row">
   <div class="col-sm-4 col-md-4 col-lg-4 nicknames">
-    <% nicks = @statistics.where(game: "wow").last(20) %>
-    <% nicks.each do |nick| %>
-    <%= nick.name %>
+  <% r = Statistic.top20wow.last(20) %>
+    <% r.each do |name| %>
+    <%= name %>
     <br>
     <% end %>
   </div>
   <div class="col-sm-4 col-md-4 col-lg-4 nicknames">
-    <% nicks = @statistics.where(game: "samp").last(20) %>
-    <% nicks.each do |nick| %>
-    <%= nick.name %>
+    <% r = Statistic.top20samp.last(20) %>
+    <% r.each do |name| %>
+    <%= name %>
     <br>
     <% end %>
   </div>
   <div class="col-sm-4 col-md-4 col-lg-4 nicknames">
-    <% nicks = @statistics.where(game: "gw2").last(20) %>
-    <% nicks.each do |nick| %>
-    <%= nick.name %>
+    <% r = Statistic.top20gw2.last(20) %>
+    <% r.each do |name| %>
+    <%= name %>
     <br>
     <% end %>
   </div>
