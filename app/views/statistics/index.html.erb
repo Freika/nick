@@ -1,6 +1,10 @@
 <div class="statistic">
+<%= javascript_tag do %>
+race = "human";
+game = "samp"
+<% end %>
 
-<%#= content_tag :div, "", id: "nicks_chart", data: {nicks: statistics_chart_data} %>
+<%= content_tag :div, "", id: "nicks_chart", data: {nicks: statistics_chart_data} %>
 
 <h1>Лучшие имена и ники</h1>
 
@@ -52,3 +56,4 @@
 </div>
 </div>
 <% content_for :title, "Статистика по самым лучшим никам" %>
+<%= javascript_include_tag "statistic" %>
