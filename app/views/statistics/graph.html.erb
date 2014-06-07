@@ -13,10 +13,9 @@
       <td><%= number_with_delimiter(Statistic.where(game: "wow").count, delimiter: " ") %></td>
       <td><%= number_with_delimiter(Statistic.where(game: "samp").count, delimiter: " ") %></td>
       <td><%= number_with_delimiter(Statistic.where(game: "gw2").count, delimiter: " ") %></td>
-      <td><%= Statistic.count %></td>
+      <td><%= number_with_delimiter(Statistic.count, delimiter: " ") %></td>
     </tr>
   </table>
 </div>
-<%= content_tag :div, "", id: "nicks_chart", data: {nicks: statistics_chart_data} %>
-<% content_for :title, "График генерации ников и имен для онлайновыхz игр" %>
-<%= javascript_include_tag "statistics" %>
+<%= render partial: 'graph' %>
+<% content_for :title, "График генерации ников и имен для онлайновых игр" %>

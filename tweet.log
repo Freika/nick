@@ -30524,3 +30524,383 @@ LINE 5:                WHERE a.attrelid = '"statistics"'::regclass
 	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `<top (required)>'
 	from bin/rails:4:in `require'
 	from bin/rails:4:in `<main>'
+/Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:791:in `async_exec': PG::UndefinedTable: ERROR:  relation "statistics" does not exist (ActiveRecord::StatementInvalid)
+LINE 5:                WHERE a.attrelid = '"statistics"'::regclass
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+                FROM pg_attribute a LEFT JOIN pg_attrdef d
+                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+               WHERE a.attrelid = '"statistics"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:791:in `exec_no_cache'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/abstract_adapter.rb:442:in `block in log'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activesupport-4.0.4/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/abstract_adapter.rb:437:in `log'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:930:in `column_definitions'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/schema_statements.rb:187:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:114:in `block in prepare_default_proc'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:56:in `yield'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:56:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/model_schema.rb:208:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/model_schema.rb:254:in `column_names'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:229:in `aggregate_column'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:252:in `execute_simple_calculation'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:224:in `perform_calculation'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:108:in `calculate'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-deprecated_finders-1.0.3/lib/active_record/deprecated_finders/relation.rb:84:in `calculate'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:24:in `count'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/querying.rb:12:in `count'
+	from /Users/frey/frails/nick/app/models/statistic.rb:4:in `tweet'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `<top (required)>'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `eval'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `<top (required)>'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `require'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+/Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:791:in `async_exec': PG::UndefinedTable: ERROR:  relation "statistics" does not exist (ActiveRecord::StatementInvalid)
+LINE 5:                WHERE a.attrelid = '"statistics"'::regclass
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+                FROM pg_attribute a LEFT JOIN pg_attrdef d
+                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+               WHERE a.attrelid = '"statistics"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:791:in `exec_no_cache'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/abstract_adapter.rb:442:in `block in log'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activesupport-4.0.4/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/abstract_adapter.rb:437:in `log'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:930:in `column_definitions'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/schema_statements.rb:187:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:114:in `block in prepare_default_proc'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:56:in `yield'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:56:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/model_schema.rb:208:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/model_schema.rb:254:in `column_names'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:229:in `aggregate_column'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:252:in `execute_simple_calculation'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:224:in `perform_calculation'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:108:in `calculate'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-deprecated_finders-1.0.3/lib/active_record/deprecated_finders/relation.rb:84:in `calculate'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:24:in `count'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/querying.rb:12:in `count'
+	from /Users/frey/frails/nick/app/models/statistic.rb:4:in `tweet'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `<top (required)>'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `eval'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `<top (required)>'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `require'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+/Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:791:in `async_exec': PG::UndefinedTable: ERROR:  relation "statistics" does not exist (ActiveRecord::StatementInvalid)
+LINE 5:                WHERE a.attrelid = '"statistics"'::regclass
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+                FROM pg_attribute a LEFT JOIN pg_attrdef d
+                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+               WHERE a.attrelid = '"statistics"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:791:in `exec_no_cache'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/abstract_adapter.rb:442:in `block in log'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activesupport-4.0.4/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/abstract_adapter.rb:437:in `log'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:930:in `column_definitions'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/schema_statements.rb:187:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:114:in `block in prepare_default_proc'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:56:in `yield'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:56:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/model_schema.rb:208:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/model_schema.rb:254:in `column_names'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:229:in `aggregate_column'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:252:in `execute_simple_calculation'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:224:in `perform_calculation'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:108:in `calculate'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-deprecated_finders-1.0.3/lib/active_record/deprecated_finders/relation.rb:84:in `calculate'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:24:in `count'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/querying.rb:12:in `count'
+	from /Users/frey/frails/nick/app/models/statistic.rb:4:in `tweet'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `<top (required)>'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `eval'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `<top (required)>'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `require'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+/Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:791:in `async_exec': PG::UndefinedTable: ERROR:  relation "statistics" does not exist (ActiveRecord::StatementInvalid)
+LINE 5:                WHERE a.attrelid = '"statistics"'::regclass
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+                FROM pg_attribute a LEFT JOIN pg_attrdef d
+                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+               WHERE a.attrelid = '"statistics"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:791:in `exec_no_cache'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/abstract_adapter.rb:442:in `block in log'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activesupport-4.0.4/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/abstract_adapter.rb:437:in `log'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:930:in `column_definitions'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/schema_statements.rb:187:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:114:in `block in prepare_default_proc'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:56:in `yield'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:56:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/model_schema.rb:208:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/model_schema.rb:254:in `column_names'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:229:in `aggregate_column'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:252:in `execute_simple_calculation'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:224:in `perform_calculation'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:108:in `calculate'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-deprecated_finders-1.0.3/lib/active_record/deprecated_finders/relation.rb:84:in `calculate'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:24:in `count'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/querying.rb:12:in `count'
+	from /Users/frey/frails/nick/app/models/statistic.rb:4:in `tweet'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `<top (required)>'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `eval'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `<top (required)>'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `require'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+/Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:791:in `async_exec': PG::UndefinedTable: ERROR:  relation "statistics" does not exist (ActiveRecord::StatementInvalid)
+LINE 5:                WHERE a.attrelid = '"statistics"'::regclass
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+                FROM pg_attribute a LEFT JOIN pg_attrdef d
+                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+               WHERE a.attrelid = '"statistics"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:791:in `exec_no_cache'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/abstract_adapter.rb:442:in `block in log'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activesupport-4.0.4/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/abstract_adapter.rb:437:in `log'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:930:in `column_definitions'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/schema_statements.rb:187:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:114:in `block in prepare_default_proc'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:56:in `yield'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:56:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/model_schema.rb:208:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/model_schema.rb:254:in `column_names'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:229:in `aggregate_column'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:252:in `execute_simple_calculation'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:224:in `perform_calculation'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:108:in `calculate'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-deprecated_finders-1.0.3/lib/active_record/deprecated_finders/relation.rb:84:in `calculate'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:24:in `count'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/querying.rb:12:in `count'
+	from /Users/frey/frails/nick/app/models/statistic.rb:4:in `tweet'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `<top (required)>'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `eval'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `<top (required)>'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `require'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+/Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:791:in `async_exec': PG::UndefinedTable: ERROR:  relation "statistics" does not exist (ActiveRecord::StatementInvalid)
+LINE 5:                WHERE a.attrelid = '"statistics"'::regclass
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+                FROM pg_attribute a LEFT JOIN pg_attrdef d
+                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+               WHERE a.attrelid = '"statistics"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:791:in `exec_no_cache'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/abstract_adapter.rb:442:in `block in log'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activesupport-4.0.4/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/abstract_adapter.rb:437:in `log'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:930:in `column_definitions'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/schema_statements.rb:187:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:114:in `block in prepare_default_proc'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:56:in `yield'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:56:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/model_schema.rb:208:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/model_schema.rb:254:in `column_names'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:229:in `aggregate_column'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:252:in `execute_simple_calculation'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:224:in `perform_calculation'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:108:in `calculate'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-deprecated_finders-1.0.3/lib/active_record/deprecated_finders/relation.rb:84:in `calculate'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:24:in `count'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/querying.rb:12:in `count'
+	from /Users/frey/frails/nick/app/models/statistic.rb:4:in `tweet'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `<top (required)>'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `eval'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `<top (required)>'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `require'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+/Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:791:in `async_exec': PG::UndefinedTable: ERROR:  relation "statistics" does not exist (ActiveRecord::StatementInvalid)
+LINE 5:                WHERE a.attrelid = '"statistics"'::regclass
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+                FROM pg_attribute a LEFT JOIN pg_attrdef d
+                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+               WHERE a.attrelid = '"statistics"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:791:in `exec_no_cache'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/abstract_adapter.rb:442:in `block in log'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activesupport-4.0.4/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/abstract_adapter.rb:437:in `log'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:930:in `column_definitions'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/schema_statements.rb:187:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:114:in `block in prepare_default_proc'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:56:in `yield'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:56:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/model_schema.rb:208:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/model_schema.rb:254:in `column_names'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:229:in `aggregate_column'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:252:in `execute_simple_calculation'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:224:in `perform_calculation'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:108:in `calculate'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-deprecated_finders-1.0.3/lib/active_record/deprecated_finders/relation.rb:84:in `calculate'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:24:in `count'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/querying.rb:12:in `count'
+	from /Users/frey/frails/nick/app/models/statistic.rb:4:in `tweet'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `<top (required)>'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `eval'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `<top (required)>'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `require'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+/Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:791:in `async_exec': PG::UndefinedTable: ERROR:  relation "statistics" does not exist (ActiveRecord::StatementInvalid)
+LINE 5:                WHERE a.attrelid = '"statistics"'::regclass
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+                FROM pg_attribute a LEFT JOIN pg_attrdef d
+                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+               WHERE a.attrelid = '"statistics"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:791:in `exec_no_cache'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/abstract_adapter.rb:442:in `block in log'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activesupport-4.0.4/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/abstract_adapter.rb:437:in `log'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:930:in `column_definitions'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/schema_statements.rb:187:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:114:in `block in prepare_default_proc'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:56:in `yield'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:56:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/model_schema.rb:208:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/model_schema.rb:254:in `column_names'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:229:in `aggregate_column'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:252:in `execute_simple_calculation'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:224:in `perform_calculation'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:108:in `calculate'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-deprecated_finders-1.0.3/lib/active_record/deprecated_finders/relation.rb:84:in `calculate'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:24:in `count'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/querying.rb:12:in `count'
+	from /Users/frey/frails/nick/app/models/statistic.rb:4:in `tweet'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `<top (required)>'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `eval'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `<top (required)>'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `require'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+/Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:791:in `async_exec': PG::UndefinedTable: ERROR:  relation "statistics" does not exist (ActiveRecord::StatementInvalid)
+LINE 5:                WHERE a.attrelid = '"statistics"'::regclass
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+                FROM pg_attribute a LEFT JOIN pg_attrdef d
+                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+               WHERE a.attrelid = '"statistics"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:791:in `exec_no_cache'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/abstract_adapter.rb:442:in `block in log'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activesupport-4.0.4/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/abstract_adapter.rb:437:in `log'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:930:in `column_definitions'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/schema_statements.rb:187:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:114:in `block in prepare_default_proc'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:56:in `yield'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:56:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/model_schema.rb:208:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/model_schema.rb:254:in `column_names'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:229:in `aggregate_column'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:252:in `execute_simple_calculation'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:224:in `perform_calculation'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:108:in `calculate'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-deprecated_finders-1.0.3/lib/active_record/deprecated_finders/relation.rb:84:in `calculate'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:24:in `count'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/querying.rb:12:in `count'
+	from /Users/frey/frails/nick/app/models/statistic.rb:4:in `tweet'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `<top (required)>'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `eval'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `<top (required)>'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `require'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+/Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:791:in `async_exec': PG::UndefinedTable: ERROR:  relation "statistics" does not exist (ActiveRecord::StatementInvalid)
+LINE 5:                WHERE a.attrelid = '"statistics"'::regclass
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+                FROM pg_attribute a LEFT JOIN pg_attrdef d
+                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+               WHERE a.attrelid = '"statistics"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:791:in `exec_no_cache'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/database_statements.rb:138:in `block in exec_query'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/abstract_adapter.rb:442:in `block in log'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activesupport-4.0.4/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/abstract_adapter.rb:437:in `log'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/database_statements.rb:137:in `exec_query'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql_adapter.rb:930:in `column_definitions'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/postgresql/schema_statements.rb:187:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:114:in `block in prepare_default_proc'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:56:in `yield'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/connection_adapters/schema_cache.rb:56:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/model_schema.rb:208:in `columns'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/model_schema.rb:254:in `column_names'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:229:in `aggregate_column'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:252:in `execute_simple_calculation'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:224:in `perform_calculation'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:108:in `calculate'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-deprecated_finders-1.0.3/lib/active_record/deprecated_finders/relation.rb:84:in `calculate'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/relation/calculations.rb:24:in `count'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/activerecord-4.0.4/lib/active_record/querying.rb:12:in `count'
+	from /Users/frey/frails/nick/app/models/statistic.rb:4:in `tweet'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `<top (required)>'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `eval'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands/runner.rb:53:in `<top (required)>'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `require'
+	from /Users/frey/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/railties-4.0.4/lib/rails/commands.rb:84:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
