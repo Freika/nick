@@ -1,4 +1,5 @@
 class Statistic < ActiveRecord::Base
+  
   def self.tweet
     nick = Statistic.offset(rand(Statistic.count)).first
   if nick.game == "samp"

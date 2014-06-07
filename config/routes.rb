@@ -1,5 +1,6 @@
 Nick::Application.routes.draw do
-
+  
+  get 'statistics/graph'
   devise_for :users
 
   resources :statistics

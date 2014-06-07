@@ -9,4 +9,7 @@ class StatisticsController < ApplicationController
     @statistic = Statistic.new
   end
 
+  def graph
+  end
+
 end
