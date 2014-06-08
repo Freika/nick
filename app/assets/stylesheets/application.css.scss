@@ -310,6 +310,10 @@ header a {
 	font-family: Verdana;
 	margin-top: 25px;
 	margin-bottom: 10px;
+	cursor: pointer;
+		&.zeroclipboard-is-active {
+		 color: #C6E000;
+		}
 	}
 	#sexybuttons {
 	margin-top: 15px;

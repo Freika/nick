@@ -14,6 +14,7 @@ gem 'sass-rails', '~> 4.0.2'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'social_poster'
 gem 'whenever', require: false
+gem 'zeroclipboard-rails'
 
 
 
