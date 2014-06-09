@@ -42,4 +42,13 @@
              <% end %>
              </ul>
          </div>
+         <div class="tab-pane <%= 'active' if params[:controller] == 'minecrafts' %>" id="minecraft">
+             <ul class="minecraft">
+             <% Minecraft.all.order("created_at asc").each do |race| %>
+             <li>
+                <%= link_to(image_tag(race.game + "-" + race.racename + ".jpg", :alt => race.pagename), "/minecraft/" + race.racename, data: {no_turbolink: true}) %>
+             </li>
+             <% end %>
+             </ul>
+         </div>
         </div>

@@ -333,7 +333,7 @@ end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_wow
-      @wow ||= Wow.find_by_slug!(params[:id])
+      @wow = Wow.friendly.find(params[:id])
     end
 
     helper_method :set_wow
