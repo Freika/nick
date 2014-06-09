@@ -20,5 +20,5 @@
 # Learn more: http://github.com/javan/whenever
 
 every 5.minutes do # Many shortcuts available: :hour, :day, :month, :year, :reboot
-  runner "Statistic.tweet", :output => 'tweet.log' 
+  runner "Statistic.tweet"
 end
