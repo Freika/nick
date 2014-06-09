@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @minecraft.game %>
+</p>
+
+<p>
+  <strong>Racename:</strong>
+  <%= @minecraft.racename %>
+</p>
+
+<p>
+  <strong>Pagename:</strong>
+  <%= @minecraft.pagename %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @minecraft.title %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @minecraft.desc %>
+</p>
+
+<p>
+  <strong>Customcode:</strong>
+  <%= @minecraft.customcode %>
+</p>
+
+<p>
+  <strong>Seo description:</strong>
+  <%= @minecraft.seo_description %>
+</p>
+
+<%= link_to 'Edit', edit_minecraft_path(@minecraft) %> |
+<%= link_to 'Back', minecrafts_path %>

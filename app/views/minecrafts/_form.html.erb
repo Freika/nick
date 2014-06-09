@@ -1,0 +1,45 @@
+<%= form_for(@minecraft) do |f| %>
+  <% if @minecraft.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@minecraft.errors.count, "error") %> prohibited this minecraft from being saved:</h2>
+
+      <ul>
+      <% @minecraft.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :game %><br>
+    <%= f.text_field :game %>
+  </div>
+  <div class="field">
+    <%= f.label :racename %><br>
+    <%= f.text_field :racename %>
+  </div>
+  <div class="field">
+    <%= f.label :pagename %><br>
+    <%= f.text_field :pagename %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :desc %><br>
+    <%= f.text_field :desc %>
+  </div>
+  <div class="field">
+    <%= f.label :customcode %><br>
+    <%= f.text_field :customcode %>
+  </div>
+  <div class="field">
+    <%= f.label :seo_description %><br>
+    <%= f.text_field :seo_description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

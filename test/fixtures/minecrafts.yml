@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game: MyString
+  racename: MyString
+  pagename: MyString
+  title: MyString
+  desc: MyString
+  customcode: MyString
+  seo_description: MyString
+
+two:
+  game: MyString
+  racename: MyString
+  pagename: MyString
+  title: MyString
+  desc: MyString
+  customcode: MyString
+  seo_description: MyString

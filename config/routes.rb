@@ -36,11 +36,13 @@ Nick::Application.routes.draw do
   get 'samp/spanish.php' => redirect('samp/spanish')
   get 'samp/swedish.php' => redirect('samp/swedish')
 
-  resources :samps, :path => 'samp'
+  resources :samps, path: 'samp'
 
-  resources :gw2s, :path => 'gw2' 
+  resources :gw2s, path: 'gw2' 
 
-  resources :wows, :path =>'wow'
+  resources :wows, path:'wow'
+
+  resources :minecrafts, path: 'minecraft'
 
   root 'wows#index'
 

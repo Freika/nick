@@ -1,0 +1,39 @@
+<h1>Listing minecrafts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Game</th>
+      <th>Racename</th>
+      <th>Pagename</th>
+      <th>Title</th>
+      <th>Desc</th>
+      <th>Customcode</th>
+      <th>Seo description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @minecrafts.each do |minecraft| %>
+      <tr>
+        <td><%= minecraft.game %></td>
+        <td><%= minecraft.racename %></td>
+        <td><%= minecraft.pagename %></td>
+        <td><%= minecraft.title %></td>
+        <td><%= minecraft.desc %></td>
+        <td><%= minecraft.customcode %></td>
+        <td><%= minecraft.seo_description %></td>
+        <td><%= link_to 'Show', minecraft %></td>
+        <td><%= link_to 'Edit', edit_minecraft_path(minecraft) %></td>
+        <td><%= link_to 'Destroy', minecraft, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Minecraft', new_minecraft_path %>

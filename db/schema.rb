@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140524140047) do
+ActiveRecord::Schema.define(version: 20140609145949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,18 @@ ActiveRecord::Schema.define(version: 20140524140047) do
   end
 
   add_index "gw2s", ["slug"], name: "index_gw2s_on_slug", using: :btree
+
+  create_table "minecrafts", force: true do |t|
+    t.string   "game"
+    t.string   "racename"
+    t.string   "pagename"
+    t.string   "title"
+    t.string   "desc"
+    t.string   "customcode"
+    t.string   "seo_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "samps", force: true do |t|
     t.text     "game"
