@@ -1,4 +1,5 @@
 class MinecraftsController < ApplicationController
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
   before_action :set_minecraft, only: [:show, :edit, :update, :destroy]
 
   # GET /minecrafts
@@ -60,6 +61,17 @@ class MinecraftsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def steve_male
+  name_start = Syllable.where(game: 'minecraft', race: 'steve', sex: 'male', position: 'start', namepart: 'name').pluck(:syllable)
+  name_end = Syllable.where(game: 'minecraft', race: 'steve', sex: 'male', position: 'end', namepart: 'name').pluck(:syllable)
+  name = name_end.sample.capitalize + " " + name_start.sample.capitalize
+
+  fullname = name
+  @name = fullname
+  render :json => @name.to_json
+  Statistic.create(game: 'minecraft', race: 'steve', sex: 'male', name: fullname)
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.

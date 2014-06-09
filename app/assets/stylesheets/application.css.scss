@@ -177,6 +177,10 @@ header a {
 
 
 
+.minecraft-steve-bg {
+	background-image: image-url("minecraft-background-steve.jpg");
+}
+
 .wow-orc-bg {
 	background-image: image-url("wow-background-orc.jpg");
 }
@@ -491,6 +495,12 @@ a.alliance {
 	background-position: 64px 0;
 }
 
+.the-tabs li.minecraft a {
+	background-image: image-url("minecraft.png");
+	width: 64px;
+	height: 64px;
+	display: block;
+}
 
 
 .tabs-left > .the-tabs {

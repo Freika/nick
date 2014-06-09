@@ -104,4 +104,8 @@ get 'api/samp/spanish/female' => 'samps#spanish_female'
 get 'api/samp/danish/male' => 'samps#danish_male'
 get 'api/samp/danish/female' => 'samps#danish_female'
 
+#MINECRAFT
+get 'api/minecraft/steve/male' => 'minecrafts#steve_male'
+
+
 end
