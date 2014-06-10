@@ -1,17 +1,19 @@
 <div>
   <table class="statistic-count table">
     <tr>
-      <th colspan=4>Количество сгенерированных ников и имен</th>
+      <th colspan=5>Количество сгенерированных ников и имен</th>
     </tr>
     <tr>
       <th>World of Warcraft</th>
       <th>Guild Wars 2</th>
       <th>GTA San Andreas</th>
+      <th>Minecraft</th>
       <th>Всего</th>
     </tr>
     <tr>
       <td><%= number_with_delimiter(Statistic.where(game: "wow").count, delimiter: " ") %></td>
       <td><%= number_with_delimiter(Statistic.where(game: "samp").count, delimiter: " ") %></td>
+      <td><%= number_with_delimiter(Statistic.where(game: "minecraft").count, delimiter: " ") %></td>
       <td><%= number_with_delimiter(Statistic.where(game: "gw2").count, delimiter: " ") %></td>
       <td><%= number_with_delimiter(Statistic.count, delimiter: " ") %></td>
     </tr>
