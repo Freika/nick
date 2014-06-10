@@ -12,9 +12,9 @@
     </tr>
     <tr>
       <td><%= number_with_delimiter(Statistic.where(game: "wow").count, delimiter: " ") %></td>
+      <td><%= number_with_delimiter(Statistic.where(game: "gw2").count, delimiter: " ") %></td>
       <td><%= number_with_delimiter(Statistic.where(game: "samp").count, delimiter: " ") %></td>
       <td><%= number_with_delimiter(Statistic.where(game: "minecraft").count, delimiter: " ") %></td>
-      <td><%= number_with_delimiter(Statistic.where(game: "gw2").count, delimiter: " ") %></td>
       <td><%= number_with_delimiter(Statistic.count, delimiter: " ") %></td>
     </tr>
   </table>
