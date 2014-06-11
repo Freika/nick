@@ -9,45 +9,59 @@ game = "samp"
 <h1>Лучшие имена и ники</h1>
 
 <div class="row howmuchnicknames">
-  <div class="col-sm-4 col-md-4 col-lg-4">
+  <div class="col-sm-3 col-md-3 col-lg-3">
     <h3>World of Warcraft</h3>
     Создано ников:
-    <%= number_with_delimiter(@statistics.where(:game => "wow").count, delimiter: " ") %>
+    <%= number_with_delimiter(@statistics.where(game: "wow").count, delimiter: " ") %>
     <hr>
   </div>
 
-  <div class="col-sm-4 col-md-4 col-lg-4">
+  <div class="col-sm-3 col-md-3 col-lg-3">
     <h3>San Andreas</h3>
     Создано ников:
-    <%= number_with_delimiter(@statistics.where(:game => "samp").count, delimiter: " ") %>
+    <%= number_with_delimiter(@statistics.where(game: "samp").count, delimiter: " ") %>
     <hr>
   </div>
 
-  <div class="col-sm-4 col-md-4 col-lg-4">
+  <div class="col-sm-3 col-md-3 col-lg-3">
     <h3>Guild Wars 2</h3>
       Создано ников:
-    <%= number_with_delimiter(@statistics.where(:game => "gw2").count, delimiter: " ") %>
+    <%= number_with_delimiter(@statistics.where(game: "gw2").count, delimiter: " ") %>
+    <hr>
+  </div>
+
+  <div class="col-sm-3 col-md-3 col-lg-3">
+    <h3>Minecraft</h3>
+      Создано ников:
+    <%= number_with_delimiter(@statistics.where(game: "minecraft").count, delimiter: " ") %>
     <hr>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-sm-4 col-md-4 col-lg-4 nicknames">
- <% nicks = @statistics.where(game: "wow").last(20) %>
+  <div class="col-sm-3 col-md-3 col-lg-3 nicknames">
+ <% nicks = @statistics.where(game: "wow").last(18) %>
     <% nicks.each do |nick| %>
     <%= nick.name %>
     <br>
     <% end %>
   </div>
-  <div class="col-sm-4 col-md-4 col-lg-4 nicknames">
-    <% nicks = @statistics.where(game: "samp").last(20) %>
+  <div class="col-sm-3 col-md-3 col-lg-3 nicknames">
+    <% nicks = @statistics.where(game: "samp").last(18) %>
     <% nicks.each do |nick| %>
     <%= nick.name %>
     <br>
     <% end %>
   </div>
-  <div class="col-sm-4 col-md-4 col-lg-4 nicknames">
-    <% nicks = @statistics.where(game: "gw2").last(20) %>
+  <div class="col-sm-3 col-md-3 col-lg-3 nicknames">
+    <% nicks = @statistics.where(game: "gw2").last(18) %>
+    <% nicks.each do |nick| %>
+    <%= nick.name %>
+    <br>
+    <% end %>
+  </div>
+  <div class="col-sm-3 col-md-3 col-lg-3 nicknames">
+    <% nicks = @statistics.where(game: "minecraft").last(18) %>
     <% nicks.each do |nick| %>
     <%= nick.name %>
     <br>
