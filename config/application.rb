@@ -11,6 +11,8 @@ module Nick
 
     config.assets.precompile += ['jquery.js']
 
+    config.cache_expires_in = 24*60*60
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
