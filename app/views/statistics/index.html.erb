@@ -1,3 +1,4 @@
+<% cache do %>
 <div class="statistic">
 <%= javascript_tag do %>
 race = "human";
@@ -71,3 +72,4 @@ game = "samp"
 </div>
 <% content_for :title, "Статистика по самым лучшим никам" %>
 <%= javascript_include_tag "statistic" %>
+<% end %>
