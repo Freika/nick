@@ -1,4 +1,3 @@
-<% cache do %>
 <div class="statistic">
 <%= javascript_tag do %>
 race = "human";
@@ -11,34 +10,34 @@ game = "samp"
 
 <div class="row howmuchnicknames">
   <div class="col-sm-3 col-md-3 col-lg-3">
-    <h3>World of Warcraft</h3>
-    Создано ников:
+    <h3>WoW</h3>
+    Создано ников: <br>
     <%= number_with_delimiter(@statistics.where(game: "wow").count, delimiter: " ") %>
     <hr>
   </div>
 
   <div class="col-sm-3 col-md-3 col-lg-3">
     <h3>San Andreas</h3>
-    Создано ников:
+    Создано ников: <br>
     <%= number_with_delimiter(@statistics.where(game: "samp").count, delimiter: " ") %>
     <hr>
   </div>
 
   <div class="col-sm-3 col-md-3 col-lg-3">
     <h3>Guild Wars 2</h3>
-      Создано ников:
+      Создано ников: <br>
     <%= number_with_delimiter(@statistics.where(game: "gw2").count, delimiter: " ") %>
     <hr>
   </div>
 
   <div class="col-sm-3 col-md-3 col-lg-3">
     <h3>Minecraft</h3>
-      Создано ников:
+      Создано ников: <br>
     <%= number_with_delimiter(@statistics.where(game: "minecraft").count, delimiter: " ") %>
     <hr>
   </div>
 </div>
-
+<% cache do %>
 <div class="row">
   <div class="col-sm-3 col-md-3 col-lg-3 nicknames">
  <% nicks = @statistics.where(game: "wow").last(18) %>
@@ -69,7 +68,7 @@ game = "samp"
     <% end %>
   </div>
 </div>
+<% end %>
 </div>
 <% content_for :title, "Статистика по самым лучшим никам" %>
 <%= javascript_include_tag "statistic" %>
-<% end %>

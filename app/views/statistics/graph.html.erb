@@ -1,4 +1,3 @@
-<% cache do %>
 <div>
   <table class="statistic-count table">
     <tr>
@@ -20,6 +19,7 @@
     </tr>
   </table>
 </div>
+<% cache do %>
 <%= render partial: 'graph' %>
-<% content_for :title, "График генерации ников и имен для онлайновых игр" %>
 <% end %>
+<% content_for :title, "График генерации ников и имен для онлайновых игр" %>
