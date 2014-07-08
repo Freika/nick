@@ -16,7 +16,17 @@ gem 'social_poster'
 gem 'whenever', require: false
 gem 'zeroclipboard-rails'
 
-
+gem 'spring'
+  gem "better_errors"
+  gem 'annotate', ">=2.6.0"
+  gem 'bullet'
+  gem 'hirb'
+  gem 'quiet_assets'
+  gem 'rack-mini-profiler'
+  gem 'rails-footnotes', '>= 4.0.0', '<5'
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'faker'
+  gem 'binding_of_caller'
 
 #gem 'activeadmin', github: 'gregbell/active_admin'
 

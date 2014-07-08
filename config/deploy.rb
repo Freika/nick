@@ -46,6 +46,8 @@ set :application,     "nick"
 
 # Сервер размещения проекта.
 set :deploy_server,   "phosphorus.locum.ru"
+set :keep_releases, 3
+
 
 # Не включать в поставку разработческие инструменты и пакеты тестирования.
 set :bundle_without,  [:development, :test]
