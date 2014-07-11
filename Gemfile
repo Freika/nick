@@ -21,7 +21,6 @@ gem 'spring'
   gem 'annotate', ">=2.6.0"
   gem 'bullet'
   gem 'hirb'
-  gem 'quiet_assets'
   gem 'rack-mini-profiler'
   gem 'rails-footnotes', '>= 4.0.0', '<5'
   gem 'rspec-rails', '~> 3.0.0'
@@ -50,8 +49,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 group :production do
-	#gem 'capistrano', '2.14.2'
+  #gem 'capistrano', '2.14.2'
   gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
+  gem 'quiet_assets'
 
 	gem 'unicorn'
 end

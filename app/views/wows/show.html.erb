@@ -2,7 +2,7 @@
 race = "<%=j @wow.racename %>";
 game = "<%=j @wow.game %>"
 <% end %>
-<% content_for :title do %><%= @wow.title %><% end %>
+<% content_for :title do @wow.title end %>
 
 <%= render "layouts/nickbox" %>
 <%= render "wows/aboutrace" %>
