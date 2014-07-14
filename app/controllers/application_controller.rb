@@ -71,31 +71,31 @@ private
     <param name='quality' value='high' />
     </object></a><img src='http://track.adwad.ru/aff_i?offer_id=1441&aff_id=7896&aff_sub=squafl1&aff_sub2=flavert1&aff_sub3=flasq2&aff_sub4=flavert2&aff_sub5=vertwiz1&tiny_url=1' width='1' height='1' />",
 
-    "<a href='http://track.adwad.ru/SH2Athttp://track.adwad.ru/SH2Av'>
+    "<a href='http://track.adwad.ru/SH2At'>
         <img src='https://dl.dropboxusercontent.com/u/15506610/Prime/13959367904027.jpg'>
       </a><img src='http://track.adwad.ru/aff_i?offer_id=1441&aff_id=7896&aff_sub=squafl1&aff_sub2=flavert1&aff_sub3=flasq2&aff_sub4=flavert2&aff_sub5=vertwiz1&tiny_url=1' width='1' height='1' />",
 
-      "<a href='http://track.adwad.ru/SH2Athttp://track.adwad.ru/SH2Av'>
+      "<a href='http://track.adwad.ru/SH2At'>
         <img src='https://dl.dropboxusercontent.com/u/15506610/Prime/13959368034536.jpg'>
       </a><img src='http://track.adwad.ru/aff_i?offer_id=1441&aff_id=7896&aff_sub=squafl1&aff_sub2=flavert1&aff_sub3=flasq2&aff_sub4=flavert2&aff_sub5=vertwiz1&tiny_url=1' width='1' height='1' />",
 
-      "<a href='http://track.adwad.ru/SH2Athttp://track.adwad.ru/SH2Av'>
+      "<a href='http://track.adwad.ru/SH2At'>
         <img src='https://dl.dropboxusercontent.com/u/15506610/Prime/13959368181976.jpg'>
       </a><img src='http://track.adwad.ru/aff_i?offer_id=1441&aff_id=7896&aff_sub=squafl1&aff_sub2=flavert1&aff_sub3=flasq2&aff_sub4=flavert2&aff_sub5=vertwiz1&tiny_url=1' width='1' height='1' />",
 
-      "<a href='http://track.adwad.ru/SH2Athttp://track.adwad.ru/SH2Av'>
+      "<a href='http://track.adwad.ru/SH2At'>
         <img src='https://dl.dropboxusercontent.com/u/15506610/Prime/13959368218977.jpg'>
       </a><img src='http://track.adwad.ru/aff_i?offer_id=1441&aff_id=7896&aff_sub=squafl1&aff_sub2=flavert1&aff_sub3=flasq2&aff_sub4=flavert2&aff_sub5=vertwiz1&tiny_url=1' width='1' height='1' />",
 
-      "<a href='http://track.adwad.ru/SH2Athttp://track.adwad.ru/SH2Av'>
+      "<a href='http://track.adwad.ru/SH2At'>
         <img src='https://dl.dropboxusercontent.com/u/15506610/Prime/13959368259148.jpg'>
       </a><img src='http://track.adwad.ru/aff_i?offer_id=1441&aff_id=7896&aff_sub=squafl1&aff_sub2=flavert1&aff_sub3=flasq2&aff_sub4=flavert2&aff_sub5=vertwiz1&tiny_url=1' width='1' height='1' />",
 
-      "<a href='http://track.adwad.ru/SH2Athttp://track.adwad.ru/SH2Av'>
+      "<a href='http://track.adwad.ru/SH2At'>
         <img src='https://dl.dropboxusercontent.com/u/15506610/Prime/13959368294038.jpg'>
       </a><img src='http://track.adwad.ru/aff_i?offer_id=1441&aff_id=7896&aff_sub=squafl1&aff_sub2=flavert1&aff_sub3=flasq2&aff_sub4=flavert2&aff_sub5=vertwiz1&tiny_url=1' width='1' height='1' />",
 
-      "<a href='http://track.adwad.ru/SH2Athttp://track.adwad.ru/SH2Av'>
+      "<a href='http://track.adwad.ru/SH2At'>
         <img src='https://dl.dropboxusercontent.com/u/15506610/Prime/13959370021633.jpg' width=240>
       </a><img src='http://track.adwad.ru/aff_i?offer_id=1441&aff_id=7896&aff_sub=squafl1&aff_sub2=flavert1&aff_sub3=flasq2&aff_sub4=flavert2&aff_sub5=vertwiz1&tiny_url=1' width='1' height='1' />",
 
