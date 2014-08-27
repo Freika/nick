@@ -1,7 +1,7 @@
 class Statistic < ActiveRecord::Base
-  
+
   def self.tweet
-    nick = Statistic.offset(rand(Statistic.count)).first
+    nick = Statistic.offset(rand(Statistic.size)).first
   if nick.game == "samp"
       game = "SAMP"
     elsif nick.game == "wow"
@@ -57,7 +57,7 @@ class Statistic < ActiveRecord::Base
     elsif nick.race == "swedish"
       race = "Шведа"
     else
-      race = "Испанца"      
+      race = "Испанца"
   end
 
 if nick.sex == "male"
@@ -73,7 +73,7 @@ if nick.sex == "male"
   end
 
   def self.top20wow
-    top = Statistic.select(:name).group(:name).having("count(*)>1").where(game: "wow").count
+    top = Statistic.select(:name).group(:name).having("count(*)>1").where(game: "wow").size
     top_array = []
     top.each_key do |name|
       top_array << name
@@ -83,7 +83,7 @@ if nick.sex == "male"
   end
 
     def self.top20samp
-    top = Statistic.select(:name).group(:name).having("count(*)>1").where(game: "samp").count
+    top = Statistic.select(:name).group(:name).having("count(*)>1").where(game: "samp").size
     top_array = []
     top.each_key do |name|
       top_array << name
@@ -93,7 +93,7 @@ if nick.sex == "male"
   end
 
     def self.top20gw2
-    top = Statistic.select(:name).group(:name).having("count(*)>1").where(game: "gw2").count
+    top = Statistic.select(:name).group(:name).having("count(*)>1").where(game: "gw2").size
     top_array = []
     top.each_key do |name|
       top_array << name
