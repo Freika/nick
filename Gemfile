@@ -15,6 +15,8 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'social_poster'
 gem 'whenever', require: false
 gem 'zeroclipboard-rails'
+gem 'newrelic_rpm'
+
 
 gem 'spring'
   gem "better_errors"
