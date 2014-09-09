@@ -60,12 +60,11 @@ class Statistic < ActiveRecord::Base
       race = "Испанца"
   end
 
-if nick.sex == "male"
+  if nick.sex == "male"
     sex = "мужчины"
   else
     sex = "женщины"
   end
-
 
     SocialPoster.write(:twitter, "Ник для #{race}-#{sex}: #{nick.name} #ник #nickname ##{game}")
     #SocialPoster.write(:vk, "Ник для #{race}-#{sex}: #{nick.name} #ник #nickname ##{game}", nil, owner_id: '172371719')
@@ -82,17 +81,17 @@ if nick.sex == "male"
     top_array
   end
 
-    def self.top20samp
+  def self.top20samp
     top = Statistic.select(:name).group(:name).having("count(*)>1").where(game: "samp").size
     top_array = []
     top.each_key do |name|
       top_array << name
     end
 
-    top_array
+     top_array
   end
 
-    def self.top20gw2
+  def self.top20gw2
     top = Statistic.select(:name).group(:name).having("count(*)>1").where(game: "gw2").size
     top_array = []
     top.each_key do |name|

@@ -125,8 +125,6 @@ GEM
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyglot (0.3.4)
-    quiet_assets (1.0.3)
-      railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-mini-profiler (0.9.1)
       rack (>= 1.1.3)
@@ -155,8 +153,6 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
     rake (10.3.1)
-    rdoc (4.1.1)
-      json (~> 1.4)
     ref (1.0.5)
     rspec-core (3.0.2)
       rspec-support (~> 3.0.0)
@@ -180,9 +176,6 @@ GEM
       sass (~> 3.2.0)
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
-    sdoc (0.4.0)
-      json (~> 1.8)
-      rdoc (~> 4.0, < 5.0)
     shoulda (3.5.0)
       shoulda-context (~> 1.0, >= 1.0.1)
       shoulda-matchers (>= 1.4.1, < 3.0)
@@ -211,7 +204,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    sqlite3 (1.3.9)
     test-unit (2.5.5)
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
@@ -269,17 +261,14 @@ DEPENDENCIES
   jquery-rails-cdn (~> 1.0.2)
   newrelic_rpm
   pg
-  quiet_assets
   rack-mini-profiler
   rails (= 4.0.4)
   rails-footnotes (>= 4.0.0, < 5)
   rspec-rails (~> 3.0.0)
   sass-rails (~> 4.0.2)
-  sdoc
   skylight
   social_poster
   spring
-  sqlite3
   therubyracer
   turbolinks
   uglifier (>= 1.3.0)

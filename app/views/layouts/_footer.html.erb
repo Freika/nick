@@ -1,12 +1,12 @@
 <footer>
 <div class="col-sm-3 col-md-3 col-lg-3">
-<ul>  
+<ul>
   <li><a href="http://madhat.ru/" title="Дизайнер">Мэдя</a></li>
   <li><a href="http://frey.su/" title="Разработчик">Frey</a></li>
 </ul>
-      <% if user_signed_in? %>
-      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-      <% end %>
+<% if user_signed_in? %>
+  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<% end %>
 </div>
 <div class="col-sm-3 col-md-3 col-lg-3">
 
@@ -14,14 +14,14 @@
 <div class="col-sm-3 col-md-3 col-lg-3">
 </div>
 <div class="col-sm-3 col-md-3 col-lg-3 right">
-    <ul>
-        <li>
-            <a href="http://generatornikov.reformal.ru" onclick="Reformal.widgetOpen();return false;" onmouseover="Reformal.widgetPreload();">Oтзывы и предложения</a>
-        </li>
-        <li>
-            <a href="https://twitter.com/nickshaker_com">Twitter</a>
-        </li>
-    </ul>
+  <ul>
+    <li>
+      <a href="http://generatornikov.reformal.ru" onclick="Reformal.widgetOpen();return false;" onmouseover="Reformal.widgetPreload();">Oтзывы и предложения</a>
+    </li>
+    <li>
+      <a href="https://twitter.com/nickshaker_com">Twitter</a>
+    </li>
+  </ul>
 </div>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -57,7 +57,7 @@
         show_tab: false,
         project_host: "generatornikov.reformal.ru"
     };
-    
+
     (function() {
         var script = document.createElement('script');
         script.type = 'text/javascript'; script.async = true;

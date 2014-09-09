@@ -1,6 +1,6 @@
 <%= javascript_tag do %>
-race = "<%=j @samp.racename %>";
-game = "<%=j @samp.game %>"
+  race = "<%=j @samp.racename %>";
+  game = "<%=j @samp.game %>"
 <% end %>
 <% content_for :title do %><%= @samp.title %><% end %>
 <%= render "layouts/nickbox" %>
