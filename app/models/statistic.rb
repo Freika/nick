@@ -2,15 +2,15 @@ class Statistic < ActiveRecord::Base
 
   def self.tweet
     nick = Statistic.offset(rand(Statistic.size)).first
-  if nick.game == "samp"
+    if nick.game == "samp"
       game = "SAMP"
     elsif nick.game == "wow"
       game = "WorldofWarcraft"
     else
       game = "GuildWars2"
-  end
+    end
 
-  if nick.race ==  "human"
+    if nick.race ==  "human"
       race = "Человека"
     elsif nick.race == "orc"
       race = "Орка"
@@ -58,13 +58,13 @@ class Statistic < ActiveRecord::Base
       race = "Шведа"
     else
       race = "Испанца"
-  end
+    end
 
-  if nick.sex == "male"
-    sex = "мужчины"
-  else
-    sex = "женщины"
-  end
+    if nick.sex == "male"
+      sex = "мужчины"
+    else
+      sex = "женщины"
+    end
 
     SocialPoster.write(:twitter, "Ник для #{race}-#{sex}: #{nick.name} #ник #nickname ##{game}")
     #SocialPoster.write(:vk, "Ник для #{race}-#{sex}: #{nick.name} #ник #nickname ##{game}", nil, owner_id: '172371719')

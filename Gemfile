@@ -13,7 +13,7 @@ gem 'zeroclipboard-rails'
 
 gem 'newrelic_rpm'
 gem "skylight"
-
+gem 'rollbar', '~> 1.0.0'
 
 gem 'spring'
 gem "better_errors"

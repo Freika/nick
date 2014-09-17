@@ -6,4 +6,3 @@ jQuery ->
     ykeys: ['count'],
     labels: ['Сгенерировано']
 });
-  

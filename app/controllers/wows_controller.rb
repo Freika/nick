@@ -3,63 +3,46 @@ class WowsController < ApplicationController
 
   before_action :set_wow, only: [:show, :edit, :update, :destroy]
 
-  # GET /wows
-  # GET /wows.json
   def index
     @wows = Wow.all
   end
 
-  # GET /wows/1
-  # GET /wows/1.json
   def show
   end
 
-  # GET /wows/new
   def new
     @wow = Wow.new
   end
 
-  # GET /wows/1/edit
   def edit
   end
 
-  # POST /wows
-  # POST /wows.json
   def create
     @wow = Wow.new(wow_params)
 
     respond_to do |format|
       if @wow.save
         format.html { redirect_to @wow, notice: 'Wow was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @wow }
       else
         format.html { render action: 'new' }
-        format.json { render json: @wow.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /wows/1
-  # PATCH/PUT /wows/1.json
   def update
     respond_to do |format|
       if @wow.update(wow_params)
         format.html { redirect_to @wow, notice: 'Wow was successfully updated.' }
-        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @wow.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /wows/1
-  # DELETE /wows/1.json
   def destroy
     @wow.destroy
     respond_to do |format|
       format.html { redirect_to wows_url }
-      format.json { head :no_content }
     end
   end
 
