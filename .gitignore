@@ -19,3 +19,4 @@
 /config/database.yml
 /config/initializers/social_poster.rb
 /tweet.log
+tweet.log
