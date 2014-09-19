@@ -1,9 +1,10 @@
 <%= javascript_tag do %>
-race = "<%=j @wow.racename %>";
-game = "<%=j @wow.game %>"
+  race = "<%=j @wow.racename %>";
+  game = "<%=j @wow.game %>"
 <% end %>
 <% content_for :title do @wow.title end %>
 
 <%= render "layouts/nickbox" %>
+<%= render "layouts/body_ads" %>
 <%= render "wows/aboutrace" %>
 <%= javascript_include_tag "games" %>
