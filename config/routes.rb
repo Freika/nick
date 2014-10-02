@@ -1,5 +1,7 @@
 Nick::Application.routes.draw do
 
+  get 'auth/bnet/callback', to: "statistics#index"
+
   get 'statistics/graph'
   devise_for :users
 

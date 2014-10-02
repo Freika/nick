@@ -1,4 +1,4 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
   # provider :developer unless Rails.env.production?
-  provider :bnet, ENV['rp36bx7ufdmddu6nz3dw5e9vqz9qppeu'], ENV['FDdMMywj7tYTgpjkwewBQDYCQmbr6kva']
+  provider :bnet, 'pxww4vneezpdphf68zcx337kfgxbrz3d', 'eMrxFmX2JXYrE78dvpvzPBuHBFnWS5va'
 end

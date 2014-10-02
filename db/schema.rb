@@ -30,15 +30,15 @@ ActiveRecord::Schema.define(version: 20140609191206) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "gw2s", force: true do |t|
-    t.text     "game"
-    t.text     "racename"
-    t.text     "pagename"
-    t.text     "title"
-    t.text     "desc"
-    t.text     "customcode"
+    t.string   "game"
+    t.string   "racename"
+    t.string   "pagename"
+    t.string   "title"
+    t.string   "desc"
+    t.string   "customcode"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "slug"
+    t.string   "slug"
     t.string   "seo_description"
   end
 
@@ -57,51 +57,51 @@ ActiveRecord::Schema.define(version: 20140609191206) do
   end
 
   create_table "samps", force: true do |t|
-    t.text     "game"
-    t.text     "racename"
-    t.text     "pagename"
-    t.text     "title"
-    t.text     "desc"
-    t.text     "customcode"
+    t.string   "game"
+    t.string   "racename"
+    t.string   "pagename"
+    t.string   "title"
+    t.string   "desc"
+    t.string   "customcode"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "slug"
+    t.string   "slug"
     t.string   "seo_description"
   end
 
   add_index "samps", ["slug"], name: "index_samps_on_slug", using: :btree
 
   create_table "statistics", force: true do |t|
-    t.text     "game"
-    t.text     "race"
-    t.text     "sex"
-    t.text     "name"
+    t.string   "game"
+    t.string   "race"
+    t.string   "sex"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "syllables", force: true do |t|
-    t.text     "game"
-    t.text     "race"
-    t.text     "sex"
-    t.text     "position"
-    t.text     "syllable"
-    t.text     "namepart"
+    t.string   "game"
+    t.string   "race"
+    t.string   "sex"
+    t.string   "position"
+    t.string   "syllable"
+    t.string   "namepart"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
-    t.text     "email",                  default: "", null: false
-    t.text     "encrypted_password",     default: "", null: false
-    t.text     "reset_password_token"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.text     "current_sign_in_ip"
-    t.text     "last_sign_in_ip"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -110,15 +110,15 @@ ActiveRecord::Schema.define(version: 20140609191206) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "wows", force: true do |t|
-    t.text     "game"
-    t.text     "racename"
-    t.text     "pagename"
-    t.text     "title"
-    t.text     "desc"
-    t.text     "customcode"
+    t.string   "game"
+    t.string   "racename"
+    t.string   "pagename"
+    t.string   "title"
+    t.string   "desc"
+    t.string   "customcode"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "slug"
+    t.string   "slug"
     t.string   "seo_description"
   end
 
