@@ -37,8 +37,6 @@ gem 'jbuilder', '~> 1.2'
 gem 'omniauth-bnet', '~> 1.0.1'
 
 group :production do
-  #gem 'capistrano', '2.14.2'
   gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
-  # gem 'quiet_assets'
   gem 'unicorn'
 end
