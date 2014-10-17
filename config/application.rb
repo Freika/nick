@@ -6,6 +6,6 @@ module Nick
   class Application < Rails::Application
     config.assets.precompile += ['jquery.js']
     config.cache_expires_in = 24*60*60
-    config.force_ssl = true
+    config.force_ssl = true if Rails.env.production?
   end
 end

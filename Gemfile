@@ -18,8 +18,6 @@ gem 'rollbar', '~> 1.0.0'
 gem 'spring'
 group :development, :test do
   gem "better_errors"
-  gem 'annotate', ">=2.6.0"
-  gem 'bullet'
   gem 'hirb'
   gem 'rack-mini-profiler'
   gem 'rails-footnotes', '>= 4.0.0', '<5'
