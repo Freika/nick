@@ -11,11 +11,11 @@
       <th>Всего</th>
     </tr>
     <tr>
-      <td><%= number_with_delimiter(Statistic.where(game: "wow").count, delimiter: " ") %></td>
-      <td><%= number_with_delimiter(Statistic.where(game: "gw2").count, delimiter: " ") %></td>
-      <td><%= number_with_delimiter(Statistic.where(game: "samp").count, delimiter: " ") %></td>
-      <td><%= number_with_delimiter(Statistic.where(game: "minecraft").count, delimiter: " ") %></td>
-      <td><%= number_with_delimiter(Statistic.count, delimiter: " ") %></td>
+      <td><%= count_names(@wows) %></td>
+      <td><%= count_names(@gws) %></td>
+      <td><%= count_names(@samps) %></td>
+      <td><%= count_names(@minecrafts) %></td>
+      <td><%= number_with_delimiter(@total, delimiter: " ") %></td>
     </tr>
   </table>
 </div>
