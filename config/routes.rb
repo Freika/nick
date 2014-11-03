@@ -1,6 +1,7 @@
 Nick::Application.routes.draw do
 
-  get 'auth/bnet/callback', to: "statistics#index"
+  get 'pages/this_is_not_cms'
+  get 'auth/bnet/callback', to: 'statistics#index'
 
   get 'statistics/graph'
   devise_for :users
@@ -8,6 +9,14 @@ Nick::Application.routes.draw do
   resources :statistics
 
   resources :syllables
+
+  get 'admin' => redirect('pages/this_is_not_cms')
+  get 'wp-admin' => redirect('pages/this_is_not_cms')
+  get 'wp-admin.php' => redirect('pages/this_is_not_cms')
+  get 'administrator' => redirect('pages/this_is_not_cms')
+  get 'wp-login' => redirect('pages/this_is_not_cms')
+  get 'wp-login.php' => redirect('pages/this_is_not_cms')
+  get 'admin.php' => redirect('pages/this_is_not_cms')
 
   #old routes
   get 'wow/orcs.php' => redirect('wow/orc')
