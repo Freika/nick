@@ -1,12 +1,12 @@
 class MinecraftsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
-  before_action :set_minecraft, only: [:show, :edit, :update, :destroy]
 
   def index
     @minecrafts = Minecraft.all
   end
 
   def show
+    @minecraft = set_minecraft
   end
 
   def new
@@ -14,6 +14,7 @@ class MinecraftsController < ApplicationController
   end
 
   def edit
+    @minecraft = set_minecraft
   end
 
   def create
@@ -21,40 +22,40 @@ class MinecraftsController < ApplicationController
 
     respond_to do |format|
       if @minecraft.save
-        format.html { redirect_to @minecraft, notice: 'Minecraft was successfully created.' }
+        redirect_to @minecraft, notice: 'Minecraft was successfully created.'
       else
-        format.html { render action: 'new' }
+        render action: 'new'
       end
     end
   end
 
   def update
+    @minecraft = set_minecraft
     respond_to do |format|
       if @minecraft.update(minecraft_params)
-        format.html { redirect_to @minecraft, notice: 'Minecraft was successfully updated.' }
+        redirect_to @minecraft, notice: 'Minecraft was successfully updated.'
       else
-        format.html { render action: 'edit' }
+        render action: 'edit'
       end
     end
   end
 
   def destroy
+    @minecraft = set_minecraft
     @minecraft.destroy
-    respond_to do |format|
-      format.html { redirect_to minecrafts_url }
+     redirect_to minecrafts_url
     end
   end
 
   def steve_male
-  name_start = Syllable.where(game: 'minecraft', race: 'steve', sex: 'male', position: 'start', namepart: 'name').pluck(:syllable)
-  name_end = Syllable.where(game: 'minecraft', race: 'steve', sex: 'male', position: 'end', namepart: 'name').pluck(:syllable)
-  name = name_end.sample.capitalize + " " + name_start.sample.capitalize
+    name_start = Syllable.where(game: 'minecraft', race: 'steve', sex: 'male', position: 'start', namepart: 'name').pluck(:syllable)
+    name_end = Syllable.where(game: 'minecraft', race: 'steve', sex: 'male', position: 'end', namepart: 'name').pluck(:syllable)
+    name = "#{name_end.sample.capitalize} #{name_start.sample.capitalize}"
 
-  fullname = name
-  @name = fullname
-  render :json => @name.to_json
-  Statistic.create(game: 'minecraft', race: 'steve', sex: 'male', name: fullname)
-end
+    @name = name
+    render :json => @name.to_json
+  Statistic.create(game: 'minecraft', race: 'steve', sex: 'male', name: @name)
+  end
 
   private
     def set_minecraft
