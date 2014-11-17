@@ -198,8 +198,6 @@ GEM
     shoulda-matchers (2.2.0)
       activesupport (>= 3.0.0)
     simple_oauth (0.2.0)
-    skylight (0.3.20)
-      activesupport (>= 3.0.0)
     social_poster (0.0.6)
       fb_graph (~> 2.7.7)
       livejournal (~> 0.3.8)
@@ -277,7 +275,6 @@ DEPENDENCIES
   rollbar (~> 1.0.0)
   rspec-rails (~> 3.0.0)
   sass-rails (~> 4.0.2)
-  skylight
   social_poster
   spring
   therubyracer
