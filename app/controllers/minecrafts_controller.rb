@@ -44,7 +44,6 @@ class MinecraftsController < ApplicationController
     @minecraft = set_minecraft
     @minecraft.destroy
      redirect_to minecrafts_url
-    end
   end
 
   def steve_male
