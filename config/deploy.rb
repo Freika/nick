@@ -23,6 +23,12 @@ task :copy_database_config, roles => :app do
   run "cp #{db_config} #{release_path}/config/database.yml"
 end
 
+after "deploy:update_code", :copy_yandex_confirm
+task :copy_yandex_confirm, roles => :app do
+  yandex_file = "#{shared_path}/yandex_681888d15b87c391.html"
+  run "cp #{yandex_file} #{release_path}/public/yandex_681888d15b87c391.html"
+end
+
 # В rails 3 по умолчанию включена функция assets pipelining,
 # которая позволяет значительно уменьшить размер статических
 # файлов css и js.
@@ -65,7 +71,7 @@ role :db,             deploy_server, :primary => true
 
 # Следующие строки необходимы, т.к. ваш проект использует rvm.
 set :rvm_ruby_string, "2.1.2"
-set :rake,            "rvm use #{rvm_ruby_string} do bundle exec rake" 
+set :rake,            "rvm use #{rvm_ruby_string} do bundle exec rake"
 set :bundle_cmd,      "rvm use #{rvm_ruby_string} do bundle"
 
 # Настройка системы контроля версий и репозитария,
