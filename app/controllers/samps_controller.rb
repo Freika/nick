@@ -1,6 +1,5 @@
 class SampsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
-
   before_action :set_samp, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -19,31 +18,24 @@ class SampsController < ApplicationController
 
   def create
     @samp = Samp.new(samp_params)
-
-    respond_to do |format|
-      if @samp.save
-        format.html { redirect_to @samp, notice: 'Samp was successfully created.' }
-      else
-        format.html { render action: 'new' }
-      end
+    if @samp.save
+      redirect_to @samp, notice: 'Samp was successfully created.'
+    else
+      render action: 'new'
     end
   end
 
   def update
-    respond_to do |format|
-      if @samp.update(samp_params)
-        format.html { redirect_to @samp, notice: 'Samp was successfully updated.' }
-      else
-        format.html { render action: 'edit' }
-      end
+    if @samp.update(samp_params)
+      redirect_to @samp, notice: 'Samp was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
   def destroy
     @samp.destroy
-    respond_to do |format|
-      format.html { redirect_to samps_url }
-    end
+    redirect_to samps_url
   end
 
 
@@ -54,10 +46,9 @@ def english_male
 
   surname = Syllable.where(game: 'samp', race: 'english', sex: 'male', position: 'start', namepart: 'surname').pluck(:syllable).sample
 
-  fullname = name + " " + surname
-  @name = fullname
+  @name = "#{name} #{surname}"
   render :json => @name.to_json
-  Statistic.create(game: 'samp', race: 'english', sex: 'male', name: fullname)
+  Statistic.create(game: 'samp', race: 'english', sex: 'male', name: @name)
 end
 
 def english_female
@@ -65,10 +56,9 @@ def english_female
 
   surname = Syllable.where(game: 'samp', race: 'english', sex: 'male', position: 'start', namepart: 'surname').pluck(:syllable).sample
 
-  fullname = name + " " + surname
-  @name = fullname
+  @name = "#{name} #{surname}"
   render :json => @name.to_json
-  Statistic.create(game: 'samp', race: 'english', sex: 'female', name: fullname)
+  Statistic.create(game: 'samp', race: 'english', sex: 'female', name: @name)
 end
 
 def swedish_male
@@ -76,10 +66,9 @@ def swedish_male
 
   surname = Syllable.where(game: 'samp', race: 'swedish', sex: 'male', position: 'start', namepart: 'surname').pluck(:syllable).sample
 
-  fullname = name + " " + surname
-  @name = fullname
+  @name = "#{name} #{surname}"
   render :json => @name.to_json
-  Statistic.create(game: 'samp', race: 'swedish', sex: 'male', name: fullname)
+  Statistic.create(game: 'samp', race: 'swedish', sex: 'male', name: @name)
 end
 
 def swedish_female
@@ -87,10 +76,9 @@ def swedish_female
 
   surname = Syllable.where(game: 'samp', race: 'swedish', sex: 'male', position: 'start', namepart: 'surname').pluck(:syllable).sample
 
-  fullname = name + " " + surname
-  @name = fullname
+  @name = "#{name} #{surname}"
   render :json => @name.to_json
-  Statistic.create(game: 'samp', race: 'swedish', sex: 'female', name: fullname)
+  Statistic.create(game: 'samp', race: 'swedish', sex: 'female', name: @name)
 end
 
 def german_male
@@ -98,10 +86,9 @@ def german_male
 
   surname = Syllable.where(game: 'samp', race: 'german', sex: 'male', position: 'start', namepart: 'surname').pluck(:syllable).sample
 
-  fullname = name + " " + surname
-  @name = fullname
+  @name = "#{name} #{surname}"
   render :json => @name.to_json
-  Statistic.create(game: 'samp', race: 'german', sex: 'male', name: fullname)
+  Statistic.create(game: 'samp', race: 'german', sex: 'male', name: @name)
 end
 
 def german_female
@@ -109,10 +96,9 @@ def german_female
 
   surname = Syllable.where(game: 'samp', race: 'german', sex: 'male', position: 'start', namepart: 'surname').pluck(:syllable).sample
 
-  fullname = name + " " + surname
-  @name = fullname
+  @name = "#{name} #{surname}"
   render :json => @name.to_json
-  Statistic.create(game: 'samp', race: 'german', sex: 'female', name: fullname)
+  Statistic.create(game: 'samp', race: 'german', sex: 'female', name: @name)
 end
 
 def italian_male
@@ -120,10 +106,9 @@ def italian_male
 
   surname = Syllable.where(game: 'samp', race: 'italian', sex: 'male', position: 'start', namepart: 'surname').pluck(:syllable).sample
 
-  fullname = name + " " + surname
-  @name = fullname
+  @name = "#{name} #{surname}"
   render :json => @name.to_json
-  Statistic.create(game: 'samp', race: 'italian', sex: 'male', name: fullname)
+  Statistic.create(game: 'samp', race: 'italian', sex: 'male', name: @name)
 end
 
 def italian_female
@@ -131,10 +116,9 @@ def italian_female
 
   surname = Syllable.where(game: 'samp', race: 'italian', sex: 'male', position: 'start', namepart: 'surname').pluck(:syllable).sample
 
-  fullname = name + " " + surname
-  @name = fullname
+  @name = "#{name} #{surname}"
   render :json => @name.to_json
-  Statistic.create(game: 'samp', race: 'italian', sex: 'female', name: fullname)
+  Statistic.create(game: 'samp', race: 'italian', sex: 'female', name: @name)
 end
 
 def french_male
@@ -142,10 +126,9 @@ def french_male
 
   surname = Syllable.where(game: 'samp', race: 'french', sex: 'male', position: 'start', namepart: 'surname').pluck(:syllable).sample
 
-  fullname = name + " " + surname
-  @name = fullname
+  @name = "#{name} #{surname}"
   render :json => @name.to_json
-  Statistic.create(game: 'samp', race: 'french', sex: 'male', name: fullname)
+  Statistic.create(game: 'samp', race: 'french', sex: 'male', name: @name)
 end
 
 def french_female
@@ -153,10 +136,9 @@ def french_female
 
   surname = Syllable.where(game: 'samp', race: 'french', sex: 'male', position: 'start', namepart: 'surname').pluck(:syllable).sample
 
-  fullname = name + " " + surname
-  @name = fullname
+  @name = "#{name} #{surname}"
   render :json => @name.to_json
-  Statistic.create(game: 'samp', race: 'french', sex: 'female', name: fullname)
+  Statistic.create(game: 'samp', race: 'french', sex: 'female', name: @name)
 end
 
 def spanish_male
@@ -164,10 +146,9 @@ def spanish_male
 
   surname = Syllable.where(game: 'samp', race: 'spanish', sex: 'male', position: 'start', namepart: 'surname').pluck(:syllable).sample
 
-  fullname = name + " " + surname
-  @name = fullname
+  @name = "#{name} #{surname}"
   render :json => @name.to_json
-  Statistic.create(game: 'samp', race: 'spanish', sex: 'male', name: fullname)
+  Statistic.create(game: 'samp', race: 'spanish', sex: 'male', name: @name)
 end
 
 def spanish_female
@@ -175,10 +156,9 @@ def spanish_female
 
   surname = Syllable.where(game: 'samp', race: 'spanish', sex: 'male', position: 'start', namepart: 'surname').pluck(:syllable).sample
 
-  fullname = name + " " + surname
-  @name = fullname
+  @name = "#{name} #{surname}"
   render :json => @name.to_json
-  Statistic.create(game: 'samp', race: 'spanish', sex: 'female', name: fullname)
+  Statistic.create(game: 'samp', race: 'spanish', sex: 'female', name: @name)
 end
 
 def danish_male
@@ -186,10 +166,9 @@ def danish_male
 
   surname = Syllable.where(game: 'samp', race: 'danish', sex: 'male', position: 'start', namepart: 'surname').pluck(:syllable).sample
 
-  fullname = name + " " + surname
-  @name = fullname
+  @name = "#{name} #{surname}"
   render :json => @name.to_json
-  Statistic.create(game: 'samp', race: 'danish', sex: 'male', name: fullname)
+  Statistic.create(game: 'samp', race: 'danish', sex: 'male', name: @name)
 end
 
 def danish_female
@@ -197,10 +176,9 @@ def danish_female
 
   surname = Syllable.where(game: 'samp', race: 'danish', sex: 'male', position: 'start', namepart: 'surname').pluck(:syllable).sample
 
-  fullname = name + " " + surname
-  @name = fullname
+  @name = "#{name} #{surname}"
   render :json => @name.to_json
-  Statistic.create(game: 'samp', race: 'danish', sex: 'female', name: fullname)
+  Statistic.create(game: 'samp', race: 'danish', sex: 'female', name: @name)
 end
 
   private

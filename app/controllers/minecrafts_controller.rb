@@ -43,7 +43,7 @@ class MinecraftsController < ApplicationController
   def destroy
     @minecraft = set_minecraft
     @minecraft.destroy
-     redirect_to minecrafts_url
+    redirect_to minecrafts_url
   end
 
   def steve_male
@@ -53,7 +53,7 @@ class MinecraftsController < ApplicationController
 
     @name = name
     render :json => @name.to_json
-  Statistic.create(game: 'minecraft', race: 'steve', sex: 'male', name: @name)
+    Statistic.create(game: 'minecraft', race: 'steve', sex: 'male', name: @name)
   end
 
   private

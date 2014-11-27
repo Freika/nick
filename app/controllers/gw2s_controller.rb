@@ -1,7 +1,6 @@
 class Gw2sController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
-
-    before_action :set_gw2, only: [:show, :edit, :update, :destroy]
+  before_action :set_gw2, only: [:show, :edit, :update, :destroy]
 
   def index
     @gw2s = Gw2.all
@@ -20,30 +19,24 @@ class Gw2sController < ApplicationController
   def create
     @gw2 = Gw2.new(gw2_params)
 
-    respond_to do |format|
-      if @gw2.save
-        format.html { redirect_to @gw2, notice: 'Gw2 was successfully created.' }
-      else
-        format.html { render action: 'new' }
-      end
+    if @gw2.save
+      redirect_to @gw2, notice: 'Gw2 was successfully created.'
+    else
+      render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @gw2.update(gw2_params)
-        format.html { redirect_to @gw2, notice: 'Gw2 was successfully updated.' }
-      else
-        format.html { render action: 'edit' }
-      end
+    if @gw2.update(gw2_params)
+      redirect_to @gw2, notice: 'Gw2 was successfully updated.'
+    else
+      render :edit
     end
   end
 
   def destroy
     @gw2.destroy
-    respond_to do |format|
-      format.html { redirect_to gw2s_url }
-    end
+    redirect_to gw2s_url
   end
 
 def charr_male
