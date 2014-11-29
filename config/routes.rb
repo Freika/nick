@@ -1,5 +1,9 @@
 Nick::Application.routes.draw do
 
+  namespace :api do
+    resources :nicks, only: :show
+  end
+
   get 'pages/this_is_not_cms'
   get 'auth/bnet/callback', to: 'statistics#index'
 
