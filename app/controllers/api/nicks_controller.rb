@@ -14,8 +14,11 @@ module Api
     end
 
     def wow
-      if params[:race] == 'human' #answers to http://localhost:3000/api/nicks/wow.json?race=human
+      if params[:race] == 'human' && params[:sex] == 'male' #answers to http://localhost:3000/api/nicks/wow.json?race=human
         @nick = "Human!"
+        render json: @nick
+      elsif params[:race] == 'human' && params[:sex] == 'female'
+        @nick = 'Woman!'
         render json: @nick
       end
     end
