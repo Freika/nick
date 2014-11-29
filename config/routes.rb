@@ -1,7 +1,8 @@
 Nick::Application.routes.draw do
 
   namespace :api do
-    resources :nicks, only: :show
+    # resources :nicks
+    get 'nicks/wow' => 'nicks#wow'
   end
 
   get 'pages/this_is_not_cms'
