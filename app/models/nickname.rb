@@ -33,6 +33,13 @@ class Nickname < ActiveRecord::Base
     name = Nickname.create(game: 'gw', race: race, sex: sex, name: "#{name_start}#{name_fin} #{surname_start}#{surname_fin}")
   end
 
+  def self.generate_samp(race, sex)
+    name = samp_syllable(race, sex, 'name')
+    surname = samp_syllable(race, sex, 'surname')
+
+    name = Nickname.create(game: 'samp', race: race, sex: sex, name: "#{name} #{surname}")
+  end
+
   private
 
   def self.wow_syllable(race, sex, position)
@@ -41,5 +48,9 @@ class Nickname < ActiveRecord::Base
 
   def self.gw_syllable(race, sex, position, namepart)
     Syllable.where(game: 'gw2', race: race, sex: sex, position: position, namepart: namepart).pluck(:syllable).sample
+  end
+
+  def self.samp_syllable(race, sex, namepart)
+    Syllable.where(game: 'samp', race: race, sex: 'male', position: 'start', namepart: namepart).pluck(:syllable).sample
   end
 end

@@ -26,6 +26,15 @@ module Api
       end
     end
 
+    def samp
+      if Nickname::SAMP_RACES.include?(params[:race]) && Nickname::SEX.include?(params[:sex])
+        @nick = Nickname.generate_samp(params[:race], params[:sex])
+        render json: @nick.name, status: 200
+      else
+        render json: 'Обратитесь с правильными параметрами', status: 500
+      end
+    end
+
 
     private
       def set_nick
