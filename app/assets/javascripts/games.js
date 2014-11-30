@@ -14,6 +14,11 @@ $( document ).ready(function() {
       }
     });
   });
+
+  // $('#fav').click( function() {
+  //   nick = $('#yournameishere').value;
+  //   $('#favorite').prepend(nick);
+  // });
 });
 var clip = new ZeroClipboard($("#yournameishere")) //Копирование ника в буфер обмена по клику на кнопку
   $('.nickbox').tooltip();

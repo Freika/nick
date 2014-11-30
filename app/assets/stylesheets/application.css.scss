@@ -106,8 +106,8 @@ header {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b30f0f0f', endColorstr='#b3000000',GradientType=0 );
 	border: 1px solid rgba(0, 0, 0, 0.5);
 
-	#history {
-		height: 590px;
+	#history, #favorite {
+		height: 250px;
 		overflow: hidden;
 	}
 
