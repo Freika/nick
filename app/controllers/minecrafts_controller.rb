@@ -48,7 +48,7 @@ class MinecraftsController < ApplicationController
 
   def steve_male
     name_start = Syllable.where(game: 'minecraft', race: 'steve', sex: 'male', position: 'start', namepart: 'name').pluck(:syllable)
-    name_end = Syllable.where(game: 'minecraft', race: 'steve', sex: 'male', position: 'end', namepart: 'name').pluck(:syllable)
+    name_end = Syllable.where(game: 'minecraft', race: 'steve', sex: 'male', position: 'start', namepart: 'surname').pluck(:syllable)
     name = "#{name_end.sample.capitalize} #{name_start.sample.capitalize}"
 
     @name = name
