@@ -7,9 +7,10 @@ $( document ).ready(function() {
     var sex = $(this).attr("name");
     $.ajax({
       url: '/api/' + game + '/' + race + '/' + sex,
-      // url: '/api/'+game+'.json?race='+race+'&sex='+sex,
+      // url: '/api/nicks/' + game + '.json?race=' + race + '&sex=' + sex,
       success: function(html) {
         $('#yournameishere').html(html);
+        $('#history').prepend(html+"<br>");
       }
     });
   });

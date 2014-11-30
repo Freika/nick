@@ -66,8 +66,6 @@ class Statistic < ActiveRecord::Base
       sex = "женщины"
     end
 
-    SocialPoster.write(:twitter, "Ник для #{race}-#{sex}: #{nick.name} #ник #nickname ##{game}")
-
   end
 
   def self.top20wow
