@@ -1,39 +1,28 @@
 module Api
   class NicksController < ApplicationController
 
-    def index
-
-    end
-
-    def show
-      @nick = set_nick
-    end
-
-    def new
-      @nick = Nick.new
-    end
 
     def wow
-      if params[:race] == 'human' && params[:sex] == 'male' #answers to http://localhost:3000/api/nicks/wow.json?race=human
-        @nick = "Human!"
-        render json: @nick
-      elsif params[:race] == 'human' && params[:sex] == 'female'
-        @nick = 'Woman!'
-        render json: @nick
+      if Nickname::WOW_RACES.include?(params[:race]) && Nickname::SEX.include?(params[:sex])
+        @nick = Nickname.generate_wow(params[:race], params[:sex])
+        render json: @nick.name, status: 200
+      else
+        render json: 'Обратитесь с правильными параметрами', status: 500
       end
     end
 
-    def create
-      @nick = Nick.new
-
-      respond_to do |format|
-        if @nick.save
-          format.html { redirect_to @nick, notice: 'Nick was successfully created.' }
-          format.json { render action: 'show', status: :created, location: @nick }
-        else
-          format.html { render action: 'new' }
-          format.json { render json: @nick.errors, status: :unprocessable_entity }
-        end
+    def gw
+      if params[:race] == 'asura' && Nickname::SEX.include?(params[:sex])
+        @nick = Nickname.generate_asura(params[:race], params[:sex])
+        render json: @nick.name, status: 200
+      elsif params[:race] == 'sylvari' && Nickname::SEX.include?(params[:sex])
+        @nick = Nickname.generate_asura(params[:race], params[:sex])
+        render json: @nick.name, status: 200
+      elsif Nickname::GW_RACES.include?(params[:race]) && Nickname::SEX.include?(params[:sex])
+        @nick = Nickname.generate_gw(params[:race], params[:sex])
+        render json: @nick.name, status: 200
+      else
+        render json: 'Обратитесь с правильными параметрами', status: 500
       end
     end
 

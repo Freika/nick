@@ -67,7 +67,6 @@ class Statistic < ActiveRecord::Base
     end
 
     SocialPoster.write(:twitter, "Ник для #{race}-#{sex}: #{nick.name} #ник #nickname ##{game}")
-    #SocialPoster.write(:vk, "Ник для #{race}-#{sex}: #{nick.name} #ник #nickname ##{game}", nil, owner_id: '172371719')
 
   end
 

@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140609191206) do
+ActiveRecord::Schema.define(version: 20141130082252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "plperl"
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -52,6 +53,15 @@ ActiveRecord::Schema.define(version: 20140609191206) do
     t.text     "desc"
     t.string   "customcode"
     t.string   "seo_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "nicknames", force: true do |t|
+    t.string   "game"
+    t.string   "race"
+    t.string   "sex"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
