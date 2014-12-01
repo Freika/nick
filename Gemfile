@@ -15,6 +15,8 @@ gem 'rollbar', '~> 1.0.0'
 
 group :development, :test do
   gem 'pry'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'quiet_assets'
 end
 
 gem 'uglifier', '>= 1.3.0'

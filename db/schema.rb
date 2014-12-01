@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141130213232) do
+ActiveRecord::Schema.define(version: 20141201155049) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,27 +31,27 @@ ActiveRecord::Schema.define(version: 20141130213232) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "gw2s", force: true do |t|
-    t.string   "game"
-    t.string   "racename"
-    t.string   "pagename"
-    t.string   "title"
-    t.string   "desc"
-    t.string   "customcode"
+    t.text     "game"
+    t.text     "racename"
+    t.text     "pagename"
+    t.text     "title"
+    t.text     "desc"
+    t.text     "customcode"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "slug"
+    t.text     "slug"
     t.string   "seo_description"
   end
 
   add_index "gw2s", ["slug"], name: "index_gw2s_on_slug", using: :btree
 
   create_table "minecrafts", force: true do |t|
-    t.string   "game"
-    t.string   "racename"
-    t.string   "pagename"
-    t.string   "title"
+    t.text     "game"
+    t.text     "racename"
+    t.text     "pagename"
+    t.text     "title"
     t.text     "desc"
-    t.string   "customcode"
+    t.text     "customcode"
     t.string   "seo_description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -67,15 +67,15 @@ ActiveRecord::Schema.define(version: 20141130213232) do
   end
 
   create_table "samps", force: true do |t|
-    t.string   "game"
-    t.string   "racename"
-    t.string   "pagename"
-    t.string   "title"
-    t.string   "desc"
-    t.string   "customcode"
+    t.text     "game"
+    t.text     "racename"
+    t.text     "pagename"
+    t.text     "title"
+    t.text     "desc"
+    t.text     "customcode"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "slug"
+    t.text     "slug"
     t.string   "seo_description"
   end
 
@@ -120,15 +120,15 @@ ActiveRecord::Schema.define(version: 20141130213232) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "wows", force: true do |t|
-    t.string   "game"
-    t.string   "racename"
-    t.string   "pagename"
-    t.string   "title"
-    t.string   "desc"
-    t.string   "customcode"
+    t.text     "game"
+    t.text     "racename"
+    t.text     "pagename"
+    t.text     "title"
+    t.text     "desc"
+    t.text     "customcode"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "slug"
+    t.text     "slug"
     t.string   "seo_description"
   end
 
