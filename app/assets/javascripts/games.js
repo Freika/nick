@@ -6,11 +6,10 @@ $( document ).ready(function() {
   $('#sexybuttons a').click( function () {
     var sex = $(this).attr("name");
     $.ajax({
-      url: '/api/' + game + '/' + race + '/' + sex,
-      // url: '/api/nicks/' + game + '.json?race=' + race + '&sex=' + sex,
-      success: function(html) {
-        $('#yournameishere').html(html);
-        $('#history').prepend(html+"<br>");
+      url: '/api/nicks/' + game + '.json?race=' + race + '&sex=' + sex,
+      success: function(json) {
+        $('#yournameishere').html(json.name);
+        $('#history').prepend(json.name+"<br>");
       }
     });
   });

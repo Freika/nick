@@ -11,7 +11,7 @@ gem 'social_poster'
 gem 'zeroclipboard-rails'
 
 gem 'newrelic_rpm'
-# gem 'rollbar', '~> 1.0.0'
+gem 'rollbar', '~> 1.0.0'
 
 group :development, :test do
   gem 'pry'
