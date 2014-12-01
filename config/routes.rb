@@ -1,5 +1,6 @@
 Nick::Application.routes.draw do
 
+  root 'wows#index'
   namespace :api do
     get 'nicks/wow' => 'nicks#wow'
     get 'nicks/gw' => 'nicks#gw'
@@ -62,7 +63,6 @@ Nick::Application.routes.draw do
 
   resources :minecrafts, path: 'minecraft'
 
-  root 'wows#index'
 
 #WoW
 
