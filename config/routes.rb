@@ -2,10 +2,12 @@ Nick::Application.routes.draw do
 
   root 'wows#index'
   namespace :api do
-    get 'nicks/wow', to: 'nicks#wow'
-    get 'nicks/gw', to: 'nicks#gw'
-    get 'nicks/samp', to: 'nicks#samp'
-    get 'nicks/minecraft', to: 'nicks#minecraft'
+    namespace :v1 do
+      get 'nicks/wow', to: 'nicks#wow'
+      get 'nicks/gw', to: 'nicks#gw'
+      get 'nicks/samp', to: 'nicks#samp'
+      get 'nicks/minecraft', to: 'nicks#minecraft'
+    end
   end
 
   get 'pages/this_is_not_cms'
