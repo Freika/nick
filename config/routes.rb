@@ -2,58 +2,52 @@ Nick::Application.routes.draw do
 
   root 'wows#index'
   namespace :api do
-    get 'nicks/wow' => 'nicks#wow'
-    get 'nicks/gw' => 'nicks#gw'
-    get 'nicks/samp' => 'nicks#samp'
-    get 'nicks/minecraft' => 'nicks#minecraft'
+    get 'nicks/wow', to: 'nicks#wow'
+    get 'nicks/gw', to: 'nicks#gw'
+    get 'nicks/samp', to: 'nicks#samp'
+    get 'nicks/minecraft', to: 'nicks#minecraft'
   end
 
   get 'pages/this_is_not_cms'
   get 'auth/bnet/callback', to: 'statistics#index'
-
   get 'statistics/graph'
   devise_for :users
 
-  resources :statistics
+  resources :statistics, only: [:index]
 
-  resources :syllables
-
-  get 'admin' => redirect('pages/this_is_not_cms')
-  get 'wp-admin' => redirect('pages/this_is_not_cms')
-  get 'wp-admin.php' => redirect('pages/this_is_not_cms')
-  get 'administrator' => redirect('pages/this_is_not_cms')
-  get 'wp-login' => redirect('pages/this_is_not_cms')
-  get 'wp-login.php' => redirect('pages/this_is_not_cms')
-  get 'admin.php' => redirect('pages/this_is_not_cms')
+  links = %w(admin wp-admin wp-admin.php adminstrator wp-login wp-login.php admin.php)
+  links.each do |link|
+    get link, to: redirect('pages/this_is_not_cms')
+  end
 
   #old routes
-  get 'wow/orcs.php' => redirect('wow/orc')
-  get 'wow/trolls.php' => redirect('wow/troll')
-  get 'wow/taurens.php' => redirect('wow/tauren')
-  get 'wow/goblins.php' => redirect('wow/goblin')
-  get 'wow/blood_elves.php' => redirect('wow/bloodelf')
-  get 'wow/undeads.php' => redirect('wow/undead')
-  get 'wow/pandarens.php' => redirect('wow/pandaren')
-  get 'wow/humans.php' => redirect('wow/human')
-  get 'wow/gnomes.php' => redirect('wow/gnome')
-  get 'wow/dwarves.php' => redirect('wow/dwarf')
-  get 'wow/draeneis.php' => redirect('wow/draenei')
-  get 'wow/night_elves.php' => redirect('wow/nightelf')
-  get 'wow/worgens.php' => redirect('wow/worgen')
+  get 'wow/orcs.php', to: redirect('wow/orc')
+  get 'wow/trolls.php', to: redirect('wow/troll')
+  get 'wow/taurens.php', to: redirect('wow/tauren')
+  get 'wow/goblins.php', to: redirect('wow/goblin')
+  get 'wow/blood_elves.php', to: redirect('wow/bloodelf')
+  get 'wow/undeads.php', to: redirect('wow/undead')
+  get 'wow/pandarens.php', to: redirect('wow/pandaren')
+  get 'wow/humans.php', to: redirect('wow/human')
+  get 'wow/gnomes.php', to: redirect('wow/gnome')
+  get 'wow/dwarves.php', to: redirect('wow/dwarf')
+  get 'wow/draeneis.php', to: redirect('wow/draenei')
+  get 'wow/night_elves.php', to: redirect('wow/nightelf')
+  get 'wow/worgens.php', to: redirect('wow/worgen')
 
-  get 'gw2/human.php' => redirect('gw2/human')
-  get 'gw2/asura.php' => redirect('gw2/asura')
-  get 'gw2/norn.php' => redirect('gw2/norn')
-  get 'gw2/charr.php' => redirect('gw2/charr')
-  get 'gw2/sylvari.php' => redirect('gw2/sylvari')
+  get 'gw2/human.php', to: redirect('gw2/human')
+  get 'gw2/asura.php', to: redirect('gw2/asura')
+  get 'gw2/norn.php', to: redirect('gw2/norn')
+  get 'gw2/charr.php', to: redirect('gw2/charr')
+  get 'gw2/sylvari.php', to: redirect('gw2/sylvari')
 
-  get 'samp/english.php' => redirect('samp/english')
-  get 'samp/german.php' => redirect('samp/german')
-  get 'samp/french.php' => redirect('samp/french')
-  get 'samp/italian.php' => redirect('samp/italian')
-  get 'samp/danish.php' => redirect('samp/danish')
-  get 'samp/spanish.php' => redirect('samp/spanish')
-  get 'samp/swedish.php' => redirect('samp/swedish')
+  get 'samp/english.php', to: redirect('samp/english')
+  get 'samp/german.php', to: redirect('samp/german')
+  get 'samp/french.php', to: redirect('samp/french')
+  get 'samp/italian.php', to: redirect('samp/italian')
+  get 'samp/danish.php', to: redirect('samp/danish')
+  get 'samp/spanish.php', to: redirect('samp/spanish')
+  get 'samp/swedish.php', to: redirect('samp/swedish')
 
   resources :samps, path: 'samp'
 
@@ -62,66 +56,4 @@ Nick::Application.routes.draw do
   resources :wows, path:'wow'
 
   resources :minecrafts, path: 'minecraft'
-
-
-#WoW
-
-  get 'api/wow/human/male' => 'wows#human_male'
-  get 'api/wow/dwarf/male' => 'wows#dwarf_male'
-  get 'api/wow/gnome/male' => 'wows#gnome_male'
-  get 'api/wow/draenei/male' => 'wows#draenei_male'
-  get 'api/wow/worgen/male' => 'wows#worgen_male'
-  get 'api/wow/nightelf/male' => 'wows#nightelf_male'
-  get 'api/wow/orc/male' => 'wows#orc_male'
-  get 'api/wow/troll/male' => 'wows#troll_male'
-  get 'api/wow/tauren/male' => 'wows#tauren_male'
-  get 'api/wow/goblin/male' => 'wows#goblin_male'
-  get 'api/wow/bloodelf/male' => 'wows#bloodelf_male'
-  get 'api/wow/undead/male' => 'wows#undead_male'
-  get 'api/wow/pandaren/male' => 'wows#pandaren_male'
-
-  get 'api/wow/human/female' => 'wows#human_female'
-  get 'api/wow/dwarf/female' => 'wows#dwarf_female'
-  get 'api/wow/gnome/female' => 'wows#gnome_female'
-  get 'api/wow/draenei/female' => 'wows#draenei_female'
-  get 'api/wow/worgen/female' => 'wows#worgen_female'
-  get 'api/wow/nightelf/female' => 'wows#nightelf_female'
-  get 'api/wow/orc/female' => 'wows#orc_female'
-  get 'api/wow/troll/female' => 'wows#troll_female'
-  get 'api/wow/tauren/female' => 'wows#tauren_female'
-  get 'api/wow/goblin/female' => 'wows#goblin_female'
-  get 'api/wow/bloodelf/female' => 'wows#bloodelf_female'
-  get 'api/wow/undead/female' => 'wows#undead_female'
-  get 'api/wow/pandaren/female' => 'wows#pandaren_female'
-
-  #GW2
-  get 'api/gw2/charr/male' => 'gw2s#charr_male'
-  get 'api/gw2/charr/female' => 'gw2s#charr_female'
-  get 'api/gw2/human/male' => 'gw2s#human_male'
-  get 'api/gw2/human/female' => 'gw2s#human_female'
-  get 'api/gw2/norn/male' => 'gw2s#norn_male'
-  get 'api/gw2/norn/female' => 'gw2s#norn_female'
-  get 'api/gw2/asura/male' => 'gw2s#asura_male'
-  get 'api/gw2/asura/female' => 'gw2s#asura_female'
-  get 'api/gw2/sylvari/male' => 'gw2s#sylvari_male'
-  get 'api/gw2/sylvari/female' => 'gw2s#sylvari_female'
-
-  #SAMP
-  get 'api/samp/english/male' => 'samps#english_male'
-  get 'api/samp/english/female' => 'samps#english_female'
-  get 'api/samp/swedish/male' => 'samps#swedish_male'
-  get 'api/samp/swedish/female' => 'samps#swedish_female'
-  get 'api/samp/french/male' => 'samps#french_male'
-  get 'api/samp/french/female' => 'samps#french_female'
-  get 'api/samp/italian/male' => 'samps#italian_male'
-  get 'api/samp/italian/female' => 'samps#italian_female'
-  get 'api/samp/german/male' => 'samps#german_male'
-  get 'api/samp/german/female' => 'samps#german_female'
-  get 'api/samp/spanish/male' => 'samps#spanish_male'
-  get 'api/samp/spanish/female' => 'samps#spanish_female'
-  get 'api/samp/danish/male' => 'samps#danish_male'
-  get 'api/samp/danish/female' => 'samps#danish_female'
-
-  #MINECRAFT
-  get 'api/minecraft/steve/male' => 'minecrafts#steve_male'
 end

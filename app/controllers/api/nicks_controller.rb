@@ -44,14 +44,5 @@ module API
       end
     end
 
-
-    private
-      def set_nick
-        nick = Nick.find(params[:id])
-      end
-
-      def nick_params
-        params.require(:nick).permit(:race, :sex)
-      end
   end
 end
