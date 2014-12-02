@@ -1,54 +1,54 @@
 <div class="races">
-         <div class="tab-pane <%= 'active' if params[:controller] == 'wows' %>" id="wow">
-         <ul class="wow">
-             <li>
-          <%= link_to(image_tag("wow-human.png", :alt => "Человек"), "/wow/human", :class => "alliance") %><%= link_to(image_tag("wow-orc.png", :alt => "Орк"), "/wow/orc", :class => "horde") %>
-             </li>
-             <li>
-          <%= link_to(image_tag("wow-gnome.png", :alt => "Гном"), "/wow/gnome", :class => "alliance") %><%= link_to(image_tag("wow-troll.png", :alt => "Тролль"), "/wow/troll", :class => "horde") %>
-             </li>
-             <li>
-          <%= link_to(image_tag("wow-dwarf.png", :alt => "Дворф"), "/wow/dwarf", :class => "alliance") %><%= link_to(image_tag("wow-tauren.png", :alt => "Таурен"), "/wow/tauren", :class => "horde") %>
-             </li>
-             <li>
-          <%= link_to(image_tag("wow-nightelf.png", :alt => "Ночной эльф"), "/wow/nightelf", :class => "alliance") %><%= link_to(image_tag("wow-undead.png", :alt => "Нежить"), "/wow/undead", :class => "horde") %>
-             </li>
-             <li>
-          <%= link_to(image_tag("wow-draenei.png", :alt => "Дреней"), "/wow/draenei", :class => "alliance") %><%= link_to(image_tag("wow-bloodelf.png", :alt => "Блад эльф"), "/wow/bloodelf", :class => "horde") %>
-             </li>
-             <li>
-          <%= link_to(image_tag("wow-worgen.png", :alt => "Ворген"), "/wow/worgen", :class => "alliance") %><%= link_to(image_tag("wow-goblin.png", :alt => "Гоблин"), "/wow/goblin", :class => "horde") %>
-             </li>
-             <li>
-          <%= link_to(image_tag("wow-pandaren.png", :alt => "Пандарен"), "/wow/pandaren", :class => "alliance") %><%= link_to(image_tag("wow-pandaren.png", :alt => "Пандарен"), "/wow/pandaren", :class => "horde") %>
-             </li>
-         </ul>
-         </div>
-         <div class="tab-pane <%= 'active' if params[:controller] == 'gw2s' %>" id="gw2">
-            <ul class="gw2">
-            <% Gw2.all.order("created_at asc").each do |race| %>
-            <li>
-                <%= link_to(image_tag(race.game + "-"+ race.racename + ".png", :alt => race.pagename), "/gw2/" + race.racename) %>
-            </li>
-                <% end %>
-            </ul>
-         </div>
-         <div class="tab-pane <%= 'active' if params[:controller] == 'samps' %>" id="samp">
-             <ul class="samp">
-             <% Samp.all.order("created_at asc").each do |race| %>
-             <li>
-                <%= link_to(image_tag(race.game + "-" + race.racename + ".png", :alt => race.pagename), "/samp/" + race.racename) %>
-             </li>
-             <% end %>
-             </ul>
-         </div>
-         <div class="tab-pane <%= 'active' if params[:controller] == 'minecrafts' %>" id="minecraft">
-             <ul class="minecraft">
-             <% Minecraft.all.order("created_at asc").each do |race| %>
-             <li>
-                <%= link_to(image_tag(race.game + "-" + race.racename + ".jpg", :alt => race.pagename), "/minecraft/" + race.racename) %>
-             </li>
-             <% end %>
-             </ul>
-         </div>
-        </div>
+  <div class="tab-pane <%= 'active' if params[:controller] == 'wows' %>" id="wow">
+    <ul class="wow">
+     <li>
+       <%= link_to(image_tag("wow-human.png", alt: "Человек"), "/wow/human", class: "alliance") %><%= link_to(image_tag("wow-orc.png", alt: "Орк"), "/wow/orc", class: "horde") %>
+     </li>
+     <li>
+       <%= link_to(image_tag("wow-gnome.png", alt: "Гном"), "/wow/gnome", class: "alliance") %><%= link_to(image_tag("wow-troll.png", alt: "Тролль"), "/wow/troll", class: "horde") %>
+     </li>
+     <li>
+       <%= link_to(image_tag("wow-dwarf.png", alt: "Дворф"), "/wow/dwarf", class: "alliance") %><%= link_to(image_tag("wow-tauren.png", alt: "Таурен"), "/wow/tauren", class: "horde") %>
+     </li>
+     <li>
+       <%= link_to(image_tag("wow-nightelf.png", alt: "Ночной эльф"), "/wow/nightelf", class: "alliance") %><%= link_to(image_tag("wow-undead.png", alt: "Нежить"), "/wow/undead", class: "horde") %>
+     </li>
+     <li>
+       <%= link_to(image_tag("wow-draenei.png", alt: "Дреней"), "/wow/draenei", class: "alliance") %><%= link_to(image_tag("wow-bloodelf.png", alt: "Блад эльф"), "/wow/bloodelf", class: "horde") %>
+     </li>
+     <li>
+       <%= link_to(image_tag("wow-worgen.png", alt: "Ворген"), "/wow/worgen", class: "alliance") %><%= link_to(image_tag("wow-goblin.png", alt: "Гоблин"), "/wow/goblin", class: "horde") %>
+     </li>
+     <li>
+       <%= link_to(image_tag("wow-pandaren.png", alt: "Пандарен"), "/wow/pandaren", class: "alliance") %><%= link_to(image_tag("wow-pandaren.png", alt: "Пандарен"), "/wow/pandaren", class: "horde") %>
+     </li>
+    </ul>
+  </div>
+  <div class="tab-pane <%= 'active' if params[:controller] == 'gw2s' %>" id="gw2">
+    <ul class="gw2">
+      <% Gw2.all.order(created_at: :asc).each do |race| %>
+        <li>
+          <%= link_to(image_tag("#{race.game}-#{race.racename}.png", alt: race.pagename), "/gw2/#{race.racename}") %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="tab-pane <%= 'active' if params[:controller] == 'samps' %>" id="samp">
+     <ul class="samp">
+       <% Samp.all.order(created_at: :asc).each do |race| %>
+         <li>
+          <%= link_to(image_tag("#{race.game}-#{race.racename}.png", alt: race.pagename), "/samp/#{race.racename}") %>
+         </li>
+       <% end %>
+     </ul>
+  </div>
+  <div class="tab-pane <%= 'active' if params[:controller] == 'minecrafts' %>" id="minecraft">
+    <ul class="minecraft">
+      <% Minecraft.all.order(created_at: :asc).each do |race| %>
+        <li>
+          <%= link_to(image_tag("#{race.game}-#{race.racename}.jpg", alt: race.pagename), "/minecraft/#{race.racename}") %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

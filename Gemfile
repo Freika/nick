@@ -13,15 +13,11 @@ gem 'zeroclipboard-rails'
 gem 'newrelic_rpm'
 gem 'rollbar', '~> 1.0.0'
 
-gem 'spring'
 group :development, :test do
-  gem "better_errors"
-  gem 'hirb'
-  gem 'rack-mini-profiler'
-  gem 'rails-footnotes', '>= 4.0.0', '<5'
-  gem 'rspec-rails', '~> 3.0.0'
-  gem 'faker'
-  gem 'binding_of_caller'
+  gem 'pry'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'quiet_assets'
+  gem 'guard-rspec', require: false
 end
 
 gem 'uglifier', '>= 1.3.0'
