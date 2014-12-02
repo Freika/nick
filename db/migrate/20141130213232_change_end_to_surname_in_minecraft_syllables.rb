@@ -3,4 +3,8 @@ class ChangeEndToSurnameInMinecraftSyllables < ActiveRecord::Migration
     s = Syllable.where(game: 'minecraft', position: 'end')
     s.update_all(position: 'start', namepart: 'surname')
   end
+
+  def down
+    irreversible migration
+  end
 end

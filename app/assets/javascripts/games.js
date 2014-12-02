@@ -5,9 +5,11 @@ $( document ).ready(function() {
 
   $('#sexybuttons a').click( function () {
     var sex = $(this).attr("name");
-    if (game = 'gw2') { // Временный
+
+    if (game == 'gw2') { // Временный
       game = 'gw'       // Костыль
     };                  // До избавления от двойки в GW2
+
     $.ajax({
       url: '/api/v1/nicks/' + game + '.json?race=' + race + '&sex=' + sex,
       success: function(json) {
@@ -15,6 +17,7 @@ $( document ).ready(function() {
         $('#history').prepend(json.name+"<br>");
       }
     });
+
   });
 });
 var clip = new ZeroClipboard($("#yournameishere")) //Копирование ника в буфер обмена по клику на кнопку

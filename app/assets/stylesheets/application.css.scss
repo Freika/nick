@@ -138,28 +138,27 @@ footer {
 	padding: 8px;
 	background-color: rgba(0, 0, 0, 0.7);
 	border: 1px solid rgba(0, 0, 0, 0.5);
+
 	.right {
 		text-align: right;
 	}
+
 	ul {
 		margin: 0;
 		padding: 0;
 	}
+
 	li {
 		list-style-type: none;
 		margin:0;
+
 		a {
 			&:hover {
 				color: white!important;
 			}
 		}
 	}
-
-
-
 }
-
-
 
 header, footer, .sidebar, .thebody {
 	box-shadow: 0 0 10px black;
@@ -179,10 +178,7 @@ header a {
 	height: 610px;
 	display: block;
 	border-radius: 10px;
-
 }
-
-
 
 .minecraft-steve-bg {
 	background-image: image-url("minecraft-background-steve.jpg");
@@ -288,8 +284,6 @@ header a {
 	background-image: image-url("samp-background-spanish.jpg");
 }
 
-
-
 .thecontent {
 	display: block;
 	-webkit-background-size: cover;
@@ -322,12 +316,14 @@ header a {
 	margin-top: 25px;
 	margin-bottom: 10px;
 	cursor: pointer;
-		&.zeroclipboard-is-active {
+	&.zeroclipboard-is-active {
 		 color: #C6E000;
 		}
 	}
+
 	#sexybuttons {
 	margin-top: 15px;
+
 		a {
 		padding: 7px;
 		background: rgb(56,51,51);
@@ -361,6 +357,7 @@ header a {
 	background: rgba(0, 0, 0, 0.6);
 	height: auto;
 	border: 1px solid black;
+
 	h1 {
 	font-size: 20px;
 	margin-top: 0;
@@ -466,7 +463,6 @@ a.alliance {
 	border: 2px solid #05C505;
 	}
 
-
 .tabs-left > .the-tabs > li{
   float: none;
   margin-top: 10px;
@@ -515,7 +511,6 @@ a.alliance {
 	display: block;
 }
 
-
 .tabs-left > .the-tabs {
   float: left;
   margin-right: 19px;
@@ -538,9 +533,9 @@ a.alliance {
   width: 137px;
   margin-left: -16px;
   padding: 5px;
-box-shadow:        inset  0  5px 5px -5px #000,
-                        inset  0 -5px 5px -5px #000;
-                    }
+	box-shadow: inset 0 5px 5px -5px #000,
+              inset  0 -5px 5px -5px #000;
+}
 
 
 
@@ -551,14 +546,15 @@ box-shadow:        inset  0  5px 5px -5px #000,
 }
 
 .index {
-	h1 {
-		font-size: 24px;
-		margin-left: 10px;
-	}
 	margin-top: 30px;
 	font-size: 16px;
 	line-height: 18px;
 	color: #afafaf;
+
+	h1 {
+		font-size: 24px;
+		margin-left: 10px;
+	}
 	p {
 		text-indent: 20px;
 		margin-left: 10px;

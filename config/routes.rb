@@ -1,6 +1,7 @@
 Nick::Application.routes.draw do
 
   root 'wows#index'
+
   namespace :api do
     namespace :v1 do
       get 'nicks/wow', to: 'nicks#wow'

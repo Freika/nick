@@ -2,7 +2,6 @@ module API
   module V1
     class NicksController < ApplicationController
 
-
       def wow
         if Nickname::WOW_RACES.include?(params[:race]) && Nickname::SEX.include?(params[:sex])
           @nick = Nickname.generate_wow(params[:race], params[:sex])
