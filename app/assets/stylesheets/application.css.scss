@@ -96,7 +96,8 @@ header {
 	border-radius: 10px;
 	display: block;
 	height: 610px;
-	padding: 15px;
+	text-align: center;
+	color: #adadad;
   background: -moz-linear-gradient(top,  rgba(15,15,15,0.7) 0%, rgba(0,0,0,0.9) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(15,15,15,0.7)), color-stop(100%,rgba(0,0,0,0.9)));
 	background: -webkit-linear-gradient(top,  rgba(15,15,15,0.7) 0%,rgba(0,0,0,0.9) 100%);
@@ -105,9 +106,10 @@ header {
 	background: linear-gradient(to bottom,  rgba(15,15,15,0.7) 0%,rgba(0,0,0,0.9) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b30f0f0f', endColorstr='#b3000000',GradientType=0 );
 	border: 1px solid rgba(0, 0, 0, 0.5);
+	margin-bottom: 5px;
 
-	#history, #favorite {
-		height: 250px;
+	#history {
+		height: 513px;
 		overflow: hidden;
 	}
 
@@ -476,7 +478,7 @@ a.alliance {
   min-width: 64px;
   margin-top: 5px;
   margin-bottom: 5px;
-  margin-left: 30px;
+  margin-left: 40px;
   margin-right: 20px;
 }
 
@@ -530,7 +532,7 @@ a.alliance {
 
 .tabs-left > .the-tabs .active {
   background-color: #212121;
-  width: 137px;
+  width: 155px;
   margin-left: -16px;
   padding: 5px;
 	box-shadow: inset 0 5px 5px -5px #000,
@@ -576,13 +578,7 @@ header {
 	#margin-top: 220px;
 }
 
-.sidebar {
-	padding-left: 7px;
-	margin-bottom: 5px;
-	div {
-		margin-bottom: 5px;
-	}
-}
+
 
 .howmuchnicknames {
 	color: #A0A1AC;
