@@ -10,7 +10,7 @@ class StatisticsController < ApplicationController
     @samps = Statistic.last.samp
     @gws = Statistic.last.gw
     @minecrafts = Statistic.last.minecraft
-    @total = Statistic.count
+    @total = @wows + @samps + @gws + @minecrafts
   end
 
 end

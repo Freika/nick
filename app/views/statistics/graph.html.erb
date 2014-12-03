@@ -11,15 +11,15 @@
       <th>Всего</th>
     </tr>
     <tr>
-      <td><%= @wows %></td>
-      <td><%= @gws %></td>
-      <td><%= @samps %></td>
-      <td><%= @minecrafts %></td>
+      <td><%= number_with_delimiter(@wows, delimiter: " ") %></td>
+      <td><%= number_with_delimiter(@gws, delimiter: " ") %></td>
+      <td><%= number_with_delimiter(@samps, delimiter: " ") %></td>
+      <td><%= number_with_delimiter(@minecrafts, delimiter: " ") %></td>
       <td><%= number_with_delimiter(@total, delimiter: " ") %></td>
     </tr>
   </table>
 </div>
 <% cache do %>
-<%= render partial: 'graph' %>
+<%#= render partial: 'graph' %>
 <% end %>
 <% content_for :title, "График генерации ников и имен для онлайновых игр" %>
