@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141202201441) do
+ActiveRecord::Schema.define(version: 20141203004907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,12 +58,8 @@ ActiveRecord::Schema.define(version: 20141202201441) do
   end
 
   create_table "nicknames", force: true do |t|
-    t.string   "game"
-    t.string   "race"
-    t.string   "sex"
     t.string   "name"
     t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "samps", force: true do |t|
@@ -82,11 +78,40 @@ ActiveRecord::Schema.define(version: 20141202201441) do
   add_index "samps", ["slug"], name: "index_samps_on_slug", using: :btree
 
   create_table "statistics", force: true do |t|
-    t.string   "game"
-    t.string   "race"
-    t.string   "sex"
-    t.string   "name"
     t.datetime "created_at"
+    t.string   "test"
+    t.integer  "wow"
+    t.integer  "gw"
+    t.integer  "samp"
+    t.integer  "minecraft"
+    t.integer  "wow_human"
+    t.integer  "dwarf"
+    t.integer  "gnome"
+    t.integer  "nightelf"
+    t.integer  "draenei"
+    t.integer  "worgen"
+    t.integer  "pandaren"
+    t.integer  "orc"
+    t.integer  "troll"
+    t.integer  "tauren"
+    t.integer  "undead"
+    t.integer  "bloodelf"
+    t.integer  "goblin"
+    t.integer  "gw_human"
+    t.integer  "asura"
+    t.integer  "sylvari"
+    t.integer  "norn"
+    t.integer  "charr"
+    t.integer  "english"
+    t.integer  "german"
+    t.integer  "french"
+    t.integer  "italian"
+    t.integer  "danish"
+    t.integer  "swedish"
+    t.integer  "spanish"
+    t.integer  "steve"
+    t.integer  "male"
+    t.integer  "female"
   end
 
   create_table "syllables", force: true do |t|

@@ -39,7 +39,7 @@ describe 'Nickname generation API V1' do
   it 'have all proper attributes' do
     get '/api/v1/nicks/minecraft.json?race=steve&sex=male'
     json = JSON.parse(response.body)
-    expect(json.count).to eq(7)
+    expect(json.count).to eq(3)
   end
 
   it 'generates minecraft nick' do
