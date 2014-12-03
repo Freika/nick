@@ -5,15 +5,11 @@ class StatisticsController < ApplicationController
     @statistics = Statistic.all
   end
 
-  def new
-    @statistic = Statistic.new
-  end
-
   def graph
-    @wows = Statistic.where(game: 'wow')
-    @samps = Statistic.where(game: 'samp')
-    @gws = Statistic.where(game: 'gw2')
-    @minecrafts = Statistic.where(game: 'minecraft')
+    @wows = Statistic.last.wow
+    @samps = Statistic.last.samp
+    @gws = Statistic.last.gw
+    @minecrafts = Statistic.last.minecraft
     @total = Statistic.count
   end
 

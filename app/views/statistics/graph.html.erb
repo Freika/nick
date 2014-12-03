@@ -11,10 +11,10 @@
       <th>Всего</th>
     </tr>
     <tr>
-      <td><%= count_names(@wows) %></td>
-      <td><%= count_names(@gws) %></td>
-      <td><%= count_names(@samps) %></td>
-      <td><%= count_names(@minecrafts) %></td>
+      <td><%= @wows %></td>
+      <td><%= @gws %></td>
+      <td><%= @samps %></td>
+      <td><%= @minecrafts %></td>
       <td><%= number_with_delimiter(@total, delimiter: " ") %></td>
     </tr>
   </table>

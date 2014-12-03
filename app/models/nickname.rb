@@ -9,7 +9,12 @@ class Nickname < ActiveRecord::Base
     start = get_syllable('wow', race, sex, 'start')
     mid = get_syllable('wow', race, sex, 'middle')
     fin = get_syllable('wow', race, sex, 'end')
-    name = Nickname.create(game: 'wow', race: race, sex: sex, name: "#{start}#{mid}#{fin}")
+    Statistic.update_weekly do
+      race = 'wow_human' if race == 'human'
+      s = Statistic.last.increment(:wow).increment(race.to_sym).increment(sex.to_sym)
+      s.save
+    end
+    name = Nickname.create(name: "#{start}#{mid}#{fin}")
   end
 
   def self.generate_gw(race, sex)
@@ -21,7 +26,12 @@ class Nickname < ActiveRecord::Base
     surname_start = get_syllable('gw2', race, 'male', 'start', 'surname')
     surname_fin = get_syllable('gw2', race, 'male', 'end', 'surname')
     #game: 'gw' or 'gw2' ?
-    name = Nickname.create(game: 'gw', race: race, sex: sex, name: "#{name_start}#{name_mid}#{name_fin} #{surname_start}#{surname_fin}")
+    Statistic.update_weekly do
+      race = 'gw_human' if race == 'human'
+      s = Statistic.last.increment(:gw).increment(race.to_sym).increment(sex.to_sym)
+      s.save
+    end
+    name = Nickname.create(name: "#{name_start}#{name_mid}#{name_fin} #{surname_start}#{surname_fin}")
   end
 
   def self.generate_gw_asura(race, sex)
@@ -30,7 +40,12 @@ class Nickname < ActiveRecord::Base
 
     surname_start = get_syllable('gw2', race, 'male', 'start', 'surname')
     surname_fin = get_syllable('gw2', race, 'male', 'end', 'surname')
-    name = Nickname.create(game: 'gw', race: race, sex: sex, name: "#{name_start}#{name_fin} #{surname_start}#{surname_fin}")
+
+    Statistic.update_weekly do
+      s = Statistic.last.increment(:gw).increment(race.to_sym).increment(sex.to_sym)
+      s.save
+    end
+    name = Nickname.create(name: "#{name_start}#{name_fin} #{surname_start}#{surname_fin}")
   end
 
   def self.generate_gw_sylvari(race, sex)
@@ -38,14 +53,24 @@ class Nickname < ActiveRecord::Base
     name_mid = get_syllable('gw2', race, sex, 'middle', 'name')
     name_fin = get_syllable('gw2', race, sex, 'end', 'name')
 
-    name = Nickname.create(game: 'gw', race: race, sex: sex, name: "#{name_start}#{name_mid}#{name_fin}")
+    Statistic.update_weekly do
+      s = Statistic.last.increment(:gw).increment(race.to_sym).increment(sex.to_sym)
+      s.save
+    end
+
+    name = Nickname.create(name: "#{name_start}#{name_mid}#{name_fin}")
   end
 
   def self.generate_samp(race, sex)
     name = get_syllable('samp', race, sex, 'start', 'name')
     surname = get_syllable('samp', race, sex, 'start', 'surname')
 
-    name = Nickname.create(game: 'samp', race: race, sex: sex, name: "#{name} #{surname}")
+    Statistic.update_weekly do
+      s = Statistic.last.increment(:samp).increment(race.to_sym).increment(sex.to_sym)
+      s.save
+    end
+
+    name = Nickname.create(name: "#{name} #{surname}")
   end
 
   def self.generate_minecraft(race, sex)
@@ -53,7 +78,12 @@ class Nickname < ActiveRecord::Base
     name = get_syllable('minecraft', race, 'male', 'start', 'name')
     surname = get_syllable('minecraft', race, 'male', 'start', 'surname')
 
-    name = Nickname.create(game: 'minecraft', race: race, sex: sex, name: "#{name.capitalize} #{surname.capitalize}")
+    Statistic.update_weekly do
+      s = Statistic.last.increment(:minecraft).increment(race.to_sym).increment(sex.to_sym)
+      s.save
+    end
+
+    name = Nickname.create(name: "#{name.capitalize} #{surname.capitalize}")
   end
 
   private
