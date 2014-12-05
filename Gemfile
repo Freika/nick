@@ -27,6 +27,8 @@ gem 'jquery-rails-cdn', '~> 1.0.2'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'omniauth-bnet', '~> 1.0.1'
+gem 'delayed_job_active_record'
+
 
 group :production do
   gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
