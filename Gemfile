@@ -28,7 +28,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'omniauth-bnet', '~> 1.0.1'
 gem 'delayed_job_active_record'
-
+gem 'seed_dump'
 
 group :production do
   gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
