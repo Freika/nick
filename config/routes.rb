@@ -1,6 +1,6 @@
 Nick::Application.routes.draw do
 
-  root 'wows#index'
+  root 'games#index'
 
   namespace :api do
     namespace :v1 do
@@ -16,7 +16,13 @@ Nick::Application.routes.draw do
   get 'statistics/graph'
   devise_for :users
 
+  resources :samps, path: 'samp'
+  resources :gw2s, path: 'gw2'
+  resources :wows, path:'wow'
+  resources :minecrafts, path: 'minecraft'
   resources :statistics, only: [:index]
+  resources :games, path: '/'
+  resources :races, path: ''
 
   links = %w(admin wp-admin wp-admin.php adminstrator wp-login wp-login.php admin.php)
   links.each do |link|
@@ -52,11 +58,4 @@ Nick::Application.routes.draw do
   get 'samp/spanish.php', to: redirect('samp/spanish')
   get 'samp/swedish.php', to: redirect('samp/swedish')
 
-  resources :samps, path: 'samp'
-
-  resources :gw2s, path: 'gw2'
-
-  resources :wows, path:'wow'
-
-  resources :minecrafts, path: 'minecraft'
 end
