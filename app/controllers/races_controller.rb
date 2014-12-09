@@ -1,28 +1,21 @@
 class RacesController < ApplicationController
   before_action :set_race, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update, :create, :new, :destroy]
 
-  # GET /races
-  # GET /races.json
   def index
     @races = Race.all
   end
 
-  # GET /races/1
-  # GET /races/1.json
   def show
   end
 
-  # GET /races/new
   def new
     @race = Race.new
   end
 
-  # GET /races/1/edit
   def edit
   end
 
-  # POST /races
-  # POST /races.json
   def create
     @race = Race.new(race_params)
 
@@ -37,8 +30,6 @@ class RacesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /races/1
-  # PATCH/PUT /races/1.json
   def update
     respond_to do |format|
       if @race.update(race_params)
@@ -51,8 +42,6 @@ class RacesController < ApplicationController
     end
   end
 
-  # DELETE /races/1
-  # DELETE /races/1.json
   def destroy
     @race.destroy
     respond_to do |format|
@@ -62,13 +51,11 @@ class RacesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_race
-      @race = Race.find(params[:id])
+      @race = Race.friendly.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def race_params
-      params[:race]
+      params.require(:race).permit(:title, :slug, :content, :description, :name)
     end
 end

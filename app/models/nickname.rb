@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: nicknames
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  created_at :datetime
+#
+
 class Nickname < ActiveRecord::Base
 
   WOW_RACES = %w(human gnome dwarf pandaren draenei worgen nightelf orc troll tauren undead bloodelf goblin).freeze

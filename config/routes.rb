@@ -16,10 +16,10 @@ Nick::Application.routes.draw do
   get 'statistics/graph'
   devise_for :users
 
-  resources :samps, path: 'samp'
-  resources :gw2s, path: 'gw2'
-  resources :wows, path:'wow'
-  resources :minecrafts, path: 'minecraft'
+  # resources :samps, path: 'samp'
+  # resources :gw2s, path: 'gw2'
+  # resources :wows, path:'wow'
+  # resources :minecrafts, path: 'minecraft'
   resources :statistics, only: [:index]
   resources :games, path: '/'
   resources :races, path: ''
