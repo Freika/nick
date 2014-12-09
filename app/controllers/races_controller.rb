@@ -7,6 +7,8 @@ class RacesController < ApplicationController
   end
 
   def show
+    @race = set_race
+    @game = @race.game
   end
 
   def new
@@ -14,6 +16,7 @@ class RacesController < ApplicationController
   end
 
   def edit
+    @race = set_race
   end
 
   def create
@@ -31,6 +34,7 @@ class RacesController < ApplicationController
   end
 
   def update
+    @race = set_race
     respond_to do |format|
       if @race.update(race_params)
         format.html { redirect_to @race, notice: 'Race was successfully updated.' }
@@ -43,6 +47,7 @@ class RacesController < ApplicationController
   end
 
   def destroy
+    @race = set_race
     @race.destroy
     respond_to do |format|
       format.html { redirect_to races_url }

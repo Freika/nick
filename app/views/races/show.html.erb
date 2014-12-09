@@ -1,4 +1,12 @@
-<p id="notice"><%= notice %></p>
+<%= javascript_tag do %>
+  race = "<%=j @race.slug %>";
+  game = "<%=j @race.game.name %>"
+<% end %>
+<% content_for :title do @race.title end %>
 
-<%= link_to 'Edit', edit_race_path(@race) %> |
-<%= link_to 'Back', races_path %>
+<%= render "layouts/nickbox" %>
+<%= render "layouts/body_ads" %>
+<%#= render "wows/aboutrace" %>
+<%= javascript_include_tag "games" %>
+
+<%= link_to 'Edit', edit_game_race_path(@game, @race) %>

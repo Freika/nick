@@ -21,8 +21,11 @@ Nick::Application.routes.draw do
   # resources :wows, path:'wow'
   # resources :minecrafts, path: 'minecraft'
   resources :statistics, only: [:index]
-  resources :games, path: '/'
-  resources :races, path: ''
+  resources :games, path: '' do
+    resources :races, path: '', except: :index
+    # get "/:game_id/:id", :to => "notes#show", :as => :short_user_note
+  end
+
 
   links = %w(admin wp-admin wp-admin.php adminstrator wp-login wp-login.php admin.php)
   links.each do |link|
