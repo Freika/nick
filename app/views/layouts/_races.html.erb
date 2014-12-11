@@ -1,5 +1,5 @@
 <div class="races">
-  <div class="tab-pane <%= 'active' if params[:controller] == 'wows' %>" id="wow">
+  <div class="tab-pane <%= 'active' if params[:game_id] == 'wow' %>" id="wow">
     <ul class="wow">
      <li>
        <%= link_to(image_tag("wow-human.png", alt: "Человек"), "/wow/human", class: "alliance") %><%= link_to(image_tag("wow-orc.png", alt: "Орк"), "/wow/orc", class: "horde") %>
@@ -24,29 +24,29 @@
      </li>
     </ul>
   </div>
-  <div class="tab-pane <%= 'active' if params[:controller] == 'gw2s' %>" id="gw2">
+  <div class="tab-pane <%= 'active' if params[:game_id] == 'gw2' %>" id="gw2">
     <ul class="gw2">
-      <% Gw2.all.order(created_at: :asc).each do |race| %>
+      <% Race.where(game: Game.find_by(slug: 'gw2')).each do |race| %>
         <li>
-          <%= link_to(image_tag("#{race.game}-#{race.racename}.png", alt: race.pagename), "/gw2/#{race.racename}") %>
+          <%= link_to(image_tag("gw2-#{race.slug}.png", alt: race.name), "/gw2/#{race.slug}") %>
         </li>
       <% end %>
     </ul>
   </div>
-  <div class="tab-pane <%= 'active' if params[:controller] == 'samps' %>" id="samp">
+  <div class="tab-pane <%= 'active' if params[:game_id] == 'samp' %>" id="samp">
      <ul class="samp">
-       <% Samp.all.order(created_at: :asc).each do |race| %>
+       <% Race.where(game: Game.find_by(slug: 'samp')).each do |race| %>
          <li>
-          <%= link_to(image_tag("#{race.game}-#{race.racename}.png", alt: race.pagename), "/samp/#{race.racename}") %>
+          <%= link_to(image_tag("samp-#{race.slug}.png", alt: race.name), "/samp/#{race.slug}") %>
          </li>
        <% end %>
      </ul>
   </div>
-  <div class="tab-pane <%= 'active' if params[:controller] == 'minecrafts' %>" id="minecraft">
+  <div class="tab-pane <%= 'active' if params[:game_id] == 'minecraft' %>" id="minecraft">
     <ul class="minecraft">
-      <% Minecraft.all.order(created_at: :asc).each do |race| %>
+      <% Race.where(game: Game.find_by(slug: 'minecraft')).each do |race| %>
         <li>
-          <%= link_to(image_tag("#{race.game}-#{race.racename}.jpg", alt: race.pagename), "/minecraft/#{race.racename}") %>
+          <%= link_to(image_tag("minecraft-#{race.slug}.jpg", alt: race.name), "/minecraft/#{race.slug}") %>
         </li>
       <% end %>
     </ul>

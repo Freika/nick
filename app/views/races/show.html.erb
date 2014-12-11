@@ -7,7 +7,6 @@
 <%= render "layouts/nickbox" %>
 <%= render "layouts/body_ads" %>
 <%= render "races/about", race: @race %>
-<%= javascript_include_tag "games" %>
 
 <% if current_user %>
   <%= link_to 'Редактировать', edit_game_race_path(@game, @race) %>

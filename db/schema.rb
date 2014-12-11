@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141209152414) do
+ActiveRecord::Schema.define(version: 20141211224656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,33 +56,6 @@ ActiveRecord::Schema.define(version: 20141209152414) do
     t.datetime "updated_at"
   end
 
-  create_table "gw2s", force: true do |t|
-    t.text     "game"
-    t.text     "racename"
-    t.text     "pagename"
-    t.text     "title"
-    t.text     "desc"
-    t.text     "customcode"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "slug"
-    t.string   "seo_description"
-  end
-
-  add_index "gw2s", ["slug"], name: "index_gw2s_on_slug", using: :btree
-
-  create_table "minecrafts", force: true do |t|
-    t.text     "game"
-    t.text     "racename"
-    t.text     "pagename"
-    t.text     "title"
-    t.text     "desc"
-    t.text     "customcode"
-    t.string   "seo_description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "nicknames", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -99,24 +72,8 @@ ActiveRecord::Schema.define(version: 20141209152414) do
     t.datetime "updated_at"
   end
 
-  create_table "samps", force: true do |t|
-    t.text     "game"
-    t.text     "racename"
-    t.text     "pagename"
-    t.text     "title"
-    t.text     "desc"
-    t.text     "customcode"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "slug"
-    t.string   "seo_description"
-  end
-
-  add_index "samps", ["slug"], name: "index_samps_on_slug", using: :btree
-
   create_table "statistics", force: true do |t|
     t.datetime "created_at"
-    t.string   "test"
     t.integer  "wow"
     t.integer  "gw"
     t.integer  "samp"
@@ -179,18 +136,5 @@ ActiveRecord::Schema.define(version: 20141209152414) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
-  create_table "wows", force: true do |t|
-    t.text     "game"
-    t.text     "racename"
-    t.text     "pagename"
-    t.text     "title"
-    t.text     "desc"
-    t.text     "customcode"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "slug"
-    t.string   "seo_description"
-  end
 
 end
