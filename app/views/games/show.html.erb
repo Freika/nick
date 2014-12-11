@@ -1,12 +1,19 @@
-<%= javascript_tag do %>
-  game = "<%=j @game.slug %>"
-<% end %>
-<% content_for :title do @game.title end %>
+<div class="index col-sm-offset-3 col-md-offset-3 col-lg-offset-2 col-sm-7 col-md-7 col-lg-8">
+  <%= javascript_tag do %>
+    game = "<%=j @game.slug %>"
+  <% end %>
+<h1>Генератор ников для <%= @game.name %></h1>
+<p>
+  <%= @game.content %>
+</p>
 
-<%= render "layouts/nickbox" %>
-<%= render "layouts/body_ads" %>
-<%= javascript_include_tag "games" %>
-
+<script>
+  $('.the-tabs li.'+game).addClass('active');
+  $('.tab-pane#'+game).addClass('active')
+</script>
+<% content_for :title, @game.title %>
+</div>
+<%= render 'layouts/body_ads' %>
 <% if current_user %>
   <%= link_to 'Редактировать страницу', edit_game_path(@game) %>
 <% end %>

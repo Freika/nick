@@ -1,25 +1,19 @@
-<h1>Listing games</h1>
+<div class="index col-sm-offset-3 col-md-offset-3 col-lg-offset-2 col-sm-7 col-md-7 col-lg-8">
+  <%= javascript_tag do %>
+    game = "<%=j @game.slug %>"
+  <% end %>
+<h1>Генератор ников для <%= @game.name %></h1>
+<p>
+  <%= @game.content %>
+</p>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<script>
+  $('.the-tabs li.wow').addClass('active');
+  $('.tab-pane#wow').addClass('active')
+</script>
+<% content_for :title, 'Онлайн генератор ников для игр, какой ник придумать? SAMP, Minecraft, WoW, Guild Wars' %>
 
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td><%= link_to game.name, game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Game', new_game_path %>
+</div>
+<% if current_user %>
+  <%= link_to 'Добавить игру', new_game_path %>
+<% end %>

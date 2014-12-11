@@ -116,6 +116,7 @@ ActiveRecord::Schema.define(version: 20141209152414) do
 
   create_table "statistics", force: true do |t|
     t.datetime "created_at"
+    t.string   "test"
     t.integer  "wow"
     t.integer  "gw"
     t.integer  "samp"

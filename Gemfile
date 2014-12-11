@@ -13,6 +13,8 @@ gem 'simple_form'
 group :development, :test do
   gem 'pry'
   gem 'rspec-rails', '~> 3.0'
+  gem 'capybara'
+  gem 'factory_girl_rails'
   gem 'quiet_assets'
   gem 'guard-rspec', require: false
   gem 'annotate'

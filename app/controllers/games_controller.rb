@@ -3,7 +3,7 @@ class GamesController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :create, :new, :destroy]
 
   def index
-    @games = Game.all
+    @game = Game.where(slug: 'wow').first
   end
 
   def show
