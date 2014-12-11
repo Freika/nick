@@ -1,0 +1,9 @@
+<%= simple_form_for game_races_path([@game, @race]) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :name %>
+  <%= f.input :slug %>
+  <%= f.input :content %>
+  <%= f.input :description %>
+
+  <%= f.button :submit, value: 'Сохранить' %>
+<% end %>
