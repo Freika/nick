@@ -1,5 +1,4 @@
 class RacesController < ApplicationController
-  before_action :set_race, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:edit, :update, :create, :new, :destroy]
 
   def index
@@ -21,38 +20,26 @@ class RacesController < ApplicationController
 
   def create
     @race = Race.new(race_params)
-
-    respond_to do |format|
-      if @race.save
-        format.html { redirect_to @race, notice: 'Race was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @race }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @race.errors, status: :unprocessable_entity }
-      end
+    if @race.save
+      redirect_to @race, notice: 'Раса создана'
+    else
+      render action: 'new'
     end
   end
 
   def update
     @race = set_race
-    respond_to do |format|
-      if @race.update(race_params)
-        format.html { redirect_to @race, notice: 'Race was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @race.errors, status: :unprocessable_entity }
-      end
+    if @race.update(race_params)
+      redirect_to @race, notice: 'Раса обновлена'
+    else
+      render action: 'edit'
     end
   end
 
   def destroy
     @race = set_race
     @race.destroy
-    respond_to do |format|
-      format.html { redirect_to races_url }
-      format.json { head :no_content }
-    end
+    redirect_to races_url
   end
 
   private

@@ -6,10 +6,10 @@ class StatisticsController < ApplicationController
   end
 
   def graph
-    @wows = Statistic.last.wow
-    @samps = Statistic.last.samp
-    @gws = Statistic.last.gw
-    @minecrafts = Statistic.last.minecraft
+    @wows = Statistic.sum(:wow)
+    @samps = Statistic.sum(:samp)
+    @gws = Statistic.sum(:gw)
+    @minecrafts = Statistic.sum(:minecraft)
     @total = @wows + @samps + @gws + @minecrafts
   end
 
