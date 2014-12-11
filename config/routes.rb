@@ -26,6 +26,7 @@ Nick::Application.routes.draw do
     get link, to: redirect('pages/this_is_not_cms')
   end
 
+  get 'gw2/human', to: redirect('gw2/human-of-tyria')
   #old routes
   get 'wow/orcs.php', to: redirect('wow/orc')
   get 'wow/trolls.php', to: redirect('wow/troll')
