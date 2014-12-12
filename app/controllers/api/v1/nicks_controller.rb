@@ -39,7 +39,7 @@ module API
 
       def minecraft
         if params[:race] == 'steve'
-          @nick = Nickname.generate_minecraft(params[:race], params[:sex])
+          @nick = Nickname.generate_minecraft(params[:race], 'male')
           render json: @nick, status: 200
         else
           render_500

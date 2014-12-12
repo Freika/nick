@@ -20,6 +20,10 @@
 $( document ).ready(function() {
   $('.the-tabs li').tooltip();
   jQuery(function($) {
+    if (race == 'man' || race == 'woman') {
+      race = 'steve'
+    };
+
     $('.thecontent').addClass(game + '-' + race + '-bg');
     $('.the-tabs li.'+game).addClass('active');
     $('.tab-pane#'+game).addClass('active')

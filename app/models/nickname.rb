@@ -84,8 +84,8 @@ class Nickname < ActiveRecord::Base
 
   def self.generate_minecraft(race, sex)
     # Lil cheat: minecraft 'syllables' have only male gender
-    name = get_syllable('minecraft', race, 'male', 'start', 'name')
-    surname = get_syllable('minecraft', race, 'male', 'start', 'surname')
+    name = get_syllable('minecraft', race, sex, 'start', 'name')
+    surname = get_syllable('minecraft', race, sex, 'start', 'surname')
 
     Statistic.update_weekly do
       s = Statistic.last.increment(:minecraft).increment(race.to_sym).increment(sex.to_sym)
