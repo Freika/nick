@@ -95,6 +95,17 @@ class Nickname < ActiveRecord::Base
     name = Nickname.create(name: "#{name.capitalize} #{surname.capitalize}")
   end
 
+  def self.generate_minecraft_skin(race, sex)
+    name = get_syllable('minecraft', race, sex, 'start', 'name')
+
+    Statistic.update_weekly do
+      s = Statistic.last.increment(:minecraft).increment(:male).increment(sex.to_sym)
+      s.save
+    end
+
+    name = Nickname.create(name: name)
+  end
+
   private
 
   def self.get_syllable(game, race, sex, position='start', namepart='name')

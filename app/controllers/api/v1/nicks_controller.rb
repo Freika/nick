@@ -39,7 +39,16 @@ module API
 
       def minecraft
         if params[:race] == 'steve'
-          @nick = Nickname.generate_minecraft(params[:race], params[:sex])
+          @nick = Nickname.generate_minecraft(params[:race], 'male')
+          render json: @nick, status: 200
+        else
+          render_500
+        end
+      end
+
+      def minecraft_skin
+        if params[:race] == 'player'
+          @nick = Nickname.generate_minecraft_skin(params[:race], 'male')
           render json: @nick, status: 200
         else
           render_500
@@ -49,9 +58,7 @@ module API
       private
 
       def check_gender
-        unless Nickname::SEX.include?(params[:sex])
-          render_500
-        end
+        render_500 unless Nickname::SEX.include?(params[:sex])
       end
 
       def render_500

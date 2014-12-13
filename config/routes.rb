@@ -8,10 +8,12 @@ Nick::Application.routes.draw do
       get 'nicks/gw', to: 'nicks#gw'
       get 'nicks/samp', to: 'nicks#samp'
       get 'nicks/minecraft', to: 'nicks#minecraft'
+      get 'nicks/minecraft_skin', to: 'nicks#minecraft_skin'
     end
   end
 
   get 'pages/this_is_not_cms'
+  get 'minecraft/skins', to: 'pages#skins'
   get 'statistics/graph'
   devise_for :users
 

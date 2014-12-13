@@ -179,12 +179,8 @@ header a {
 	border-radius: 10px;
 }
 
-.minecraft-man-bg {
+.minecraft-steve-bg {
 	background-image: image-url("minecraft-background-man.jpg");
-}
-
-.minecraft-woman-bg {
-	background-image: image-url("minecraft-background-woman.jpg");
 }
 
 .wow-orc-bg {
@@ -353,7 +349,21 @@ header a {
 	}
 }
 
-.about-race {
+.minecraft_skin {
+	padding: 10px;
+
+	a {
+		color: #fff!important;
+		margin: 6px;
+	}
+}
+
+.red-border {
+	border-color: red!important;
+	opacity: 1!important;
+}
+
+.about-race, .minecraft_skin {
 	min-height: 100px;
 	padding: 5px;
 	color: #adadad;
