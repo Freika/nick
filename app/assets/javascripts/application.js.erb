@@ -38,6 +38,20 @@ $( document ).ready(function() {
         success: function(json) {
           $('#yournameishere').html(json.name);
           $('#history').prepend(json.name+"<br>");
+        }
+      });
+
+    });
+
+
+    $('#get_nick').click( function () {
+      //для генерации скина
+      var sex = $(this).attr("name");
+      $.ajax({
+        url: '/api/v1/nicks/' + game + '.json?race=' + race + '&sex=' + sex,
+        success: function(json) {
+          $('#yournameishere').html(json.name);
+          $('#history').prepend(json.name+"<br>");
           $('#nick_download').attr('href', 'http://s3.amazonaws.com/MinecraftSkins/' + json.name + '.png')
           $("#player_skin").attr("src","http://mcapi.ca/skin/3d/" + json.name + "/");
 
@@ -45,6 +59,7 @@ $( document ).ready(function() {
       });
 
     });
+
   });
   var clip = new ZeroClipboard($("#yournameishere")) //Копирование ника в буфер обмена по клику на кнопку
   $('.nickbox').tooltip();
