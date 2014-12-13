@@ -1,2 +1,22 @@
-<% content_for :title do "Сайт сделан на Ruby on Rails" end %>
-<%= render 'layouts/nickbox' %>
+<% content_for :title do "Ники по скинам для Майнкрафт, генератор скинов по никам для Minecraft" end %>
+<%= render 'layouts/skin_nickbox' %>
+<%= render 'layouts/body_ads' %>
+<div class="col-md-4 about-race minecraft_skin">
+  <center><img src="http://mcapi.ca/skin/3d/Freikin/" id="player_skin"></center>
+  <center>
+    <a href="http://s3.amazonaws.com/MinecraftSkins/Freikin.png" class="btn btn-success" id="nick_download" target="_blank">Скачать скин</a>
+</center>
+</div>
+<div class="col-md-7 col-md-offset-1 about-race">
+  <h3>Ники по скинам для Майнкрафт</h3>
+  На Никшейкере вы можете выбрать ник со скином для Minecraft. Просто нажмите "Сгенерировать" и вы получите новый ник, а в окошке ниже увидите скин, которому он соответствует и ссылку на скачивание этого скина, если это вам нужно. Скины по никам - распространенный и удобный способ выбрать красивый и уникальный внешний вид для вашего персонажа в Minecraft без необходимости покупать игру. Просто подберите ник со скином, который вам нравится, зайдите с ним в Minecraft и ваш персонаж будет иметь этот скин.
+</div>
+
+
+<script>
+  race = 'player';
+  game = 'minecraft_skin';
+  $('.thecontent').addClass('minecraft-steve-bg');
+  $('.the-tabs li.minecraft').addClass('active');
+    $('.tab-pane#minecraft').addClass('active');
+</script>

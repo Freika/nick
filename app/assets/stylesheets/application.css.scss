@@ -349,7 +349,21 @@ header a {
 	}
 }
 
-.about-race {
+.minecraft_skin {
+	padding: 10px;
+
+	a {
+		color: #fff!important;
+		margin: 6px;
+	}
+}
+
+.red-border {
+	border-color: red!important;
+	opacity: 1!important;
+}
+
+.about-race, .minecraft_skin {
 	min-height: 100px;
 	padding: 5px;
 	color: #adadad;

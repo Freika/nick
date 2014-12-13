@@ -8,6 +8,7 @@ Nick::Application.routes.draw do
       get 'nicks/gw', to: 'nicks#gw'
       get 'nicks/samp', to: 'nicks#samp'
       get 'nicks/minecraft', to: 'nicks#minecraft'
+      get 'nicks/minecraft_skin', to: 'nicks#minecraft_skin'
     end
   end
 
