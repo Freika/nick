@@ -1,4 +1,4 @@
-require 'rollbar/rails'
+require 'rollbar/rails' if Rails.env.production?
 Rollbar.configure do |config|
   # Without configuration, Rollbar is enabled in all environments.
   # To disable in specific environments, set config.enabled=false.
@@ -49,4 +49,4 @@ Rollbar.configure do |config|
   # config.use_sidekiq
   # You can supply custom Sidekiq options:
   # config.use_sidekiq 'queue' => 'my_queue'
-end
+end if Rails.env.production?
