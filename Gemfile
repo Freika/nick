@@ -18,6 +18,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'guard-rspec', require: false
   gem 'annotate'
+  gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
 end
 
 gem 'uglifier', '>= 1.3.0'
@@ -33,6 +34,5 @@ gem 'seed_dump'
 group :production do
   gem 'newrelic_rpm'
   gem 'rollbar', '~> 1.0.0'
-  gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
   gem 'unicorn'
 end
