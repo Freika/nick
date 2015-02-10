@@ -36,25 +36,25 @@ describe 'Nickname generation API V1' do
 
   # minecraft nicks
 
-  it 'have all proper attributes' do
-    get '/api/v1/nicks/minecraft.json?race=steve&sex=male'
-    json = JSON.parse(response.body)
-    expect(json.count).to eq(3)
-  end
+  # it 'have all proper attributes' do
+  #   get '/api/v1/nicks/minecraft.json?race=steve&sex=male'
+  #   json = JSON.parse(response.body)
+  #   expect(json.count).to eq(3)
+  # end
 
-  it 'generates minecraft nick' do
-    get '/api/v1/nicks/minecraft.json?race=steve&sex=male'
-    expect(response).to be_success
-  end
+  # it 'generates minecraft nick' do
+  #   get '/api/v1/nicks/minecraft.json?race=steve&sex=male'
+  #   expect(response).to be_success
+  # end
 
-  it 'generates minecraft nick' do
-    get '/api/v1/nicks/minecraft.json?race=steve&sex=female'
-    expect(response).to be_success
-  end
+  # it 'generates minecraft nick' do
+  #   get '/api/v1/nicks/minecraft.json?race=steve&sex=female'
+  #   expect(response).to be_success
+  # end
 
-  it 'fails with wrong parameters' do
-    get "/api/v1/nicks/minecraft.json?race=steve&sex=shemale"
-    expect(response.status).to eq(500)
-  end
+  # it 'fails with wrong parameters' do
+  #   get "/api/v1/nicks/minecraft.json?race=steve&sex=shemale"
+  #   expect(response.status).to eq(500)
+  # end
 
 end
