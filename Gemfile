@@ -9,6 +9,7 @@ gem 'sass-rails', '~> 4.0.2'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'zeroclipboard-rails'
 gem 'simple_form'
+gem 'slim-rails'
 
 group :development, :test do
   gem 'pry'
