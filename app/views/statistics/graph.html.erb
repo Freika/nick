@@ -11,11 +11,11 @@
       <th>Всего</th>
     </tr>
     <tr>
-      <td><%= number_with_delimiter(@wows, delimiter: " ") %></td>
-      <td><%= number_with_delimiter(@gws, delimiter: " ") %></td>
-      <td><%= number_with_delimiter(@samps, delimiter: " ") %></td>
-      <td><%= number_with_delimiter(@minecrafts, delimiter: " ") %></td>
-      <td><%= number_with_delimiter(@total, delimiter: " ") %></td>
+      <td><%= delimited_numbers @wows %></td>
+      <td><%= delimited_numbers @gws %></td>
+      <td><%= delimited_numbers @samps %></td>
+      <td><%= delimited_numbers @minecrafts %></td>
+      <td><%= delimited_numbers @total %></td>
     </tr>
   </table>
 </div>
