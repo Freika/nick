@@ -25,7 +25,7 @@
 }
 
 body {
-	background-image: image-url("background.jpg")!important;
+	background-image: image-url('background.jpg')!important;
 	#background: #000!important;
 	color: white;
 	-webkit-background-size: cover!important;
@@ -179,108 +179,112 @@ header a {
 	border-radius: 10px;
 }
 
+.dota-bg {
+	background-image: image-url('dota-bg.jpg');
+}
+
 .minecraft-steve-bg {
-	background-image: image-url("minecraft-background-man.jpg");
+	background-image: image-url('minecraft-background-man.jpg');
 }
 
 .wow-orc-bg {
-	background-image: image-url("wow-background-orc.jpg");
+	background-image: image-url('wow-background-orc.jpg');
 }
 
 .wow-troll-bg {
-	background-image: image-url("wow-background-troll.jpg");
+	background-image: image-url('wow-background-troll.jpg');
 }
 
 .wow-tauren-bg {
-	background-image: image-url("wow-background-tauren.jpg");
+	background-image: image-url('wow-background-tauren.jpg');
 }
 
 .wow-undead-bg {
-	background-image: image-url("wow-background-undead.jpg");
+	background-image: image-url('wow-background-undead.jpg');
 }
 
 .wow-bloodelf-bg {
-	background-image: image-url("wow-background-bloodelf.jpg");
+	background-image: image-url('wow-background-bloodelf.jpg');
 }
 
 .wow-goblin-bg {
-	background-image: image-url("wow-background-goblin.jpg");
+	background-image: image-url('wow-background-goblin.jpg');
 }
 
 .wow-pandaren-bg {
-	background-image: image-url("wow-background-pandaren.jpg");
+	background-image: image-url('wow-background-pandaren.jpg');
 }
 
 .wow-human-bg {
-	background-image: image-url("wow-background-human.jpg");
+	background-image: image-url('wow-background-human.jpg');
 }
 
 .wow-dwarf-bg {
-	background-image: image-url("wow-background-dwarf.jpg");
+	background-image: image-url('wow-background-dwarf.jpg');
 }
 
 .wow-gnome-bg {
-	background-image: image-url("wow-background-gnome.jpg");
+	background-image: image-url('wow-background-gnome.jpg');
 }
 
 .wow-nightelf-bg {
-	background-image: image-url("wow-background-nightelf.jpg");
+	background-image: image-url('wow-background-nightelf.jpg');
 }
 
 .wow-draenei-bg {
-	background-image: image-url("wow-background-draenei.jpg");
+	background-image: image-url('wow-background-draenei.jpg');
 }
 
 .wow-worgen-bg {
-	background-image: image-url("wow-background-worgen.jpg");
+	background-image: image-url('wow-background-worgen.jpg');
 }
 
 .gw2-asura-bg {
-	background-image: image-url("gw2-background-asura.jpg");
+	background-image: image-url('gw2-background-asura.jpg');
 }
 
 .gw2-human-of-tyria-bg {
-	background-image: image-url("gw2-background-human-of-tyria.jpg");
+	background-image: image-url('gw2-background-human-of-tyria.jpg');
 }
 
 .gw2-norn-bg {
-	background-image: image-url("gw2-background-norn.jpg");
+	background-image: image-url('gw2-background-norn.jpg');
 }
 
 .gw2-sylvari-bg {
-	background-image: image-url("gw2-background-sylvari.jpg");
+	background-image: image-url('gw2-background-sylvari.jpg');
 }
 
 .gw2-charr-bg {
-	background-image: image-url("gw2-background-charr.jpg");
+	background-image: image-url('gw2-background-charr.jpg');
 }
 
 .samp-english-bg {
-	background-image: image-url("samp-background-english.jpg");
+	background-image: image-url('samp-background-english.jpg');
 }
 
 .samp-german-bg {
-	background-image: image-url("samp-background-german.jpg");
+	background-image: image-url('samp-background-german.jpg');
 }
 
 .samp-italian-bg {
-	background-image: image-url("samp-background-italian.jpg");
+	background-image: image-url('samp-background-italian.jpg');
 }
 
 .samp-french-bg {
-	background-image: image-url("samp-background-french.jpg");
+	background-image: image-url('samp-background-french.jpg');
 }
 
 .samp-swedish-bg {
-	background-image: image-url("samp-background-swedish.jpg");
+	background-image: image-url('samp-background-swedish.jpg');
 }
 
 .samp-danish-bg {
-	background-image: image-url("samp-background-danish.jpg");
+	background-image: image-url('samp-background-danish.jpg');
 }
 
 .samp-spanish-bg {
-	background-image: image-url("samp-background-spanish.jpg");
+	background-image: image-url('samp-background-spanish.jpg');
 }
 
 .thecontent {
@@ -433,7 +437,8 @@ header a {
 .tab-pane ul.wow li a img,
 .tab-pane ul.samp li a img,
 .tab-pane ul.minecraft li a img,
-.tab-pane ul.gw2 li a img{
+.tab-pane ul.dota li a img,
+.tab-pane ul.gw2 li a img {
 	padding: 5px;
 	opacity: .7;
 	width: 52px;
@@ -491,7 +496,7 @@ a.alliance {
 }
 
 .the-tabs li.wow a {
-	background-image: image-url("games64.png");
+	background-image: image-url('games64.png');
 	width: 64px;
 	height: 64px;
 	display: block;
@@ -499,7 +504,7 @@ a.alliance {
 }
 
 .the-tabs li.gw2 a {
-	background-image: image-url("games64.png");
+	background-image: image-url('games64.png');
 	width: 64px;
 	height: 64px;
 	display: block;
@@ -507,7 +512,7 @@ a.alliance {
 }
 
 .the-tabs li.samp a {
-	background-image: image-url("games64.png");
+	background-image: image-url('games64.png');
 	width: 64px;
 	height: 64px;
 	display: block;
@@ -515,10 +520,19 @@ a.alliance {
 }
 
 .the-tabs li.minecraft a {
-	background-image: image-url("minecraft.png");
+	background-image: image-url('minecraft.png');
 	width: 64px;
 	height: 64px;
 	display: block;
+}
+
+.the-tabs li.dota a {
+	background-image: image-url('dota.jpg');
+	width: 64px;
+	height: 64px;
+	display: block;
+	background-size: cover;
+	border-radius: 9999px;
 }
 
 .tabs-left > .the-tabs {
