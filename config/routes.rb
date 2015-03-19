@@ -9,11 +9,13 @@ Nick::Application.routes.draw do
       get 'nicks/samp', to: 'nicks#samp'
       get 'nicks/minecraft', to: 'nicks#minecraft'
       get 'nicks/minecraft_skin', to: 'nicks#minecraft_skin'
+      get 'nicks/dota', to: 'nicks#dota'
     end
   end
 
   get 'pages/this_is_not_cms'
   get 'minecraft/skins', to: 'pages#skins'
+  get 'dota/generator', to: 'pages#dota'
   get 'statistics/graph'
   devise_for :users
 
@@ -28,8 +30,8 @@ Nick::Application.routes.draw do
     get link, to: redirect('pages/this_is_not_cms')
   end
 
+  # legacy routes
   get 'gw2/human', to: redirect('gw2/human-of-tyria')
-  #old routes
   get 'wow/orcs.php', to: redirect('wow/orc')
   get 'wow/trolls.php', to: redirect('wow/troll')
   get 'wow/taurens.php', to: redirect('wow/tauren')

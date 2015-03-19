@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150129073145) do
+ActiveRecord::Schema.define(version: 20150319153049) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(version: 20150129073145) do
     t.integer  "steve"
     t.integer  "male"
     t.integer  "female"
+    t.integer  "dota"
   end
 
   create_table "syllables", force: true do |t|

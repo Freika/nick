@@ -97,6 +97,17 @@ class Nickname < ActiveRecord::Base
     name = Nickname.create(name: name)
   end
 
+  def self.generate_dota(race, sex)
+    name = get_syllable('dota', race, sex, 'start', 'name')
+
+    Statistic.update_weekly do
+      s = Statistic.last.increment(:dota).increment(:male).increment(sex.to_sym)
+      s.save
+    end
+
+    name = Nickname.create(name: name)
+  end
+
   private
 
   def self.get_syllable(game, race, sex, position='start', namepart='name')
