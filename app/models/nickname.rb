@@ -1,5 +1,4 @@
 class Nickname < ActiveRecord::Base
-
   WOW_RACES = %w(human gnome dwarf pandaren draenei worgen nightelf orc troll tauren undead bloodelf goblin).freeze
   GW_RACES = %w(human charr asura norn sylvari).freeze
   SAMP_RACES = %w(english german french italian danish swedish spanish).freeze

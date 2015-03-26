@@ -1,12 +1,12 @@
 class GamesController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update, :create, :new, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_game, only: [:show, :edit, :update, :destroy]
 
   def index
     @game = Game.where(slug: 'wow').first
   end
 
   def show
-    @game = set_game
   end
 
   def new
@@ -14,7 +14,6 @@ class GamesController < ApplicationController
   end
 
   def edit
-    @game = set_game
   end
 
   def create
@@ -27,7 +26,6 @@ class GamesController < ApplicationController
   end
 
   def update
-    @game = set_game
     if @game.update(game_params)
       redirect_to @game, notice: 'Игра обновлена'
     else
@@ -36,17 +34,17 @@ class GamesController < ApplicationController
   end
 
   def destroy
-    @game = set_game
     @game.destroy
     redirect_to games_url
   end
 
   private
-    def set_game
-      @game = Game.friendly.find(params[:id])
-    end
 
-    def game_params
-      params.require(:game).permit(:title, :slug, :content, :description, :name)
-    end
+  def set_game
+    @game = Game.friendly.find(params[:id])
+  end
+
+  def game_params
+    params.require(:game).permit(:title, :slug, :content, :description, :name)
+  end
 end

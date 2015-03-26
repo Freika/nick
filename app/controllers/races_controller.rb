@@ -1,12 +1,12 @@
 class RacesController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update, :create, :new, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_race, only: [:show, :edit, :update, :destroy]
 
   def index
     @races = Race.all
   end
 
   def show
-    @race = set_race
     @game = @race.game
   end
 
@@ -15,7 +15,6 @@ class RacesController < ApplicationController
   end
 
   def edit
-    @race = set_race
   end
 
   def create
@@ -28,7 +27,6 @@ class RacesController < ApplicationController
   end
 
   def update
-    @race = set_race
     if @race.update(race_params)
       redirect_to @race, notice: 'Раса обновлена'
     else
@@ -37,17 +35,17 @@ class RacesController < ApplicationController
   end
 
   def destroy
-    @race = set_race
     @race.destroy
     redirect_to races_url
   end
 
   private
-    def set_race
-      @race = Race.friendly.find(params[:id])
-    end
 
-    def race_params
-      params.require(:race).permit(:title, :slug, :content, :description, :name)
-    end
+  def set_race
+    @race = Race.friendly.find(params[:id])
+  end
+
+  def race_params
+    params.require(:race).permit(:title, :slug, :content, :description, :name)
+  end
 end
