@@ -284,7 +284,7 @@ header a {
 }
 
 .wide-center {
-  margin: 10px 0;
+  bottom: 0px;
 }
 
 .nickbox {
@@ -292,7 +292,7 @@ header a {
   height: 120px;
   display: block;
   background-color: rgba(0, 0, 0, 0.5);
-  margin: 10px 0 0 10px;
+  margin: 10px 0;
   text-align: center;
   color: #dedede;
 
@@ -350,13 +350,14 @@ header a {
 }
 
 .about-race, .minecraft_skin {
-  min-height: 100px;
+  height: 280px;
   padding: 5px;
   color: #adadad;
   font-size: 14px;
   background: rgba(0, 0, 0, 0.6);
-  height: auto;
   border: 1px solid black;
+  display: block;
+  margin: 10px 0;
 
   h1 {
     font-size: 20px;
@@ -365,9 +366,6 @@ header a {
   }
 }
 
-.about-race {
-  margin-bottom: 60px;
-}
 
 
 /* custom inclusion of left tab */
