@@ -4,10 +4,10 @@
 <% end %>
 <% content_for :title do @race.title end %>
 
-<%= render 'layouts/above_nickbox_ads' %>
 <%= render "layouts/nickbox" %>
-<%= render "layouts/body_ads" %>
+<%= render 'layouts/above_nickbox_ads' %>
 <%= render "races/about", race: @race %>
+<%= render "layouts/body_ads" %>
 
 <% if current_user %>
   <%= link_to 'Редактировать', edit_game_race_path(@game, @race) %>
