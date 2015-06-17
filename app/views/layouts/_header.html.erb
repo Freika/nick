@@ -1,11 +1,13 @@
-<header>
-  <div class="col-md-3 logo">
-    <%= link_to(image_tag("logo_1.png"), root_path ) %>
-  </div>
-  <div class="col-md-5 thereisnospoon">
-  </div>
-  <div class="col-md-4 text-right highgarden">
-    <%= link_to 'График', statistics_graph_path %>
-    <%= link_to "Статистика", statistics_path %>
-  </div>
-</header>
+<% cache do %>
+  <header>
+    <div class="col-md-3 logo">
+      <%= link_to(image_tag("logo_1.png"), root_path ) %>
+    </div>
+    <div class="col-md-5 thereisnospoon">
+    </div>
+    <div class="col-md-4 text-right highgarden">
+      <%= link_to 'График', statistics_graph_path %>
+      <%= link_to "Статистика", statistics_path %>
+    </div>
+  </header>
+<% end %>

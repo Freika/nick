@@ -4,9 +4,16 @@
 <% end %>
 <% content_for :title do @race.title end %>
 
-<%= render "layouts/nickbox" %>
-<%= render 'layouts/above_nickbox_ads' %>
-<%= render "races/about", race: @race %>
+<% cache do %>
+  <%= render "layouts/nickbox" %>
+<% end %>
+
+  <%= render 'layouts/above_nickbox_ads' %>
+
+<% cache do %>
+  <%= render "races/about", race: @race %>
+<% end %>
+
 <%= render "layouts/body_ads" %>
 
 <% if current_user %>
