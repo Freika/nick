@@ -19,8 +19,13 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'guard-rspec', require: false
   gem 'annotate'
-  gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
+  # gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
 end
+  gem 'capistrano', '~> 3.4.0'
+  gem 'capistrano-bundler', '~> 1.1.2'
+  gem 'capistrano-rails', '~> 1.1.1'
+
+  gem 'capistrano-rvm', github: "capistrano/rvm"
 
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -37,3 +42,5 @@ group :production do
   gem 'rollbar', '~> 1.0.0'
   gem 'unicorn'
 end
+
+
