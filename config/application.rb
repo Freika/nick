@@ -7,6 +7,6 @@ module Nick
     config.time_zone = 'Novosibirsk'
     config.assets.precompile += ['jquery.js']
     config.cache_expires_in = 24*60*60
-    config.force_ssl = true if Rails.env.production?
+    # config.force_ssl = true if Rails.env.production?
   end
 end
