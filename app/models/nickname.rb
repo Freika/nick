@@ -1,6 +1,6 @@
 class Nickname < ActiveRecord::Base
   WOW_RACES = %w(human gnome dwarf pandaren draenei worgen nightelf orc troll tauren undead bloodelf goblin).freeze
-  GW_RACES = %w(human charr asura norn sylvari).freeze
+  GW_RACES = %w(human-of-tyria charr asura norn sylvari).freeze
   SAMP_RACES = %w(english german french italian danish swedish spanish).freeze
   SEX = %w(male female).freeze
 
@@ -19,14 +19,14 @@ class Nickname < ActiveRecord::Base
   def self.generate_gw(race, sex)
     # only charr, human and norn (because of names' length)
     name_start = get_syllable('gw2', race, sex, 'start', 'name')
-    name_mid =   get_syllable('gw2', race, sex, 'middle', 'name')
-    name_fin =   get_syllable('gw2', race, sex, 'end', 'name')
+    name_mid   = get_syllable('gw2', race, sex, 'middle', 'name')
+    name_fin   = get_syllable('gw2', race, sex, 'end', 'name')
 
     surname_start = get_syllable('gw2', race, 'male', 'start', 'surname')
-    surname_fin =   get_syllable('gw2', race, 'male', 'end', 'surname')
+    surname_fin   = get_syllable('gw2', race, 'male', 'end', 'surname')
     # game: 'gw' or 'gw2' ?
     Statistic.update_weekly do
-      race = 'gw_human' if race == 'human'
+      race = 'gw_human' if race == 'human-of-tyria'
       s = Statistic.last.increment(:gw).increment(race.to_sym).increment(sex.to_sym)
       s.save
     end
@@ -111,6 +111,7 @@ class Nickname < ActiveRecord::Base
 
   def self.get_syllable(game, race, sex, position='start', namepart='name')
     sex = 'male' if namepart == 'surname'
+    race = 'human' if game == 'gw2' && race == 'human-of-tyria'
     Syllable.where(game: game, race: race, sex: sex, position: position, namepart: namepart).pluck(:syllable).sample
   end
 end
