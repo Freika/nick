@@ -21,11 +21,11 @@ group :development, :test do
   gem 'annotate'
   # gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
 end
-  gem 'capistrano', '~> 3.4.0'
-  gem 'capistrano-bundler', '~> 1.1.2'
-  gem 'capistrano-rails', '~> 1.1.1'
 
-  gem 'capistrano-rvm', github: "capistrano/rvm"
+gem 'capistrano', '~> 3.4.0'
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.1'
+gem 'capistrano-rvm', github: "capistrano/rvm"
 
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -41,6 +41,8 @@ group :production do
   gem 'newrelic_rpm'
   gem 'rollbar', '~> 1.0.0'
   gem 'unicorn'
+  gem 'syslogger', '~> 1.6.0'
+  gem 'lograge', '~> 0.3.1'
 end
 
 
