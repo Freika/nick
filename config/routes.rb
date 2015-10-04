@@ -62,5 +62,5 @@ Nick::Application.routes.draw do
     end
   end
 
-  get '*path', to: redirect {|params| "/#{I18n.default_locale}/#{CGI::unescape(params[:path])}" }, constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+  get '*path', to: redirect(status: 302) {|params| "/#{I18n.default_locale}/#{CGI::unescape(params[:path])}"}, constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
 end
