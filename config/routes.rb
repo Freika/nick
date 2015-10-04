@@ -60,7 +60,9 @@ Nick::Application.routes.draw do
     resources :games, path: '', only: :show do
       resources :races, path: '', only: :show
     end
-
-
   end
+
+  get '*path', to: redirect {|params| "/#{I18n.default_locale}/#{CGI::unescape(params[:path])}" }, constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+  # get "/*path", to: redirect("/#{I18n.default_locale}/%{path}", status: 302)
+  #, constraints: {path: /(?!(#{I18n.available_locales.join("|")})\/).*/}, format: false
 end
