@@ -12,5 +12,6 @@ en:
       name: Name
       generate_name: Generate
       get_nick: Get nick
+      click_to_copy: 'Click to copy'
     sidebar:
       history: History
