@@ -8,5 +8,9 @@ en:
       female: Female
       name: Name
       generate_name: Generate name
+    skin_nickbox:
+      name: Name
+      generate_name: Generate
+      get_nick: Get nick
     sidebar:
       history: History

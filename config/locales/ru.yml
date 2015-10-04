@@ -8,5 +8,10 @@ ru:
       female: Женское
       name: Имя
       generate_name: Придумать имя
+    skin_nickbox:
+      name: Имя
+      generate_name: Сгенерировать
+      get_nick: Получить ник
+
     sidebar:
       history: История
