@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'Nickname generation API V1' do
 
-  gw = { name: 'gw', races: %w(human charr norn sylvari asura) }
+  gw = { name: 'gw', races: %w(human-of-tyria charr norn sylvari asura) }
   wow = { name: 'wow', races: %w(human gnome dwarf draenei worgen pandaren
     nightelf orc troll tauren bloodelf goblin undead) }
   samp = { name: 'samp', races: %w(english german french danish spanish swedish italian) }
