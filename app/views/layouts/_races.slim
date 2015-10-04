@@ -3,39 +3,39 @@
     #wow.tab-pane class=('active' if params[:game_id] == 'wow')
       ul.wow
        li
-         = link_to image_tag('wow-human.png'), "/#{I18n.locale}/wow/human", title: 'Человек', class: 'alliance'
-         = link_to image_tag('wow-orc.png'), "/#{I18n.locale}/wow/orc", title: 'Орк', class: 'horde'
+         = link_to image_tag('wow-human.png'), game_race_path('wow', 'human'), title: 'Человек', class: 'alliance'
+         = link_to image_tag('wow-orc.png'), game_race_path('wow', 'orc'), title: 'Орк', class: 'horde'
        li
-         = link_to image_tag('wow-gnome.png'), "/#{I18n.locale}/wow/gnome", title: 'Гном', class: 'alliance'
-         = link_to image_tag('wow-troll.png'), "/#{I18n.locale}/wow/troll", title: 'Тролль', class: 'horde'
+         = link_to image_tag('wow-gnome.png'), game_race_path('wow', 'gnome'), title: 'Гном', class: 'alliance'
+         = link_to image_tag('wow-troll.png'), game_race_path('wow', 'troll'), title: 'Тролль', class: 'horde'
        li
-         = link_to image_tag('wow-dwarf.png'), "/#{I18n.locale}/wow/dwarf", title: 'Дворф', class: 'alliance'
-         = link_to image_tag('wow-tauren.png'), "/#{I18n.locale}/wow/tauren", title: 'Таурен', class: 'horde'
+         = link_to image_tag('wow-dwarf.png'), game_race_path('wow', 'dwarf'), title: 'Дворф', class: 'alliance'
+         = link_to image_tag('wow-tauren.png'), game_race_path('wow', 'tauren'), title: 'Таурен', class: 'horde'
        li
-         = link_to image_tag('wow-nightelf.png'), "/#{I18n.locale}/wow/nightelf", title: 'Ночной эльф' , class: 'alliance'
-         = link_to image_tag('wow-undead.png'), "/#{I18n.locale}/wow/undead", title: 'Нежить', class: 'horde'
+         = link_to image_tag('wow-nightelf.png'), game_race_path('wow', 'nightelf'), title: 'Ночной эльф' , class: 'alliance'
+         = link_to image_tag('wow-undead.png'), game_race_path('wow', 'undead'), title: 'Нежить', class: 'horde'
        li
-         = link_to image_tag('wow-draenei.png'), "/#{I18n.locale}/wow/draenei", title: 'Дреней', class: 'alliance'
-         = link_to image_tag('wow-bloodelf.png'), "/#{I18n.locale}/wow/bloodelf", title: 'Блад эльф (кровавый эльф' , class: 'horde'
+         = link_to image_tag('wow-draenei.png'), game_race_path('wow', 'draenei'), title: 'Дреней', class: 'alliance'
+         = link_to image_tag('wow-bloodelf.png'), game_race_path('wow', 'bloodelf'), title: 'Блад эльф (кровавый эльф' , class: 'horde'
        li
-         = link_to image_tag('wow-worgen.png'), "/#{I18n.locale}/wow/worgen", title: 'Ворген', class: 'alliance'
-         = link_to image_tag('wow-goblin.png'), "/#{I18n.locale}/wow/goblin", title: 'Гоблин', class: 'horde'
+         = link_to image_tag('wow-worgen.png'), game_race_path('wow', 'worgen'), title: 'Ворген', class: 'alliance'
+         = link_to image_tag('wow-goblin.png'), game_race_path('wow', 'goblin'), title: 'Гоблин', class: 'horde'
        li
-         = link_to image_tag('wow-pandaren.png'), "/#{I18n.locale}/wow/pandaren", title: 'Пандарен', class: 'alliance'
-         = link_to image_tag('wow-pandaren.png'), "/#{I18n.locale}/wow/pandaren", title: 'Пандарен', class: 'horde'
+         = link_to image_tag('wow-pandaren.png'), game_race_path('wow', 'pandaren'), title: 'Пандарен', class: 'alliance'
+         = link_to image_tag('wow-pandaren.png'), game_race_path('wow', 'pandaren'), title: 'Пандарен', class: 'horde'
     #gw2.tab-pane class=('active' if params[:game_id] == 'gw2')
       ul.gw2
         - @gw2_races.each do |race|
           li
-            = link_to image_tag("gw2-#{race.slug}.png"), game_race_path(I18n.locale, 'gw2', race.slug), title:  race.name
+            = link_to image_tag("gw2-#{race.slug}.png"), game_race_path('gw2', race.slug), title:  race.name
     #samp.tab-pane class=('active' if params[:game_id] == 'samp')
        ul.samp
          - @samp_races.each do |race|
            li
-            = link_to image_tag("samp-#{race.slug}.png"), game_race_path(I18n.locale, 'samp', race.slug), title: race.name
+            = link_to image_tag("samp-#{race.slug}.png"), game_race_path('samp', race.slug), title: race.name
     #minecraft.tab-pane class=('active' if params[:game_id] == 'minecraft')
       ul.minecraft
         - @minecraft_races.each do |race|
           li
-            = link_to image_tag("minecraft-#{race.slug}.jpg"), game_race_path(I18n.locale, 'minecraft', race.slug), title: race.name
+            = link_to image_tag("minecraft-#{race.slug}.jpg"), game_race_path('minecraft', race.slug), title: race.name
         li = link_to image_tag('steve.png', class: 'red-border'), minecraft_skins_path(I18n.locale), title: 'Ники для Майнкрафт по скинам'

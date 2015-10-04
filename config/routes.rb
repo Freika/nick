@@ -14,6 +14,12 @@ Nick::Application.routes.draw do
   end
 
 
+  links = %w(admin wp-admin wp-admin.php adminstrator wp-login wp-login.php admin.php)
+  links.each do |link|
+    get link, to: redirect('pages/this_is_not_cms')
+  end
+  get 'pages/this_is_not_cms'
+
   # legacy routes
   get 'gw2/human',            to: redirect('ru/gw2/human-of-tyria')
   get '/wow/orcs.php',        to: redirect('ru/wow/orc')
@@ -45,21 +51,15 @@ Nick::Application.routes.draw do
   get 'samp/swedish.php',     to: redirect('ru/samp/swedish')
 
   scope '/:locale', locale: /en|ru/ do
-    get 'pages/this_is_not_cms'
     get 'minecraft/skins', to: 'pages#skins'
     get 'dota/generator', to: 'pages#dota'
     get 'statistics/graph'
-    devise_for :users
 
     resources :statistics, only: [:index]
-    resources :games, path: '' do
-      resources :races, path: '', except: :index
+    resources :games, path: '', only: :show do
+      resources :races, path: '', only: :show
     end
 
 
-    links = %w(admin wp-admin wp-admin.php adminstrator wp-login wp-login.php admin.php)
-    links.each do |link|
-      get link, to: redirect('pages/this_is_not_cms')
-    end
   end
 end
