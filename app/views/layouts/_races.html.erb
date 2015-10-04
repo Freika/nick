@@ -3,25 +3,25 @@
     <div class="tab-pane <%= 'active' if params[:game_id] == 'wow' %>" id="wow">
       <ul class="wow">
        <li>
-         <%= link_to(image_tag("wow-human.png", alt: "Человек"), "/wow/human", class: "alliance") %><%= link_to(image_tag("wow-orc.png", alt: "Орк"), "/wow/orc", class: "horde") %>
+         <%= link_to image_tag("wow-human.png", alt: "Человек"), "/#{I18n.locale}/wow/human", class: "alliance" %><%= link_to image_tag("wow-orc.png", alt: "Орк"), "/#{I18n.locale}/wow/orc", class: "horde" %>
        </li>
        <li>
-         <%= link_to(image_tag("wow-gnome.png", alt: "Гном"), "/wow/gnome", class: "alliance") %><%= link_to(image_tag("wow-troll.png", alt: "Тролль"), "/wow/troll", class: "horde") %>
+         <%= link_to image_tag("wow-gnome.png", alt: "Гном"), "/#{I18n.locale}/wow/gnome", class: "alliance" %><%= link_to image_tag("wow-troll.png", alt: "Тролль"), "/#{I18n.locale}/wow/troll", class: "horde" %>
        </li>
        <li>
-         <%= link_to(image_tag("wow-dwarf.png", alt: "Дворф"), "/wow/dwarf", class: "alliance") %><%= link_to(image_tag("wow-tauren.png", alt: "Таурен"), "/wow/tauren", class: "horde") %>
+         <%= link_to image_tag("wow-dwarf.png", alt: "Дворф"), "/#{I18n.locale}/wow/dwarf", class: "alliance" %><%= link_to image_tag("wow-tauren.png", alt: "Таурен"), "/#{I18n.locale}/wow/tauren", class: "horde" %>
        </li>
        <li>
-         <%= link_to(image_tag("wow-nightelf.png", alt: "Ночной эльф"), "/wow/nightelf", class: "alliance") %><%= link_to(image_tag("wow-undead.png", alt: "Нежить"), "/wow/undead", class: "horde") %>
+         <%= link_to image_tag("wow-nightelf.png", alt: "Ночной эльф"), "/#{I18n.locale}/wow/nightelf", class: "alliance" %><%= link_to image_tag("wow-undead.png", alt: "Нежить"), "/#{I18n.locale}/wow/undead", class: "horde" %>
        </li>
        <li>
-         <%= link_to(image_tag("wow-draenei.png", alt: "Дреней"), "/wow/draenei", class: "alliance") %><%= link_to(image_tag("wow-bloodelf.png", alt: "Блад эльф"), "/wow/bloodelf", class: "horde") %>
+         <%= link_to image_tag("wow-draenei.png", alt: "Дреней"), "/#{I18n.locale}/wow/draenei", class: "alliance" %><%= link_to image_tag("wow-bloodelf.png", alt: "Блад эльф"), "/#{I18n.locale}/wow/bloodelf", class: "horde" %>
        </li>
        <li>
-         <%= link_to(image_tag("wow-worgen.png", alt: "Ворген"), "/wow/worgen", class: "alliance") %><%= link_to(image_tag("wow-goblin.png", alt: "Гоблин"), "/wow/goblin", class: "horde") %>
+         <%= link_to image_tag("wow-worgen.png", alt: "Ворген"), "/#{I18n.locale}/wow/worgen", class: "alliance" %><%= link_to image_tag("wow-goblin.png", alt: "Гоблин"), "/#{I18n.locale}/wow/goblin", class: "horde" %>
        </li>
        <li>
-         <%= link_to(image_tag("wow-pandaren.png", alt: "Пандарен"), "/wow/pandaren", class: "alliance") %><%= link_to(image_tag("wow-pandaren.png", alt: "Пандарен"), "/wow/pandaren", class: "horde") %>
+         <%= link_to image_tag("wow-pandaren.png", alt: "Пандарен"), "/#{I18n.locale}/wow/pandaren", class: "alliance" %><%= link_to image_tag("wow-pandaren.png", alt: "Пандарен"), "/#{I18n.locale}/wow/pandaren", class: "horde" %>
        </li>
       </ul>
     </div>
@@ -29,7 +29,7 @@
       <ul class="gw2">
         <% Race.where(game: Game.find_by(slug: 'gw2')).each do |race| %>
           <li>
-            <%= link_to(image_tag("gw2-#{race.slug}.png", alt: race.name), "/gw2/#{race.slug}") %>
+            <%= link_to image_tag("gw2-#{race.slug}.png", alt: race.name), game_race_path(I18n.locale, 'gw2', race.slug) %>
           </li>
         <% end %>
       </ul>
@@ -38,7 +38,7 @@
        <ul class="samp">
          <% Race.where(game: Game.find_by(slug: 'samp')).each do |race| %>
            <li>
-            <%= link_to(image_tag("samp-#{race.slug}.png", alt: race.name), "/samp/#{race.slug}") %>
+            <%= link_to image_tag("samp-#{race.slug}.png", alt: race.name), game_race_path(I18n.locale, 'samp', race.slug) %>
            </li>
          <% end %>
        </ul>
@@ -47,10 +47,11 @@
       <ul class="minecraft">
         <% Race.where(game: Game.find_by(slug: 'minecraft')).each do |race| %>
           <li>
-            <%= link_to(image_tag("minecraft-#{race.slug}.jpg", alt: race.name), "/minecraft/#{race.slug}") %>
+            <%= link_to image_tag("minecraft-#{race.slug}.jpg"), game_race_path(I18n.locale, 'minecraft', race.slug), title: race.name %>
           </li>
         <% end %>
-        <li><a href="/minecraft/skins"><img alt="Ники для Майнкрафт по скинам" src="/assets/steve.png" class="red-border"></a></li>
+        <li><%= link_to image_tag('steve.png', class: 'red-border'), minecraft_skins_path(I18n.locale), title: 'Ники для Майнкрафт по скинам' %>
+        </li>
       </ul>
     </div>
   </div>
