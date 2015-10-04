@@ -1,5 +1,12 @@
 en:
   layouts:
     header:
-      graph: 'Graph'
-      statistics: 'Statistics'
+      graph: Graph
+      statistics: Statistics
+    nickbox:
+      male: Male
+      female: Female
+      name: Name
+      generate_name: Generate name
+    sidebar:
+      history: History

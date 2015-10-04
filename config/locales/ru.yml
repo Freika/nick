@@ -1,5 +1,12 @@
 ru:
   layouts:
     header:
-      graph: 'График'
-      statistics: 'Статистика'
+      graph: График
+      statistics: Статистика
+    nickbox:
+      male: Мужское
+      female: Женское
+      name: Имя
+      generate_name: Придумать имя
+    sidebar:
+      history: История
