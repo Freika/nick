@@ -1,0 +1,5 @@
+ru:
+  layouts:
+    header:
+      graph: 'График'
+      statistics: 'Статистика'
