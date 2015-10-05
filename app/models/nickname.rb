@@ -112,6 +112,11 @@ class Nickname < ActiveRecord::Base
   def self.get_syllable(game, race, sex, position='start', namepart='name')
     sex = 'male' if namepart == 'surname'
     race = 'human' if game == 'gw2' && race == 'human-of-tyria'
-    Syllable.where(game: game, race: race, sex: sex, position: position, namepart: namepart).pluck(:syllable).sample
+
+    rel = Syllable.where(game: game, race: race, sex: sex, position: position, namepart: namepart)
+    cnt = rel.count
+    rand_record = rel.offset(rand(cnt)).first.syllable
+
+    # Syllable.order("RANDOM()").where(game: game, race: race, sex: sex, position: position, namepart: namepart).pluck(:syllable)[0]
   end
 end

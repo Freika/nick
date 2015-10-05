@@ -1,5 +1,7 @@
 Nick::Application.routes.draw do
 
+  get '/:locale', to: 'games#index'
+  get '/', to: redirect('ru/')
   root 'games#index'
 
   namespace :api do
@@ -13,51 +15,53 @@ Nick::Application.routes.draw do
     end
   end
 
-  get 'pages/this_is_not_cms'
-  get 'minecraft/skins', to: 'pages#skins'
-  get 'dota/generator', to: 'pages#dota'
-  get 'statistics/graph'
-  devise_for :users
-
-  resources :statistics, only: [:index]
-  resources :games, path: '' do
-    resources :races, path: '', except: :index
-  end
-
 
   links = %w(admin wp-admin wp-admin.php adminstrator wp-login wp-login.php admin.php)
   links.each do |link|
     get link, to: redirect('pages/this_is_not_cms')
   end
+  get 'pages/this_is_not_cms'
 
   # legacy routes
-  get 'gw2/human', to: redirect('gw2/human-of-tyria')
-  get 'wow/orcs.php', to: redirect('wow/orc')
-  get 'wow/trolls.php', to: redirect('wow/troll')
-  get 'wow/taurens.php', to: redirect('wow/tauren')
-  get 'wow/goblins.php', to: redirect('wow/goblin')
-  get 'wow/blood_elves.php', to: redirect('wow/bloodelf')
-  get 'wow/undeads.php', to: redirect('wow/undead')
-  get 'wow/pandarens.php', to: redirect('wow/pandaren')
-  get 'wow/humans.php', to: redirect('wow/human')
-  get 'wow/gnomes.php', to: redirect('wow/gnome')
-  get 'wow/dwarves.php', to: redirect('wow/dwarf')
-  get 'wow/draeneis.php', to: redirect('wow/draenei')
-  get 'wow/night_elves.php', to: redirect('wow/nightelf')
-  get 'wow/worgens.php', to: redirect('wow/worgen')
+  get 'gw2/human',            to: redirect('ru/gw2/human-of-tyria')
+  get '/wow/orcs.php',        to: redirect('ru/wow/orc')
+  get 'wow/trolls.php',       to: redirect('ru/wow/troll')
+  get 'wow/taurens.php',      to: redirect('ru/wow/tauren')
+  get 'wow/goblins.php',      to: redirect('ru/wow/goblin')
+  get 'wow/blood_elves.php',  to: redirect('ru/wow/bloodelf')
+  get 'wow/undeads.php',      to: redirect('ru/wow/undead')
+  get 'wow/pandarens.php',    to: redirect('ru/wow/pandaren')
+  get 'wow/humans.php',       to: redirect('ru/wow/human')
+  get 'wow/gnomes.php',       to: redirect('ru/wow/gnome')
+  get 'wow/dwarves.php',      to: redirect('ru/wow/dwarf')
+  get 'wow/draeneis.php',     to: redirect('ru/wow/draenei')
+  get 'wow/night_elves.php',  to: redirect('ru/wow/nightelf')
+  get 'wow/worgens.php',      to: redirect('ru/wow/worgen')
 
-  get 'gw2/human.php', to: redirect('gw2/human')
-  get 'gw2/asura.php', to: redirect('gw2/asura')
-  get 'gw2/norn.php', to: redirect('gw2/norn')
-  get 'gw2/charr.php', to: redirect('gw2/charr')
-  get 'gw2/sylvari.php', to: redirect('gw2/sylvari')
+  get 'gw2/human.php',        to: redirect('ru/gw2/human')
+  get 'gw2/asura.php',        to: redirect('ru/gw2/asura')
+  get 'gw2/norn.php',         to: redirect('ru/gw2/norn')
+  get 'gw2/charr.php',        to: redirect('ru/gw2/charr')
+  get 'gw2/sylvari.php',      to: redirect('ru/gw2/sylvari')
 
-  get 'samp/english.php', to: redirect('samp/english')
-  get 'samp/german.php', to: redirect('samp/german')
-  get 'samp/french.php', to: redirect('samp/french')
-  get 'samp/italian.php', to: redirect('samp/italian')
-  get 'samp/danish.php', to: redirect('samp/danish')
-  get 'samp/spanish.php', to: redirect('samp/spanish')
-  get 'samp/swedish.php', to: redirect('samp/swedish')
+  get 'samp/english.php',     to: redirect('ru/samp/english')
+  get 'samp/german.php',      to: redirect('ru/samp/german')
+  get 'samp/french.php',      to: redirect('ru/samp/french')
+  get 'samp/italian.php',     to: redirect('ru/samp/italian')
+  get 'samp/danish.php',      to: redirect('ru/samp/danish')
+  get 'samp/spanish.php',     to: redirect('ru/samp/spanish')
+  get 'samp/swedish.php',     to: redirect('ru/samp/swedish')
 
+  scope '/:locale', locale: /en|ru/ do
+    get 'minecraft/skins', to: 'pages#skins'
+    get 'dota/generator', to: 'pages#dota'
+    get 'statistics/graph'
+
+    resources :statistics, only: [:index]
+    resources :games, path: '', only: :show do
+      resources :races, path: '', only: :show
+    end
+  end
+
+  get '*path', to: redirect(status: 301) {|params| "/#{I18n.default_locale}/#{CGI::unescape(params[:path])}"}, constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
 end

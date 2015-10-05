@@ -1,0 +1,18 @@
+ru:
+  layouts:
+    header:
+      graph: График
+      statistics: Статистика
+    nickbox:
+      male: Мужское
+      female: Женское
+      name: Имя
+      generate_name: Придумать имя
+    skin_nickbox:
+      name: Имя
+      generate_name: Сгенерировать
+      get_nick: Получить ник
+      click_to_copy: 'Нажми, чтобы скопировать'
+
+    sidebar:
+      history: История

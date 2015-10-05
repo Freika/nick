@@ -1,6 +1,6 @@
 <div class="index col-md-offset-3 col-md-7">
   <%= javascript_tag do %>
-    game = "<%=j @game.slug %>"
+    game = "<%= j @game.slug %>"
   <% end %>
 <h1>Генератор ников для <%= @game.name %></h1>
 <p>
@@ -14,6 +14,3 @@
 <% content_for :title, 'Онлайн генератор ников для игр, какой ник придумать? SAMP, Minecraft, WoW, Guild Wars' %>
 
 </div>
-<% if current_user %>
-  <%= link_to 'Добавить игру', new_game_path %>
-<% end %>
