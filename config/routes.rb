@@ -1,6 +1,7 @@
 Nick::Application.routes.draw do
 
   get '/:locale', to: 'games#index'
+  get '/', to: redirect('ru/')
   root 'games#index'
 
   namespace :api do
@@ -62,5 +63,5 @@ Nick::Application.routes.draw do
     end
   end
 
-  get '*path', to: redirect(status: 302) {|params| "/#{I18n.default_locale}/#{CGI::unescape(params[:path])}"}, constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+  get '*path', to: redirect(status: 301) {|params| "/#{I18n.default_locale}/#{CGI::unescape(params[:path])}"}, constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
 end
