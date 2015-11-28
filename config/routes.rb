@@ -1,7 +1,7 @@
 Nick::Application.routes.draw do
 
   get '/:locale', to: 'games#index'
-  get '/', to: redirect('ru/')
+  # get '/', to: redirect('ru/')
   root 'games#index'
 
   namespace :api do
