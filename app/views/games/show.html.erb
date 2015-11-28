@@ -14,6 +14,3 @@
 <% content_for :title, @game.title %>
 </div>
 <%= render 'layouts/body_ads' %>
-<% if current_user %>
-  <%= link_to 'Редактировать страницу', edit_game_path(@game) %>
-<% end %>
