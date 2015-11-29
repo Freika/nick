@@ -3,6 +3,8 @@ ru:
     header:
       graph: График
       statistics: Статистика
+      last_news: Последние игровые новости
+      wisconsin: Агрегатор игровых новостей
     nickbox:
       male: Мужское
       female: Женское

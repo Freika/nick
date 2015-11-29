@@ -2,9 +2,11 @@
   header
     .col-md-3.logo
       = link_to(image_tag("logo_1.png"), "/#{I18n.locale}/" )
-    .col-md-5.thereisnospoon
-    .col-md-4.text-right.highgarden
+    .col-md-4.thereisnospoon
+    .col-md-5.text-right.highgarden
       = link_to t('.statistics'), statistics_graph_path
       / = link_to t('.statistics'), statistics_path
+      ' |
+      = link_to t('.last_news'), 'http://news.nickshaker.com/', title: t('.wisconsin')
       = link_to image_tag('ru.gif'), '/ru/'
       = link_to image_tag('en.gif'), '/en/'
