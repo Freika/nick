@@ -5,38 +5,14 @@ class Nickname < ActiveRecord::Base
   SEX = %w(male female).freeze
 
   def self.generate_wow(race, sex)
-    # start = get_syllable('wow', race, sex, 'start')
-    # mid = get_syllable('wow', race, sex, 'middle')
-    # fin = get_syllable('wow', race, sex, 'end')
-    nick = Syllable.find_by_sql(
-      [
-        "(
-          select syllable from syllables where game = :game and race = :race
-          and sex = :sex and position = 'start' and namepart = 'name'
-          order by random() limit 1
-          )
-          union
-          (
-          select syllable from syllables where game = :game and race = :race
-          and sex = :sex and position = 'middle' and namepart = 'name'
-          order by random() limit 1
-          )
-          union
-          (
-          select syllable from syllables where game = :game and race = :race
-          and sex = :sex and position = 'end' and namepart = 'name'
-          order by random() limit 1
-          )
-          order by syllable
-        ",
-        game: 'wow', race: race, sex: sex
-      ]
-    ).map{ |s| s.syllable }.sum
+    nick = get_nick('wow', race, sex)
+
     Statistic.update_weekly do
       race = 'wow_human' if race == 'human'
       s = Statistic.last.increment(:wow).increment(race.to_sym).increment(sex.to_sym)
       s.save
     end
+
     name = Nickname.create(name: nick)
   end
 
@@ -133,51 +109,40 @@ class Nickname < ActiveRecord::Base
 
   private
 
+  def self.get_nick(game, race, sex)
+    Syllable.find_by_sql(
+      [
+        "(
+          select syllable from syllables where game = :game and race = :race
+          and sex = :sex and position = 'start' and namepart = 'name'
+          order by random() limit 1
+          )
+          union
+          (
+          select syllable from syllables where game = :game and race = :race
+          and sex = :sex and position = 'middle' and namepart = 'name'
+          order by random() limit 1
+          )
+          union
+          (
+          select syllable from syllables where game = :game and race = :race
+          and sex = :sex and position = 'end' and namepart = 'name'
+          order by random() limit 1
+          )
+          order by syllable
+        ",
+        game: 'wow', race: race, sex: sex
+      ]
+    ).map{ |s| s.syllable }.sum
+  end
+
   def self.get_syllable(game, race, sex, position='start', namepart='name')
     sex = 'male' if namepart == 'surname'
     race = 'human' if game == 'gw2' && race == 'human-of-tyria'
 
-    Syllable.find_by_sql(
-      [
-        "(
-          select syllable from syllables
-          where game = :game and
-          race = :race and
-          sex = :sex and
-          position = 'start' and
-          namepart = :namepart
-          order by random()
-          limit 1
-          )
-          union
-          (
-          select syllable from syllables
-          where game = :game and
-          race = :race and
-          sex = :sex and
-          position = 'middle' and
-          namepart = :namepart
-          order by random()
-          limit 1
-          )
-          union
-          (
-          select syllable from syllables
-          where game = :game and
-          race = :race and
-          sex = :sex and
-          position = 'end' and
-          namepart = :namepart
-          order by random()
-          limit 1
-          )
-        ",
-         game: game, race: race, sex: sex, position: position, namepart: namepart
-      ]
-    ).first.syllable
-    # rel = Syllable.where(game: game, race: race, sex: sex, position: position, namepart: namepart)
-    # cnt = rel.count
-    # rand_record = rel.offset(rand(cnt)).first.syllable
+    rel = Syllable.where(game: game, race: race, sex: sex, position: position, namepart: namepart)
+    cnt = rel.count
+    rand_record = rel.offset(rand(cnt)).first.syllable
 
     # Syllable.order("RANDOM()").where(game: game, race: race, sex: sex, position: position, namepart: namepart).pluck(:syllable)[0]
   end
