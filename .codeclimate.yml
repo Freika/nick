@@ -1,0 +1,23 @@
+engines:
+  rubocop:
+    enabled: true
+    checks:
+      Rubocop/Style/Documentation:
+        enabled: false
+  eslint:
+    enabled: true
+  csslint:
+    enabled: true
+  fixme:
+      enabled: true
+ratings:
+   paths:
+   - app/**
+   - lib/**
+   - "**.rb"
+   - "**.js"
+   - "**.coffee"
+exclude_paths:
+- public/assets/*
+- Guardfile
+- Rakefile
