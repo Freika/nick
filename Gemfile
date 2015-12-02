@@ -27,6 +27,7 @@ gem 'seed_dump'
 gem 'globalize', '~> 5.0.0'
 
 group :development, :test do
+  gem 'bullet'
   gem 'pry'
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'

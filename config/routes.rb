@@ -1,5 +1,9 @@
 Nick::Application.routes.draw do
 
+  get '/wow', to: redirect('/ru/wow')
+  get '/samp', to: redirect('/ru/samp')
+  get '/minecraft', to: redirect('/ru/minecraft')
+  get '/gw2', to: redirect('/ru/gw2')
   get '/:locale', to: 'games#index'
   # get '/', to: redirect('ru/')
   root 'games#index'
