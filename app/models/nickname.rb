@@ -5,9 +5,14 @@ class Nickname < ActiveRecord::Base
   SEX = %w(male female).freeze
 
   def self.generate_wow(race, sex)
-    nick = get_nick('wow', race, sex)
+    # nick = get_nick('wow', race, sex)
+    nick = NicknameGenerator.new(game: 'wow', race: race, sex: sex, namepart: 'name').generate
 
+    # name_start = get_syllable('wow', race, sex, 'start', 'name')
+    # name_mid   = get_syllable('wow', race, sex, 'middle', 'name')
+    # name_fin   = get_syllable('wow', race, sex, 'end', 'name')
     Statistic.update_weekly do
+
       race = 'wow_human' if race == 'human'
       s = Statistic.last.increment(:wow).increment(race.to_sym).increment(sex.to_sym)
       s.save
@@ -140,9 +145,17 @@ class Nickname < ActiveRecord::Base
     sex = 'male' if namepart == 'surname'
     race = 'human' if game == 'gw2' && race == 'human-of-tyria'
 
-    rel = Syllable.where(game: game, race: race, sex: sex, position: position, namepart: namepart)
-    cnt = rel.count
-    rand_record = rel.offset(rand(cnt)).first.syllable
+    # rel = Syllable.where(game: game, race: race, sex: sex, position: position, namepart: namepart)
+    # cnt = rel.count
+    # rand_record = rel.offset(rand(cnt)).first.syllable
+
+    collection ||= Syllable.where(game: game, race: race, sex: sex, namepart: 'name')
+                           .select(:position, :syllable)
+    [
+      collection.where(position: 'start').order('random()').first.syllable,
+      collection.where(position: 'middle').order('random()').first.syllable,
+      collection.where(position: 'end').order('random()').first.syllable
+    ].join()
 
     # Syllable.order("RANDOM()").where(game: game, race: race, sex: sex, position: position, namepart: namepart).pluck(:syllable)[0]
   end
