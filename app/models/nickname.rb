@@ -145,17 +145,17 @@ class Nickname < ActiveRecord::Base
     sex = 'male' if namepart == 'surname'
     race = 'human' if game == 'gw2' && race == 'human-of-tyria'
 
-    # rel = Syllable.where(game: game, race: race, sex: sex, position: position, namepart: namepart)
-    # cnt = rel.count
-    # rand_record = rel.offset(rand(cnt)).first.syllable
+    rel = Syllable.where(game: game, race: race, sex: sex, position: position, namepart: namepart)
+    cnt = rel.count
+    rand_record = rel.offset(rand(cnt)).first.syllable
 
-    collection ||= Syllable.where(game: game, race: race, sex: sex, namepart: 'name')
-                           .select(:position, :syllable)
-    [
-      collection.where(position: 'start').order('random()').first.syllable,
-      collection.where(position: 'middle').order('random()').first.syllable,
-      collection.where(position: 'end').order('random()').first.syllable
-    ].join()
+    # collection ||= Syllable.where(game: game, race: race, sex: sex, namepart: 'name')
+    #                        .select(:position, :syllable)
+    # [
+    #   collection.where(position: 'start').order('random()').first.syllable,
+    #   collection.where(position: 'middle').order('random()').first.syllable,
+    #   collection.where(position: 'end').order('random()').first.syllable
+    # ].join()
 
     # Syllable.order("RANDOM()").where(game: game, race: race, sex: sex, position: position, namepart: namepart).pluck(:syllable)[0]
   end
