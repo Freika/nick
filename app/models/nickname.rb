@@ -6,13 +6,15 @@ class Nickname < ActiveRecord::Base
 
   def self.generate_wow(race, sex)
     # nick = get_nick('wow', race, sex)
-    nick = NicknameGenerator.new(game: 'wow', race: race, sex: sex, namepart: 'name').generate
+    # nick = NicknameGenerator.new(game: 'wow', race: race, sex: sex, namepart: 'name').generate
 
-    # name_start = get_syllable('wow', race, sex, 'start', 'name')
-    # name_mid   = get_syllable('wow', race, sex, 'middle', 'name')
-    # name_fin   = get_syllable('wow', race, sex, 'end', 'name')
+    name_start = get_syllable('wow', race, sex, 'start', 'name')
+    name_mid   = get_syllable('wow', race, sex, 'middle', 'name')
+    name_fin   = get_syllable('wow', race, sex, 'end', 'name')
+
+    nick = "#{name_start}#{name_mid}#{name_fin}"
+
     Statistic.update_weekly do
-
       race = 'wow_human' if race == 'human'
       s = Statistic.last.increment(:wow).increment(race.to_sym).increment(sex.to_sym)
       s.save
