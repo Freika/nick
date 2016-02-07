@@ -520,6 +520,15 @@ a.alliance {
   border-radius: 9999px;
 }
 
+.the-tabs li.tes a {
+  background-image: image-url('tes.png');
+  width: 64px;
+  height: 64px;
+  display: block;
+  background-size: cover;
+  border-radius: 9999px;
+}
+
 .tabs-left > .the-tabs {
   float: left;
   margin-right: 19px;
