@@ -44,8 +44,6 @@ group :production do
   gem 'newrelic_rpm'
   gem 'rollbar', '~> 1.0.0'
   gem 'unicorn'
-  gem 'syslogger', '~> 1.6.0'
-  gem 'lograge', '~> 0.3.1'
 end
 gem "codeclimate-test-reporter", group: :test, require: nil
 

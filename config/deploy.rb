@@ -32,7 +32,7 @@ role :web,            deploy_server
 role :app,            deploy_server
 role :db,             deploy_server, :primary => true
 
-set :rvm_ruby_string, "2.1.2"
+set :rvm_ruby_string, "2.3.0"
 set :rake,            "rvm use #{rvm_ruby_string} do bundle exec rake"
 set :bundle_cmd,      "rvm use #{rvm_ruby_string} do bundle"
 
