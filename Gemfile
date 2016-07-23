@@ -18,8 +18,7 @@ gem 'seed_dump'
 gem 'globalize', '~> 5.0.0'
 
 group :development, :test do
-  gem 'bullet'
-  gem 'pry'
+  gem 'byebug'
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'factory_girl_rails'
@@ -28,8 +27,6 @@ group :development, :test do
   gem 'annotate'
   gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
 end
-
-gem 'locum'
 
 group :production do
   gem 'newrelic_rpm'
