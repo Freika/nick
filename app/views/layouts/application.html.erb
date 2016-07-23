@@ -10,7 +10,6 @@
       <%= content_for?(:title) ? yield(:title) + ', какой ник придумаешь ты?' : 'Генератор ников для игр, какой ник придумать?' %>
     <% end %>
   </title>
-  <%= jquery_include_tag :google %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'favicon.ico' %>
