@@ -3,8 +3,6 @@ en:
     header:
       graph: Graph
       statistics: Statistics
-      last_news: Last gamings news
-      wisconsin: Gamins news aggregator
     nickbox:
       male: Male
       female: Female
