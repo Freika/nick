@@ -1,2 +1,2 @@
-class Syllable < ActiveRecord::Base
+class Syllable < ApplicationRecord
 end
