@@ -3,8 +3,8 @@ class Api::V1::NicksController < ApplicationController
 
   def wow
     if Nickname::WOW_RACES.include?(params[:race])
-      @nick = Nickname.generate_wow(params[:race], params[:sex])
-      render json: @nick, status: 200
+      nick = Nickname.generate_wow(params[:race], params[:sex])
+      render json: nick, status: 200
     else
       render_500
     end
@@ -13,14 +13,14 @@ class Api::V1::NicksController < ApplicationController
   def gw
     case params[:race]
     when 'asura'
-      @nick = Nickname.generate_gw_asura(params[:race], params[:sex])
-      render json: @nick, status: 200
+      nick = Nickname.generate_gw_asura(params[:race], params[:sex])
+      render json: nick, status: 200
     when 'sylvari'
-      @nick = Nickname.generate_gw_sylvari(params[:race], params[:sex])
-      render json: @nick, status: 200
+      nick = Nickname.generate_gw_sylvari(params[:race], params[:sex])
+      render json: nick, status: 200
     when *Nickname::GW_RACES
-      @nick = Nickname.generate_gw(params[:race], params[:sex])
-      render json: @nick, status: 200
+      nick = Nickname.generate_gw(params[:race], params[:sex])
+      render json: nick, status: 200
     else
       render_500
     end
@@ -28,8 +28,8 @@ class Api::V1::NicksController < ApplicationController
 
   def samp
     if Nickname::SAMP_RACES.include?(params[:race])
-      @nick = Nickname.generate_samp(params[:race], params[:sex])
-      render json: @nick, status: 200
+      nick = Nickname.generate_samp(params[:race], params[:sex])
+      render json: nick, status: 200
     else
       render_500
     end
@@ -37,8 +37,8 @@ class Api::V1::NicksController < ApplicationController
 
   def minecraft
     if params[:race] == 'steve'
-      @nick = Nickname.generate_minecraft(params[:race], 'male')
-      render json: @nick, status: 200
+      nick = Nickname.generate_minecraft(params[:race], 'male')
+      render json: nick, status: 200
     else
       render_500
     end
@@ -46,8 +46,8 @@ class Api::V1::NicksController < ApplicationController
 
   def minecraft_skin
     if params[:race] == 'player'
-      @nick = Nickname.generate_minecraft_skin(params[:race], 'male')
-      render json: @nick, status: 200
+      nick = Nickname.generate_minecraft_skin(params[:race], 'male')
+      render json: nick, status: 200
     else
       render_500
     end
@@ -55,8 +55,8 @@ class Api::V1::NicksController < ApplicationController
 
   def dota
     if params[:race] == 'crab'
-      @nick = Nickname.generate_dota(params[:race], 'male')
-      render json: @nick, status: 200
+      nick = Nickname.generate_dota(params[:race], 'male')
+      render json: nick, status: 200
     else
       render_500
     end
@@ -71,5 +71,4 @@ class Api::V1::NicksController < ApplicationController
   def render_500
     render json: 'Обратитесь с правильными параметрами', status: 500
   end
-
 end
