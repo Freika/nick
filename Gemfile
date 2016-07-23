@@ -3,11 +3,11 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.6'
 gem 'pg'
 
-gem 'friendly_id', '~> 5.0.0'
 gem 'sass-rails', '~> 4.0.2'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'zeroclipboard-rails'
 gem 'slim-rails'
+gem 'jquery-rails'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
