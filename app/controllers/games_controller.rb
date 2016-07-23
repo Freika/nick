@@ -11,7 +11,7 @@ class GamesController < ApplicationController
   private
 
   def set_game
-    @game = Game.friendly.find(params[:id])
+    @game = Game.find_by(slug: params[:id])
   end
 
   def game_params

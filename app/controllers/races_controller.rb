@@ -12,7 +12,7 @@ class RacesController < ApplicationController
   private
 
   def set_race
-    @race = Race.friendly.find(params[:id])
+    @race = Race.find_by(slug: params[:id])
   end
 
   def race_params
