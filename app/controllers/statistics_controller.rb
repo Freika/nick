@@ -10,5 +10,4 @@ class StatisticsController < ApplicationController
     @minecrafts = Statistic.sum(:minecraft)
     @total = @wows + @samps + @gws + @minecrafts
   end
-
 end
