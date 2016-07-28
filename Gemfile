@@ -29,7 +29,17 @@ group :production do
   gem 'rollbar', '~> 1.0.0'
   gem 'unicorn'
 end
-gem "codeclimate-test-reporter", group: :test, require: nil
+
+group :development do
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano3-unicorn'
+  gem 'capistrano-cookbook', require: false
+end
+
+group :test do
+  gem 'codeclimate-test-reporter'
+end
 
 
 
