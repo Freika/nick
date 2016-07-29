@@ -31,10 +31,10 @@ group :production do
 end
 
 group :development do
+  gem 'capistrano'
+  gem 'capistrano-bundler'
   gem 'capistrano-rails'
-  gem 'capistrano-rvm'
-  gem 'capistrano3-unicorn'
-  gem 'capistrano-cookbook', require: false
+  gem 'capistrano-rvm', github: "capistrano/rvm"
 end
 
 group :test do

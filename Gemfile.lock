@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/capistrano/rvm.git
+  revision: 9cfef39cf0022839dca6b5b330dfefeb5fc363e7
+  specs:
+    capistrano-rvm (0.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
+
+GIT
   remote: git://github.com/globalize/globalize.git
   revision: 51aa34b34ef6b00b8e6e307ac9145eeffade833c
   specs:
@@ -69,17 +77,10 @@ GEM
     capistrano-bundler (1.1.4)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
-    capistrano-cookbook (0.2.1)
-      capistrano (~> 3.2)
     capistrano-harrow (0.5.3)
     capistrano-rails (1.1.7)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
-    capistrano-rvm (0.1.2)
-      capistrano (~> 3.0)
-      sshkit (~> 1.2)
-    capistrano3-unicorn (0.2.1)
-      capistrano (~> 3.1, >= 3.1.0)
     capybara (2.7.1)
       addressable
       mime-types (>= 1.16)
@@ -287,10 +288,10 @@ DEPENDENCIES
   activemodel-serializers-xml
   bootstrap-sass (~> 3.1.1)
   byebug
-  capistrano-cookbook
+  capistrano
+  capistrano-bundler
   capistrano-rails
-  capistrano-rvm
-  capistrano3-unicorn
+  capistrano-rvm!
   capybara
   codeclimate-test-reporter
   coffee-rails
