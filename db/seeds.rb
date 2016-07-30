@@ -415,4 +415,8 @@ Statistic.create!([
   {wow: 210704, gw: 9351, samp: 37413, minecraft: 8135, wow_human: 43455, dwarf: 7457, gnome: 4303, nightelf: 21950, draenei: 16974, worgen: 14223, pandaren: 10843, orc: 16474, troll: 7886, tauren: 9232, undead: 17896, bloodelf: 36469, goblin: 3542, gw_human: nil, asura: 1067, sylvari: 5452, norn: 1532, charr: 1300, english: 19492, german: 4056, french: 4169, italian: 3665, danish: 1524, swedish: 1298, spanish: 3209, steve: 4955, male: 271765, female: 95518, dota: 49250}
 ])
 
+p 'games and races loaded'
+
 Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].sort.each { |seed| load seed }
+
+p 'syllables loaded'
