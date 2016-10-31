@@ -34,7 +34,7 @@ group :development do
   gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
-  gem 'capistrano-rvm', github: "capistrano/rvm"
+  gem 'capistrano-rvm', github: 'capistrano/rvm'
 end
 
 group :test do
