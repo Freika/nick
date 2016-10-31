@@ -13,9 +13,12 @@ class ApplicationController < ActionController::Base
   end
 
   def set_nav_variables
-    @gw2_races        = Race.where(game: Game.find_by(slug: 'gw2'))
-    @samp_races       = Race.where(game: Game.find_by(slug: 'samp'))
-    @minecraft_races  = Race.where(game: Game.find_by(slug: 'minecraft'))
+    @gw2_races = Race.includes(:translations)
+                     .where(game: Game.find_by(slug: 'gw2'))
+    @samp_races = Race.includes(:translations)
+                      .where(game: Game.find_by(slug: 'samp'))
+    @minecraft_races= Race.includes(:translations)
+                          .where(game: Game.find_by(slug: 'minecraft'))
   end
 
   protected

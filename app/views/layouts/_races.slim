@@ -23,19 +23,26 @@
        li
          = link_to image_tag('wow-pandaren.png'), game_race_path('wow', 'pandaren'), title: 'Пандарен', class: 'alliance'
          = link_to image_tag('wow-pandaren.png'), game_race_path('wow', 'pandaren'), title: 'Пандарен', class: 'horde'
+
     #gw2.tab-pane class=('active' if params[:game_id] == 'gw2')
       ul.gw2
-        - @gw2_races.includes(:translations).each do |race|
+        - @gw2_races.each do |race|
           li
-            = link_to image_tag("gw2-#{race.slug}.png"), game_race_path('gw2', race.slug), title:  race.name
+            = link_to game_race_path('gw2', race.slug), title:  race.name do
+              = image_tag("gw2-#{race.slug}.png")
     #samp.tab-pane class=('active' if params[:game_id] == 'samp')
        ul.samp
-         - @samp_races.includes(:translations).each do |race|
+         - @samp_races.each do |race|
            li
-            = link_to image_tag("samp-#{race.slug}.png"), game_race_path('samp', race.slug), title: race.name
+            = link_to game_race_path('samp', race.slug), title: race.name do
+              = image_tag("samp-#{race.slug}.png")
     #minecraft.tab-pane class=('active' if params[:game_id] == 'minecraft')
       ul.minecraft
-        - @minecraft_races.includes(:translations).each do |race|
+        - @minecraft_races.each do |race|
           li
-            = link_to image_tag("minecraft-#{race.slug}.jpg"), game_race_path('minecraft', race.slug), title: race.name
-        li = link_to image_tag('steve.png', class: 'red-border'), minecraft_skins_path(I18n.locale), title: 'Ники для Майнкрафт по скинам'
+            = link_to game_race_path('minecraft', race.slug), title: race.name do
+              = image_tag("minecraft-#{race.slug}.jpg")
+        li
+          = link_to minecraft_skins_path(I18n.locale),
+            title: 'Ники для Майнкрафт по скинам' do
+            = image_tag('steve.png', class: 'red-border')

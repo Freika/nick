@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   def index
-    @game = Game.where(slug: 'wow').first
+    @game = Game.find_by(slug: 'wow')
   end
 
   def show
