@@ -14,8 +14,4 @@ class RacesController < ApplicationController
   def set_race
     @race = Race.find_by(slug: params[:id])
   end
-
-  def race_params
-    params.require(:race).permit(:title, :slug, :content, :description, :name)
-  end
 end

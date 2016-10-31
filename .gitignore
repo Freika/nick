@@ -18,3 +18,4 @@
 /config/database.yml
 /config/initializers/social_poster.rb
 .DS_Store
+/server/*/**

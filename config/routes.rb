@@ -1,11 +1,10 @@
 Nick::Application.routes.draw do
-
   get '/wow', to: redirect('/ru/wow')
   get '/samp', to: redirect('/ru/samp')
   get '/minecraft', to: redirect('/ru/minecraft')
   get '/gw2', to: redirect('/ru/gw2')
   get '/:locale', to: 'games#index'
-  # get '/', to: redirect('ru/')
+
   root 'games#index'
 
   namespace :api do
@@ -18,13 +17,6 @@ Nick::Application.routes.draw do
       get 'nicks/dota', to: 'nicks#dota'
     end
   end
-
-
-  links = %w(admin wp-admin wp-admin.php adminstrator wp-login wp-login.php admin.php)
-  links.each do |link|
-    get link, to: redirect('pages/this_is_not_cms')
-  end
-  get 'pages/this_is_not_cms'
 
   # legacy routes
   get 'gw2/human',            to: redirect('ru/gw2/human-of-tyria')

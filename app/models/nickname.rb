@@ -9,11 +9,12 @@ class Nickname < ApplicationRecord
     # nick = NicknameGenerator.new(game: 'wow', race: race, sex: sex, namepart: 'name').generate
 
     name_start = get_syllable('wow', race, sex, 'start', 'name')
-    name_mid   = if race == 'pandaren' && sex == 'male'
-                   ''
-                 else
-                   get_syllable('wow', race, sex, 'middle', 'name')
-                 end
+    name_mid =
+      if race == 'pandaren' && sex == 'male'
+       ''
+     else
+       get_syllable('wow', race, sex, 'middle', 'name')
+     end
     name_fin   = get_syllable('wow', race, sex, 'end', 'name')
 
     nick = "#{name_start}#{name_mid}#{name_fin}"

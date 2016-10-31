@@ -13,8 +13,4 @@ class GamesController < ApplicationController
   def set_game
     @game = Game.find_by(slug: params[:id])
   end
-
-  def game_params
-    params.require(:game).permit(:title, :slug, :content, :description, :name)
-  end
 end
