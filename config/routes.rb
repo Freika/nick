@@ -9,12 +9,14 @@ Nick::Application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get 'nicks/wow', to: 'nicks#wow'
-      get 'nicks/gw', to: 'nicks#gw'
-      get 'nicks/samp', to: 'nicks#samp'
-      get 'nicks/minecraft', to: 'nicks#minecraft'
-      get 'nicks/minecraft_skin', to: 'nicks#minecraft_skin'
-      get 'nicks/dota', to: 'nicks#dota'
+      namespace :nicks do
+        post 'wow/create', to: 'wow#create'
+        post 'gw/create', to: 'guild_wars#create'
+        post 'samp/create', to: 'samp#create'
+        post 'minecraft/create', to: 'minecraft#create'
+        post 'minecraft_skin/create', to: 'minecraft#create_skin'
+        post 'dota/create', to: 'dota#create'
+      end
     end
   end
 

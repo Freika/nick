@@ -12,6 +12,6 @@ class RacesController < ApplicationController
   private
 
   def set_race
-    @race = Race.find_by(slug: params[:id])
+    @race = Race.includes(:game).find_by(slug: params[:id])
   end
 end

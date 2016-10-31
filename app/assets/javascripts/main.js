@@ -1,13 +1,12 @@
-$( document ).ready(function() {
-  $('.the-tabs li').tooltip();
+$(document).ready(function() {
   jQuery(function($) {
     if (race == 'man' || race == 'woman') {
       race = 'steve'
     };
 
     $('.thecontent').addClass(game + '-' + race + '-bg');
-    $('.the-tabs li.'+game).addClass('active');
-    $('.tab-pane#'+game).addClass('active');
+    $('.the-tabs li.' + game).addClass('active');
+    $('.tab-pane#' + game).addClass('active');
 
     $('#sexybuttons .just_nick').click(function(e) {
       var sex = $(this).attr('name');
@@ -17,20 +16,23 @@ $( document ).ready(function() {
       };                   // До избавления от двойки в GW2
 
       $.ajax({
-        url: '/api/v1/nicks/' + game + '.json?race=' + race + '&sex=' + sex,
+        method: 'post',
+        url: '/api/v1/nicks/' + game + '/create.json?race=' + race + '&sex=' + sex,
         success: function(json) {
           $('#yournameishere').text(json.name);
           $('#history').prepend(json.name+'<br>');
         }
       });
+
       e.preventDefault();
     });
 
-    $('#get_nick').click( function () {
-      //для генерации скина
+    $('#get_nick').click(function (e) {
+      // для генерации скина
       var sex = $(this).attr('name');
       $.ajax({
-        url: '/api/v1/nicks/' + game + '.json?race=' + race + '&sex=' + sex,
+        method: 'post',
+        url: '/api/v1/nicks/' + game + '/create.json?race=' + race + '&sex=' + sex,
         success: function(json) {
           $('#yournameishere').text(json.name);
           $('#history').prepend(json.name+"<br>");
@@ -39,8 +41,14 @@ $( document ).ready(function() {
 
         }
       });
+
+      e.preventDefault();
     });
   });
-  var clip = new ZeroClipboard($('#yournameishere')) //Копирование ника в буфер обмена по клику на кнопку
+
+  // Копирование ника в буфер обмена по клику на кнопку
+  var clip = new ZeroClipboard($('#yournameishere'))
+
   $('.nickbox').tooltip();
+  $('.the-tabs li').tooltip();
 });

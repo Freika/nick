@@ -17,4 +17,14 @@ class ApplicationController < ActionController::Base
     @samp_races       = Race.where(game: Game.find_by(slug: 'samp'))
     @minecraft_races  = Race.where(game: Game.find_by(slug: 'minecraft'))
   end
+
+  protected
+
+  def render_500
+    render json: 'Обратитесь с правильными параметрами', status: 500
+  end
+
+  def check_gender
+    render_500 unless Nickname::SEX.include?(params[:sex])
+  end
 end
