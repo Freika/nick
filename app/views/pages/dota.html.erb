@@ -1,17 +1,13 @@
+<% content_for :title do t('dota.title') end %>
+
 <%= render 'layouts/skin_nickbox' %>
 <%= render 'layouts/above_nickbox_ads' %>
 <div class="col-md-8 col-md-offset-2 about-race">
-  <% if I18n.locale == :en %>
-    <% content_for :title do 'DOTA nicknames, nickname generator for DOTA 2, cool nicknames for dota' end %>
-    <h3>DOTA nickname generator</h3>
-      In order to properly own trash players on midlane, you will need a good nickname first.
-    Use nickname generator to easily and effortlessly create unique and unforgettable alter-ego, which will distract your foes until they are dead at last. Don’t waste your time thinking of Dota nicknames, just generate it using Nickshaker and you’re good to go right in the battlefield!
-  <% else %>
-    <% content_for :title do 'Ники для Доты, генератор имен и ников для DotA 2, прикольные ники для Доты' end %>
-    <h3>Ники для Доты</h3>
-    Для того, чтобы нагибать раков на миде, стоит сначала обзавестись хорошим ником. Воспользовавшись генератором ников для Доты вы легко и непринужденно создадите себе уникальный и запоминающийся ник, при одном только виде которого ваши противники растеряются и позволят безболезненно себя убить. Не тратьте время, придумывая ники для Доты, сгенерируйте себе ник при помощи Никшейкера и отправляйтесь на поле боя!
-  <% end %>
+
+  <h3><%= t('dota.header') %></h3>
+  <%= t('dota.content') %>
 </div>
+
 <%= render 'layouts/body_ads' %>
 
 <script>

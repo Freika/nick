@@ -4,29 +4,23 @@
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
   <title>
-    <% if I18n.locale == :en %>
-      <%= content_for?(:title) ? yield(:title) + ', which nickname will you choose?' : 'Nickname generator for online fantasy games' %>
+    <% if content_for(:title) %>
+      <%= "#{yield(:title)}, #{t('title_which_nick')}" %>
     <% else %>
-      <%= content_for?(:title) ? yield(:title) + ', какой ник придумаешь ты?' : 'Генератор ников для игр, какой ник придумать?' %>
+      <%= t('title_basic') %>
     <% end %>
   </title>
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'favicon.ico' %>
+  <%= javascript_include_tag 'application' %>
 
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+  <meta name='description' content='<%= t('meta_description') %>'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-
-  <% if I18n.locale == :en %>
-    <meta name='description' content='Online nickname generator for Minecraft, nicknames by skins for minecraft, Dota nickname generator, SAMP nickname generator, Guild Wars 2 nickname generator, World of Warcraft nickname generator'>
-  <% else %>
-    <meta name='description' content='Онлайн генератор имен и ников, ники для Minecraft, ники по скинам для Minecraft, генератор ников для Wow, ники для Доты, генератор ников для SAMP, генератор имен для Guild Wars 2'>
-  <% end %>
-
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <meta name="google-site-verification" content="gu0D3yx2t7CPbgYC7aswGKAGxTj84SVb_Sg7fjZfEMQ" />
+  <meta name="google-site-verification" content="gu0D3yx2t7CPbgYC7aswGKAGxTj84SVb_Sg7fjZfEMQ" >
 </head>
 <body>
   <div class='container'>
@@ -54,8 +48,5 @@
       <%= render 'layouts/footer' %>
     </div>
   </div>
-
-  <%= javascript_include_tag 'application' %>
-
 </body>
 </html>

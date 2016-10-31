@@ -1,3 +1,5 @@
+<% content_for :title do t('minecraft.title') end %>
+
 <%= render 'layouts/skin_nickbox' %>
 <%= render 'layouts/above_nickbox_ads' %>
 <div class="col-md-4 about-race minecraft_skin">
@@ -13,18 +15,11 @@
 </center>
 </div>
 <div class="col-md-7 col-md-offset-1 about-race">
-  <% if I18n.locale == :en %>
-    <% content_for :title do "Nicknames ny skins for Minecraft, nickname generator for Minecraft" end %>
-    <h3>Nicknames by skins for Minecraft</h3>
-    At Nickshaker you can find your own nickname with skin for Minecraft. Just click “Generate” and get the brand-new nickname, the window below will contain the skin it pertains to. The link is provided to download the skin if you like it. Skin-with-nickname is the most comfortable and common way to choose rocking,unique outlook for your character in Minecraft without the need to buy the game. Just pick a nick with the skin you like, login to Minecraft and your character is shipped with the skin.
-  <% else %>
-    <% content_for :title do "Ники по скинам для Майнкрафт, генератор скинов по никам для Minecraft" end %>
-    <h3>Ники по скинам для Майнкрафт</h3>
-    На Никшейкере вы можете выбрать ник со скином для Minecraft. Просто нажмите "Сгенерировать" и вы получите новый ник, а в окошке ниже увидите скин, которому он соответствует и ссылку на скачивание этого скина, если это вам нужно. Скины по никам - распространенный и удобный способ выбрать красивый и уникальный внешний вид для вашего персонажа в Minecraft без необходимости покупать игру. Просто подберите ник со скином, который вам нравится, зайдите с ним в Minecraft и ваш персонаж будет иметь этот скин.
-  <% end %>
+  <h3><%= t('minecraft.header') %></h3>
+  <%= t('minecraft.content') %>
 </div>
-<%= render 'layouts/body_ads' %>
 
+<%= render 'layouts/body_ads' %>
 
 <script>
   race = 'player';

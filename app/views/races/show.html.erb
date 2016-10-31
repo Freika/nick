@@ -1,15 +1,15 @@
 <%= javascript_tag do %>
-  race = "<%=j @race.slug %>";
-  game = "<%=j @race.game.slug %>"
+  race = '<%=j @race.slug %>';
+  game = '<%=j @race.game.slug %>'
 <% end %>
 <% content_for :title do @race.title end %>
 
-<%= render "layouts/nickbox" %>
+<%= render 'layouts/nickbox' %>
 
 <%= render 'layouts/above_nickbox_ads' %>
 
 <% cache do %>
-  <%= render "races/about", race: @race %>
+  <%= render 'races/about', race: @race %>
 <% end %>
 
-<%= render "layouts/body_ads" %>
+<%= render 'layouts/body_ads' %>
