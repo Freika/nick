@@ -28,8 +28,9 @@ $(document).ready(function() {
     });
 
     $('#get_nick').click(function (e) {
-      // для генерации скина
+      // Getting minecraft skin from amazon aws
       var sex = $(this).attr('name');
+
       $.ajax({
         method: 'post',
         url: '/api/v1/nicks/' + game + '/create.json?race=' + race + '&sex=' + sex,
@@ -46,7 +47,7 @@ $(document).ready(function() {
     });
   });
 
-  // Копирование ника в буфер обмена по клику на кнопку
+  // Copy nick into clipboard
   var clip = new ZeroClipboard($('#yournameishere'))
 
   $('.nickbox').tooltip();

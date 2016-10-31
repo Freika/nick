@@ -19,3 +19,4 @@
 /config/initializers/social_poster.rb
 .DS_Store
 /server/*/**
+/server

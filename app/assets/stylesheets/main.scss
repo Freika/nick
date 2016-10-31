@@ -25,10 +25,7 @@ body {
 
   table {
     color: #c5c5c5;
-    th {
-      text-align: center;
-    }
-    td {
+    th, td {
       text-align: center;
     }
   }
@@ -91,7 +88,6 @@ header {
     height: 513px;
     overflow: hidden;
   }
-
 }
 
 .games {
