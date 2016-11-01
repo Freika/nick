@@ -53,7 +53,6 @@ Nick::Application.routes.draw do
   scope '/:locale', locale: /en|ru/ do
     get 'minecraft/skins', to: 'pages#skins'
     get 'dota/generator', to: 'pages#dota'
-    get 'statistics/graph'
 
     resources :statistics, only: [:index]
     resources :games, path: '', only: :show do

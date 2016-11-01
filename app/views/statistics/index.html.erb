@@ -1,29 +1,22 @@
-<div class="statistic">
-
-<h1>Лучшие имена и ники</h1>
-
-<div class="row howmuchnicknames">
-  <div class="col-sm-3 col-md-3 col-lg-3">
-    <h3>WoW</h3>
-    <hr>
-  </div>
-
-  <div class="col-sm-3 col-md-3 col-lg-3">
-    <h3>San Andreas</h3>
-    <hr>
-  </div>
-
-  <div class="col-sm-3 col-md-3 col-lg-3">
-    <h3>Guild Wars 2</h3>
-    <hr>
-  </div>
-
-  <div class="col-sm-3 col-md-3 col-lg-3">
-    <h3>Minecraft</h3>
-    <hr>
-  </div>
+<div>
+  <table class='statistic-count table'>
+    <tr>
+      <th colspan=5>Количество сгенерированных ников и имен</th>
+    </tr>
+    <tr>
+      <th>World of Warcraft</th>
+      <th>Guild Wars 2</th>
+      <th>GTA San Andreas</th>
+      <th>Minecraft</th>
+      <th>Всего</th>
+    </tr>
+    <tr>
+      <td><%= delimited_numbers @wows %></td>
+      <td><%= delimited_numbers @gws %></td>
+      <td><%= delimited_numbers @samps %></td>
+      <td><%= delimited_numbers @minecrafts %></td>
+      <td><%= delimited_numbers @total %></td>
+    </tr>
+  </table>
 </div>
-<center><h3>Скоро здесь будут отобранные пользователями ники</h3></center>
-</div>
-
-<% content_for :title, "Статистика по самым лучшим никам" %>
+<% content_for :title, 'График генерации ников и имен для онлайновых игр' %>
