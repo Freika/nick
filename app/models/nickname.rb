@@ -1,5 +1,8 @@
 class Nickname < ApplicationRecord
-  WOW_RACES = %w(human gnome dwarf pandaren draenei worgen nightelf orc troll tauren undead bloodelf goblin).freeze
+  WOW_RACES = %w(
+    human gnome dwarf pandaren draenei worgen nightelf orc troll tauren
+    undead bloodelf goblin
+  ).freeze
   GW_RACES = %w(human-of-tyria charr asura norn sylvari).freeze
   SAMP_RACES = %w(english german french italian danish swedish spanish).freeze
   SEX = %w(male female).freeze
@@ -10,22 +13,20 @@ class Nickname < ApplicationRecord
 
     name_start = get_syllable('wow', race, sex, 'start', 'name')
     name_mid =
-      if race == 'pandaren' && sex == 'male'
-       ''
-     else
-       get_syllable('wow', race, sex, 'middle', 'name')
-     end
-    name_fin   = get_syllable('wow', race, sex, 'end', 'name')
+      unless race == 'pandaren' && sex == 'male'
+        get_syllable('wow', race, sex, 'middle', 'name')
+      end
+    name_fin = get_syllable('wow', race, sex, 'end', 'name')
 
     nick = "#{name_start}#{name_mid}#{name_fin}"
 
-    Statistic.update_weekly do
-      race = 'wow_human' if race == 'human'
-      s = Statistic.last.increment(:wow).increment(race.to_sym).increment(sex.to_sym)
-      s.save
-    end
+    # Statistic.update_weekly do
+    #   race = 'wow_human' if race == 'human'
+    #   statistic = Statistic.last.increment(:wow).increment(race.to_sym).increment(sex.to_sym)
+    #   statistic.save
+    # end
 
-    name = Nickname.create(name: nick)
+    Nickname.create(name: nick)
   end
 
   def self.generate_gw(race, sex)
@@ -39,10 +40,16 @@ class Nickname < ApplicationRecord
     # game: 'gw' or 'gw2' ?
     Statistic.update_weekly do
       race = 'gw_human' if race == 'human-of-tyria'
-      s = Statistic.last.increment(:gw).increment(race.to_sym).increment(sex.to_sym)
-      s.save
+      statistic = Statistic.last
+                            .increment(:gw)
+                            .increment(race.to_sym)
+                            .increment(sex.to_sym)
+      statistic.save
     end
-    name = Nickname.create(name: "#{name_start}#{name_mid}#{name_fin} #{surname_start}#{surname_fin}")
+
+    Nickname.create(
+      name: "#{name_start}#{name_mid}#{name_fin} #{surname_start}#{surname_fin}"
+    )
   end
 
   def self.generate_gw_asura(race, sex)
@@ -53,10 +60,16 @@ class Nickname < ApplicationRecord
     surname_fin =   get_syllable('gw2', race, 'male', 'end', 'surname')
 
     Statistic.update_weekly do
-      s = Statistic.last.increment(:gw).increment(race.to_sym).increment(sex.to_sym)
-      s.save
+      statistic = Statistic.last
+                            .increment(:gw)
+                            .increment(race.to_sym)
+                            .increment(sex.to_sym)
+      statistic.save
     end
-    name = Nickname.create(name: "#{name_start}#{name_fin} #{surname_start}#{surname_fin}")
+
+    Nickname.create(
+      name: "#{name_start}#{name_fin} #{surname_start}#{surname_fin}"
+    )
   end
 
   def self.generate_gw_sylvari(race, sex)
@@ -65,11 +78,14 @@ class Nickname < ApplicationRecord
     name_fin =   get_syllable('gw2', race, sex, 'end', 'name')
 
     Statistic.update_weekly do
-      s = Statistic.last.increment(:gw).increment(race.to_sym).increment(sex.to_sym)
-      s.save
+      statistic = Statistic.last
+                            .increment(:gw)
+                            .increment(race.to_sym)
+                            .increment(sex.to_sym)
+      statistic.save
     end
 
-    name = Nickname.create(name: "#{name_start}#{name_mid}#{name_fin}")
+    Nickname.create(name: "#{name_start}#{name_mid}#{name_fin}")
   end
 
   def self.generate_samp(race, sex)
@@ -77,11 +93,14 @@ class Nickname < ApplicationRecord
     surname = get_syllable('samp', race, sex, 'start', 'surname')
 
     Statistic.update_weekly do
-      s = Statistic.last.increment(:samp).increment(race.to_sym).increment(sex.to_sym)
-      s.save
+      statistic = Statistic.last
+                    .increment(:samp)
+                    .increment(race.to_sym)
+                    .increment(sex.to_sym)
+      statistic.save
     end
 
-    name = Nickname.create(name: "#{name} #{surname}")
+    Nickname.create(name: "#{name} #{surname}")
   end
 
   def self.generate_minecraft(race, sex)
@@ -90,19 +109,25 @@ class Nickname < ApplicationRecord
     surname = get_syllable('minecraft', race, 'male', 'start', 'surname')
 
     Statistic.update_weekly do
-      s = Statistic.last.increment(:minecraft).increment(race.to_sym).increment(sex.to_sym)
-      s.save
+      statistic = Statistic.last
+                            .increment(:minecraft)
+                            .increment(race.to_sym)
+                            .increment(sex.to_sym)
+      statistic.save
     end
 
-    name = Nickname.create(name: "#{name.capitalize} #{surname.capitalize}")
+    Nickname.create(name: "#{name.capitalize} #{surname.capitalize}")
   end
 
   def self.generate_minecraft_skin(race, sex)
     name = get_syllable('minecraft', race, sex, 'start', 'name')
 
     Statistic.update_weekly do
-      s = Statistic.last.increment(:minecraft).increment(:male).increment(sex.to_sym)
-      s.save
+      statistic = Statistic.last
+                            .increment(:minecraft)
+                            .increment(:male)
+                            .increment(sex.to_sym)
+      statistic.save
     end
 
     name = Nickname.create(name: name)
@@ -112,8 +137,11 @@ class Nickname < ApplicationRecord
     name = get_syllable('dota', race, sex, 'start', 'name')
 
     Statistic.update_weekly do
-      s = Statistic.last.increment(:dota).increment(:male).increment(sex.to_sym)
-      s.save
+      statistic = Statistic.last
+                            .increment(:dota)
+                            .increment(:male)
+                            .increment(sex.to_sym)
+      statistic.save
     end
 
     name = Nickname.create(name: name)
@@ -152,18 +180,10 @@ class Nickname < ApplicationRecord
     sex = 'male' if namepart == 'surname'
     race = 'human' if game == 'gw2' && race == 'human-of-tyria'
 
-    rel = Syllable.where(game: game, race: race, sex: sex, position: position, namepart: namepart)
-    cnt = rel.count
-    rand_record = rel.offset(rand(cnt)).first.syllable
-
-    # collection ||= Syllable.where(game: game, race: race, sex: sex, namepart: 'name')
-    #                        .select(:position, :syllable)
-    # [
-    #   collection.where(position: 'start').order('random()').first.syllable,
-    #   collection.where(position: 'middle').order('random()').first.syllable,
-    #   collection.where(position: 'end').order('random()').first.syllable
-    # ].join()
-
-    # Syllable.order("RANDOM()").where(game: game, race: race, sex: sex, position: position, namepart: namepart).pluck(:syllable)[0]
+    rel = Syllable.where(
+      game: game, race: race, sex: sex, position: position, namepart: namepart
+    )
+    count = rel.count
+    rand_record = rel.offset(rand(count)).first.syllable
   end
 end
