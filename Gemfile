@@ -25,9 +25,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'newrelic_rpm'
-  gem 'rollbar', '~> 1.0.0'
-  gem 'unicorn'
+  gem 'rollbar', '~> 2.13.2'
 end
 
 group :development do
