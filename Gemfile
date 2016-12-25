@@ -16,6 +16,7 @@ gem 'turbolinks'
 gem 'globalize', github: 'globalize/globalize'
 gem 'activemodel-serializers-xml'
 gem 'figaro'
+gem 'capistrano-rails-console', require: false
 
 group :development, :test do
   gem 'byebug'

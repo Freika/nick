@@ -81,6 +81,9 @@ GEM
     capistrano-rails (1.1.7)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    capistrano-rails-console (2.2.0)
+      capistrano (>= 3.5.0, < 4.0.0)
+      sshkit-interactive (~> 0.2.0)
     capybara (2.7.1)
       addressable
       mime-types (>= 1.16)
@@ -256,6 +259,8 @@ GEM
     sshkit (1.11.1)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    sshkit-interactive (0.2.0)
+      sshkit (~> 1.9)
     temple (0.7.7)
     therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
@@ -288,6 +293,7 @@ DEPENDENCIES
   capistrano
   capistrano-bundler
   capistrano-rails
+  capistrano-rails-console
   capistrano-rvm!
   capybara
   codeclimate-test-reporter
