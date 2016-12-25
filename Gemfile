@@ -15,6 +15,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'turbolinks'
 gem 'globalize', github: 'globalize/globalize'
 gem 'activemodel-serializers-xml'
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug'
@@ -26,6 +27,7 @@ end
 
 group :production do
   gem 'rollbar', '~> 2.13.2'
+  gem 'newrelic_rpm'
 end
 
 group :development do

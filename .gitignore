@@ -20,3 +20,6 @@
 .DS_Store
 /server/*/**
 /server
+
+# Ignore application configuration
+/config/application.yml
