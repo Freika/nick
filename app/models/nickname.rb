@@ -86,23 +86,23 @@ class Nickname < ApplicationRecord
     Syllable.find_by_sql(
       [
         "(
-          select syllable from syllables where game = :game and race = :race
+          select syllable, position from syllables where game = :game and race = :race
           and sex = :sex and position = 'start' and namepart = 'name'
           order by random() limit 1
           )
           union
           (
-          select syllable from syllables where game = :game and race = :race
+          select syllable, position from syllables where game = :game and race = :race
           and sex = :sex and position = 'middle' and namepart = 'name'
           order by random() limit 1
           )
           union
           (
-          select syllable from syllables where game = :game and race = :race
+          select syllable, position from syllables where game = :game and race = :race
           and sex = :sex and position = 'end' and namepart = 'name'
           order by random() limit 1
           )
-          order by syllable
+          order by position desc
         ",
         game: 'wow', race: race, sex: sex
       ]
