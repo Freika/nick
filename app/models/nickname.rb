@@ -18,9 +18,7 @@ class Nickname < ApplicationRecord
       end
     name_fin = get_syllable('wow', race, sex, 'end', 'name')
 
-    nick = "#{name_start}#{name_mid}#{name_fin}"
-
-    Nickname.create(name: nick)
+    { name: "#{name_start}#{name_mid}#{name_fin}" }
   end
 
   def self.generate_gw(race, sex)
@@ -33,9 +31,7 @@ class Nickname < ApplicationRecord
     surname_fin   = get_syllable('gw2', race, 'male', 'end', 'surname')
     # game: 'gw' or 'gw2' ?
 
-    Nickname.create(
-      name: "#{name_start}#{name_mid}#{name_fin} #{surname_start}#{surname_fin}"
-    )
+    { name: "#{name_start}#{name_mid}#{name_fin} #{surname_start}#{surname_fin}" }
   end
 
   def self.generate_gw_asura(race, sex)
@@ -45,9 +41,7 @@ class Nickname < ApplicationRecord
     surname_start = get_syllable('gw2', race, 'male', 'start', 'surname')
     surname_fin =   get_syllable('gw2', race, 'male', 'end', 'surname')
 
-    Nickname.create(
-      name: "#{name_start}#{name_fin} #{surname_start}#{surname_fin}"
-    )
+    { name: "#{name_start}#{name_fin} #{surname_start}#{surname_fin}" }
   end
 
   def self.generate_gw_sylvari(race, sex)
@@ -55,7 +49,7 @@ class Nickname < ApplicationRecord
     name_mid =   get_syllable('gw2', race, sex, 'middle', 'name')
     name_fin =   get_syllable('gw2', race, sex, 'end', 'name')
 
-    Nickname.create(name: "#{name_start}#{name_mid}#{name_fin}")
+    { name: "#{name_start}#{name_mid}#{name_fin}" }
   end
 
   def self.generate_samp(race, sex)
@@ -70,19 +64,19 @@ class Nickname < ApplicationRecord
     name =    get_syllable('minecraft', race, 'male', 'start', 'name')
     surname = get_syllable('minecraft', race, 'male', 'start', 'surname')
 
-    Nickname.create(name: "#{name.capitalize} #{surname.capitalize}")
+    { name: "#{name.capitalize} #{surname.capitalize}" }
   end
 
   def self.generate_minecraft_skin(race, sex)
     name = get_syllable('minecraft', race, sex, 'start', 'name')
 
-    name = Nickname.create(name: name)
+    { name: name }
   end
 
   def self.generate_dota(race, sex)
     name = get_syllable('dota', race, sex, 'start', 'name')
 
-    name = Nickname.create(name: name)
+    { name: name }
   end
 
   private
