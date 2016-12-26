@@ -20,12 +20,6 @@ class Nickname < ApplicationRecord
 
     nick = "#{name_start}#{name_mid}#{name_fin}"
 
-    # Statistic.update_weekly do
-    #   race = 'wow_human' if race == 'human'
-    #   statistic = Statistic.last.increment(:wow).increment(race.to_sym).increment(sex.to_sym)
-    #   statistic.save
-    # end
-
     Nickname.create(name: nick)
   end
 
@@ -38,14 +32,6 @@ class Nickname < ApplicationRecord
     surname_start = get_syllable('gw2', race, 'male', 'start', 'surname')
     surname_fin   = get_syllable('gw2', race, 'male', 'end', 'surname')
     # game: 'gw' or 'gw2' ?
-    Statistic.update_weekly do
-      race = 'gw_human' if race == 'human-of-tyria'
-      statistic = Statistic.last
-                            .increment(:gw)
-                            .increment(race.to_sym)
-                            .increment(sex.to_sym)
-      statistic.save
-    end
 
     Nickname.create(
       name: "#{name_start}#{name_mid}#{name_fin} #{surname_start}#{surname_fin}"
@@ -59,14 +45,6 @@ class Nickname < ApplicationRecord
     surname_start = get_syllable('gw2', race, 'male', 'start', 'surname')
     surname_fin =   get_syllable('gw2', race, 'male', 'end', 'surname')
 
-    Statistic.update_weekly do
-      statistic = Statistic.last
-                            .increment(:gw)
-                            .increment(race.to_sym)
-                            .increment(sex.to_sym)
-      statistic.save
-    end
-
     Nickname.create(
       name: "#{name_start}#{name_fin} #{surname_start}#{surname_fin}"
     )
@@ -77,28 +55,12 @@ class Nickname < ApplicationRecord
     name_mid =   get_syllable('gw2', race, sex, 'middle', 'name')
     name_fin =   get_syllable('gw2', race, sex, 'end', 'name')
 
-    Statistic.update_weekly do
-      statistic = Statistic.last
-                            .increment(:gw)
-                            .increment(race.to_sym)
-                            .increment(sex.to_sym)
-      statistic.save
-    end
-
     Nickname.create(name: "#{name_start}#{name_mid}#{name_fin}")
   end
 
   def self.generate_samp(race, sex)
     name =    get_syllable('samp', race, sex, 'start', 'name')
     surname = get_syllable('samp', race, sex, 'start', 'surname')
-
-    Statistic.update_weekly do
-      statistic = Statistic.last
-                    .increment(:samp)
-                    .increment(race.to_sym)
-                    .increment(sex.to_sym)
-      statistic.save
-    end
 
     Nickname.create(name: "#{name} #{surname}")
   end
@@ -108,41 +70,17 @@ class Nickname < ApplicationRecord
     name =    get_syllable('minecraft', race, 'male', 'start', 'name')
     surname = get_syllable('minecraft', race, 'male', 'start', 'surname')
 
-    Statistic.update_weekly do
-      statistic = Statistic.last
-                            .increment(:minecraft)
-                            .increment(race.to_sym)
-                            .increment(sex.to_sym)
-      statistic.save
-    end
-
     Nickname.create(name: "#{name.capitalize} #{surname.capitalize}")
   end
 
   def self.generate_minecraft_skin(race, sex)
     name = get_syllable('minecraft', race, sex, 'start', 'name')
 
-    Statistic.update_weekly do
-      statistic = Statistic.last
-                            .increment(:minecraft)
-                            .increment(:male)
-                            .increment(sex.to_sym)
-      statistic.save
-    end
-
     name = Nickname.create(name: name)
   end
 
   def self.generate_dota(race, sex)
     name = get_syllable('dota', race, sex, 'start', 'name')
-
-    Statistic.update_weekly do
-      statistic = Statistic.last
-                            .increment(:dota)
-                            .increment(:male)
-                            .increment(sex.to_sym)
-      statistic.save
-    end
 
     name = Nickname.create(name: name)
   end
