@@ -17,6 +17,7 @@ gem 'globalize', github: 'globalize/globalize'
 gem 'activemodel-serializers-xml'
 gem 'figaro'
 gem 'capistrano-rails-console', require: false
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'byebug'
@@ -28,10 +29,10 @@ end
 
 group :production do
   gem 'rollbar', '~> 2.13.2'
-  gem 'newrelic_rpm'
 end
 
 group :development do
+  gem 'puma'
   gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
