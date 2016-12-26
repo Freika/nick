@@ -8,17 +8,18 @@ class Nickname < ApplicationRecord
   SEX = %w(male female).freeze
 
   def self.generate_wow(race, sex)
-    # nick = get_nick('wow', race, sex)
+    nick = get_nick('wow', race, sex)
     # nick = NicknameGenerator.new(game: 'wow', race: race, sex: sex, namepart: 'name').generate
 
-    name_start = get_syllable('wow', race, sex, 'start', 'name')
-    name_mid =
-      unless race == 'pandaren' && sex == 'male'
-        get_syllable('wow', race, sex, 'middle', 'name')
-      end
-    name_fin = get_syllable('wow', race, sex, 'end', 'name')
+    # name_start = get_syllable('wow', race, sex, 'start', 'name')
+    # name_mid =
+    #   unless race == 'pandaren' && sex == 'male'
+    #     get_syllable('wow', race, sex, 'middle', 'name')
+    #   end
+    # name_fin = get_syllable('wow', race, sex, 'end', 'name')
 
-    { name: "#{name_start}#{name_mid}#{name_fin}" }
+    # { name: "#{name_start}#{name_mid}#{name_fin}" }
+    { name: nick }
   end
 
   def self.generate_gw(race, sex)
