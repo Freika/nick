@@ -1,5 +1,0 @@
----
-- hosts: static
-  remote_user: deploy
-  tasks:
-    - include: tasks/nginx.yml
