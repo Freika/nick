@@ -57,7 +57,7 @@ class Nickname < ApplicationRecord
     name =    get_syllable('samp', race, sex, 'start', 'name')
     surname = get_syllable('samp', race, sex, 'start', 'surname')
 
-    Nickname.create(name: "#{name} #{surname}")
+    { name: "#{name} #{surname}" }
   end
 
   def self.generate_minecraft(race, sex)
