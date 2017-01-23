@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151004195042) do
+ActiveRecord::Schema.define(version: 20170123155130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,12 +21,11 @@ ActiveRecord::Schema.define(version: 20151004195042) do
     t.string   "sluggable_type", limit: 50
     t.string   "scope"
     t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
-
-  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
-  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
-  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
-  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "game_translations", force: :cascade do |t|
     t.integer  "game_id",    null: false
@@ -37,10 +35,9 @@ ActiveRecord::Schema.define(version: 20151004195042) do
     t.string   "title"
     t.string   "name"
     t.text     "content"
+    t.index ["game_id"], name: "index_game_translations_on_game_id", using: :btree
+    t.index ["locale"], name: "index_game_translations_on_locale", using: :btree
   end
-
-  add_index "game_translations", ["game_id"], name: "index_game_translations_on_game_id", using: :btree
-  add_index "game_translations", ["locale"], name: "index_game_translations_on_locale", using: :btree
 
   create_table "games", force: :cascade do |t|
     t.string   "title"
@@ -65,10 +62,9 @@ ActiveRecord::Schema.define(version: 20151004195042) do
     t.string   "title"
     t.string   "name"
     t.text     "content"
+    t.index ["locale"], name: "index_race_translations_on_locale", using: :btree
+    t.index ["race_id"], name: "index_race_translations_on_race_id", using: :btree
   end
-
-  add_index "race_translations", ["locale"], name: "index_race_translations_on_locale", using: :btree
-  add_index "race_translations", ["race_id"], name: "index_race_translations_on_race_id", using: :btree
 
   create_table "races", force: :cascade do |t|
     t.string   "title"
@@ -120,12 +116,16 @@ ActiveRecord::Schema.define(version: 20151004195042) do
   end
 
   create_table "syllables", force: :cascade do |t|
-    t.string "game"
-    t.string "race"
-    t.string "sex"
-    t.string "position"
-    t.string "syllable"
-    t.string "namepart"
+    t.string  "game"
+    t.string  "race"
+    t.string  "sex"
+    t.string  "position"
+    t.string  "syllable"
+    t.string  "namepart"
+    t.integer "game_id",  default: 0, null: false
+    t.integer "race_id",  default: 0, null: false
+    t.index ["game_id"], name: "index_syllables_on_game_id", using: :btree
+    t.index ["race_id"], name: "index_syllables_on_race_id", using: :btree
   end
 
 end

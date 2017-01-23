@@ -8,68 +8,73 @@ class Nickname < ApplicationRecord
   SEX = %w(male female).freeze
 
   def self.generate_wow(race, sex)
-    nick = get_nick('wow', race, sex)
-    # nick = NicknameGenerator.new(game: 'wow', race: race, sex: sex, namepart: 'name').generate
-
-    # name_start = get_syllable('wow', race, sex, 'start', 'name')
-    # name_mid =
-    #   unless race == 'pandaren' && sex == 'male'
-    #     get_syllable('wow', race, sex, 'middle', 'name')
-    #   end
-    # name_fin = get_syllable('wow', race, sex, 'end', 'name')
-
-    # { name: "#{name_start}#{name_mid}#{name_fin}" }
-    { name: nick }
+    { name: get_nick(race, sex) }
   end
 
   def self.generate_gw(race, sex)
-    # only charr, human and norn (because of names' length)
-    name_start = get_syllable('gw2', race, sex, 'start', 'name')
-    name_mid   = get_syllable('gw2', race, sex, 'middle', 'name')
-    name_fin   = get_syllable('gw2', race, sex, 'end', 'name')
+    game = Game.find_by(slug: 'gw2')
+    race_id = game.races.find_by(slug: race).id
 
-    surname_start = get_syllable('gw2', race, 'male', 'start', 'surname')
-    surname_fin   = get_syllable('gw2', race, 'male', 'end', 'surname')
+    # only charr, human and norn (because of names' length)
+    name_start = get_syllable(game.id, race_id, sex, 'start', 'name')
+    name_mid   = get_syllable(game.id, race_id, sex, 'middle', 'name')
+    name_fin   = get_syllable(game.id, race_id, sex, 'end', 'name')
+
+    surname_start = get_syllable(game.id, race_id, 'male', 'start', 'surname')
+    surname_fin   = get_syllable(game.id, race_id, 'male', 'end', 'surname')
     # game: 'gw' or 'gw2' ?
 
     { name: "#{name_start}#{name_mid}#{name_fin} #{surname_start}#{surname_fin}" }
   end
 
   def self.generate_gw_asura(race, sex)
-    name_start = get_syllable('gw2', race, sex, 'start', 'name')
-    name_fin =   get_syllable('gw2', race, sex, 'end', 'name')
+    game = Game.find_by(slug: 'gw2')
+    race_id = game.races.find_by(slug: race).id
 
-    surname_start = get_syllable('gw2', race, 'male', 'start', 'surname')
-    surname_fin =   get_syllable('gw2', race, 'male', 'end', 'surname')
+    name_start = get_syllable(game.id, race_id, sex, 'start', 'name')
+    name_fin =   get_syllable(game.id, race_id, sex, 'end', 'name')
+
+    surname_start = get_syllable(game.id, race_id, 'male', 'start', 'surname')
+    surname_fin =   get_syllable(game.id, race_id, 'male', 'end', 'surname')
 
     { name: "#{name_start}#{name_fin} #{surname_start}#{surname_fin}" }
   end
 
   def self.generate_gw_sylvari(race, sex)
-    name_start = get_syllable('gw2', race, sex, 'start', 'name')
-    name_mid =   get_syllable('gw2', race, sex, 'middle', 'name')
-    name_fin =   get_syllable('gw2', race, sex, 'end', 'name')
+    game = Game.find_by(slug: 'gw2')
+    race_id = game.races.find_by(slug: race).id
+
+    name_start = get_syllable(game.id, race_id, sex, 'start', 'name')
+    name_mid =   get_syllable(game.id, race_id, sex, 'middle', 'name')
+    name_fin =   get_syllable(game.id, race_id, sex, 'end', 'name')
 
     { name: "#{name_start}#{name_mid}#{name_fin}" }
   end
 
   def self.generate_samp(race, sex)
-    name =    get_syllable('samp', race, sex, 'start', 'name')
-    surname = get_syllable('samp', race, sex, 'start', 'surname')
+    game = Game.find_by(slug: 'samp')
+    race_id = game.races.find_by(slug: race).id
+
+    name =    get_syllable(game.id, race_id, sex, 'start', 'name')
+    surname = get_syllable(game.id, race_id, sex, 'start', 'surname')
 
     { name: "#{name} #{surname}" }
   end
 
   def self.generate_minecraft(race, sex)
+    game = Game.find_by(slug: 'minecraft')
     # Lil cheat: minecraft 'syllables' have only male gender
-    name =    get_syllable('minecraft', race, 'male', 'start', 'name')
-    surname = get_syllable('minecraft', race, 'male', 'start', 'surname')
+
+    name =    get_syllable(game.id, race, 'male', 'start', 'name')
+    surname = get_syllable(game.id, race, 'male', 'start', 'surname')
 
     { name: "#{name.capitalize} #{surname.capitalize}" }
   end
 
   def self.generate_minecraft_skin(race, sex)
-    name = get_syllable('minecraft', race, sex, 'start', 'name')
+    game_id = Game.find_by(slug: 'minecraft').id
+
+    name = get_syllable(game_id, race, sex, 'start', 'name')
 
     { name: name }
   end
@@ -82,40 +87,47 @@ class Nickname < ApplicationRecord
 
   private
 
-  def self.get_nick(game, race, sex)
+  def self.get_nick(race, sex)
+    game_id = Game.find_by(slug: 'wow').id
+
     Syllable.find_by_sql(
       [
         "(
-          select syllable, position from syllables where game = :game and race = :race
+          select syllable, position from syllables where game_id = :game_id and race = :race
           and sex = :sex and position = 'start' and namepart = 'name'
           order by random() limit 1
           )
           union
           (
-          select syllable, position from syllables where game = :game and race = :race
+          select syllable, position from syllables where game_id = :game_id and race = :race
           and sex = :sex and position = 'middle' and namepart = 'name'
           order by random() limit 1
           )
           union
           (
-          select syllable, position from syllables where game = :game and race = :race
+          select syllable, position from syllables where game_id = :game_id and race = :race
           and sex = :sex and position = 'end' and namepart = 'name'
           order by random() limit 1
           )
           order by position desc
         ",
-        game: 'wow', race: race, sex: sex
+        game_id: game_id, race: race, sex: sex
       ]
     ).map{ |s| s.syllable }.sum
   end
 
-  def self.get_syllable(game, race, sex, position='start', namepart='name')
+  def self.get_syllable(game_id, race_id, sex, position='start', namepart='name')
     sex = 'male' if namepart == 'surname'
-    race = 'human' if game == 'gw2' && race == 'human-of-tyria'
+    # race = 'human' if game == 'gw2' && race == 'human-of-tyria'
 
     rel = Syllable.where(
-      game: game, race: race, sex: sex, position: position, namepart: namepart
+      game_id: game_id,
+      race_id: race_id,
+      sex: sex,
+      position: position,
+      namepart: namepart
     )
+
     count = rel.count
     rand_record = rel.offset(rand(count)).first.syllable
   end
