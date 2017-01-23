@@ -62,10 +62,11 @@ class Nickname < ApplicationRecord
   end
 
   def self.generate_minecraft(race, sex)
-    game_id = Game.find_by(slug: 'minecraft').id
+    game = Game.find_by(slug: 'minecraft')
     # Lil cheat: minecraft 'syllables' have only male gender
-    name =    get_syllable(game_id, race, 'male', 'start', 'name')
-    surname = get_syllable(game_id, race, 'male', 'start', 'surname')
+
+    name =    get_syllable(game.id, race, 'male', 'start', 'name')
+    surname = get_syllable(game.id, race, 'male', 'start', 'surname')
 
     { name: "#{name.capitalize} #{surname.capitalize}" }
   end
