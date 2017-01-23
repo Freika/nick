@@ -84,6 +84,8 @@ GEM
     capistrano-rails-console (2.2.0)
       capistrano (>= 3.5.0, < 4.0.0)
       sshkit-interactive (~> 0.2.0)
+    capistrano-rake (0.1.0)
+      capistrano (>= 3.0)
     capybara (2.7.1)
       addressable
       mime-types (>= 1.16)
@@ -295,6 +297,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails
   capistrano-rails-console
+  capistrano-rake
   capistrano-rvm!
   capybara
   codeclimate-test-reporter
@@ -318,4 +321,4 @@ DEPENDENCIES
   zeroclipboard-rails
 
 BUNDLED WITH
-   1.13.2
+   1.13.6

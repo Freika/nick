@@ -4,6 +4,7 @@ require 'capistrano/bundler'
 require 'capistrano/rails'
 require 'capistrano/rails/console'
 require 'capistrano/rvm'
+require 'capistrano/rake'
 set :rvm_type, :user
 set :rvm_ruby_version, '2.3.1'
 
