@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '5.0.0'
+gem 'rails', '5.0.0.1'
 gem 'pg'
 
 gem 'sass-rails', '~> 5.0.6'
@@ -23,7 +23,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '>= 4.7.0'
   gem 'guard-rspec', require: false
 end
 
