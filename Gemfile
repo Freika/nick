@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '5.0.0.1'
 gem 'pg'
 
-gem 'sass-rails', '~> 5.0.6'
+gem 'sassc-rails', '~> 1.3.0'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'zeroclipboard-rails'
 gem 'slim-rails'
@@ -11,7 +11,7 @@ gem 'jquery-rails'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
-gem 'therubyracer', platforms: :ruby
+gem 'mini_racer'
 gem 'turbolinks'
 gem 'globalize', github: 'globalize/globalize'
 gem 'activemodel-serializers-xml'
