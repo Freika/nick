@@ -20,6 +20,11 @@ gem 'capistrano-rails-console', require: false
 gem 'newrelic_rpm'
 gem 'redis'
 
+# Security
+gem 'rbnacl'
+gem 'rbnacl-libsodium'
+gem 'bcrypt_pbkdf'
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'

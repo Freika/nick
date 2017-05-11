@@ -65,6 +65,7 @@ GEM
     airbrussh (1.2.0)
       sshkit (>= 1.6.1, != 1.7.0)
     arel (7.1.4)
+    bcrypt_pbkdf (1.0.0)
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
     builder (3.2.3)
@@ -205,6 +206,10 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    rbnacl (4.0.2)
+      ffi
+    rbnacl-libsodium (1.0.11)
+      rbnacl (>= 3.0.1)
     redis (3.3.3)
     request_store (1.3.2)
     rollbar (2.13.3)
@@ -293,6 +298,7 @@ PLATFORMS
 
 DEPENDENCIES
   activemodel-serializers-xml
+  bcrypt_pbkdf
   bootstrap-sass (~> 3.1.1)
   byebug
   capistrano
@@ -314,6 +320,8 @@ DEPENDENCIES
   pg
   puma
   rails (= 5.0.0.1)
+  rbnacl
+  rbnacl-libsodium
   redis
   rollbar (~> 2.13.2)
   rspec-rails (~> 3.0)
