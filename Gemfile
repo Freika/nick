@@ -18,6 +18,7 @@ gem 'activemodel-serializers-xml'
 gem 'figaro'
 gem 'capistrano-rails-console', require: false
 gem 'newrelic_rpm'
+gem 'redis'
 
 group :development, :test do
   gem 'byebug'
