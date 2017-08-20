@@ -1,6 +1,5 @@
 require_relative 'boot'
 require 'rails/all'
-require 'rbnacl/libsodium'
 Bundler.require(*Rails.groups)
 
 module Nick
