@@ -20,10 +20,7 @@ gem 'capistrano-rails-console', require: false
 gem 'newrelic_rpm'
 gem 'redis'
 
-# Security
-gem 'rbnacl'
-gem 'rbnacl-libsodium'
-gem 'bcrypt_pbkdf'
+gem 'puma'
 
 group :development, :test do
   gem 'byebug'
@@ -38,7 +35,6 @@ group :production do
 end
 
 group :development do
-  gem 'puma'
   gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
