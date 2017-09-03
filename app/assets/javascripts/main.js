@@ -26,25 +26,6 @@ $(document).ready(function() {
 
       e.preventDefault();
     });
-
-    $('#get_nick').click(function (e) {
-      // Getting minecraft skin from amazon aws
-      var sex = $(this).attr('name');
-
-      $.ajax({
-        method: 'post',
-        url: '/api/v1/nicks/' + game + '/create.json?race=' + race + '&sex=' + sex,
-        success: function(json) {
-          $('#yournameishere').text(json.name);
-          $('#history').prepend(json.name+"<br>");
-          $('#nick_download').attr('href', 'http://s3.amazonaws.com/MinecraftSkins/' + json.name + '.png')
-          $('#player_skin').attr('src','http://mcapi.ca/skin/3d/' + json.name + '/');
-
-        }
-      });
-
-      e.preventDefault();
-    });
   });
 
   // Copy nick into clipboard
