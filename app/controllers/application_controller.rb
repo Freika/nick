@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
-
   before_action :set_locale
 
   def set_locale
@@ -16,8 +14,6 @@ class ApplicationController < ActionController::Base
                      .where(game: Game.find_by(slug: 'gw2'))
     @samp_races = Race.includes(:translations)
                       .where(game: Game.find_by(slug: 'samp'))
-    @minecraft_races= Race.includes(:translations)
-                          .where(game: Game.find_by(slug: 'minecraft'))
   end
 
   protected

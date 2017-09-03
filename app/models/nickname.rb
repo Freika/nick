@@ -61,57 +61,35 @@ class Nickname < ApplicationRecord
     { name: "#{name} #{surname}" }
   end
 
-  def self.generate_minecraft(race, sex)
-    game = Game.find_by(slug: 'minecraft')
-    # Lil cheat: minecraft 'syllables' have only male gender
-
-    name =    get_syllable(game.id, race, 'male', 'start', 'name')
-    surname = get_syllable(game.id, race, 'male', 'start', 'surname')
-
-    { name: "#{name.capitalize} #{surname.capitalize}" }
-  end
-
-  def self.generate_minecraft_skin(race, sex)
-    game_id = Game.find_by(slug: 'minecraft').id
-
-    name = get_syllable(game_id, race, sex, 'start', 'name')
-
-    { name: name }
-  end
-
-  def self.generate_dota(race, sex)
-    name = get_syllable('dota', race, sex, 'start', 'name')
-
-    { name: name }
-  end
-
   private
 
   def self.get_nick(race, sex)
-    game_id = Game.find_by(slug: 'wow').id
+    game = Game.find_by(slug: 'wow')
+    game_id = game.id
+    race_id = game.races.find_by(slug: race).id
 
     Syllable.find_by_sql(
       [
         "(
-          select syllable, position from syllables where game_id = :game_id and race = :race
+          select syllable, position from syllables where game_id = :game_id and race_id = :race
           and sex = :sex and position = 'start' and namepart = 'name'
           order by random() limit 1
           )
           union
           (
-          select syllable, position from syllables where game_id = :game_id and race = :race
+          select syllable, position from syllables where game_id = :game_id and race_id = :race
           and sex = :sex and position = 'middle' and namepart = 'name'
           order by random() limit 1
           )
           union
           (
-          select syllable, position from syllables where game_id = :game_id and race = :race
+          select syllable, position from syllables where game_id = :game_id and race_id = :race
           and sex = :sex and position = 'end' and namepart = 'name'
           order by random() limit 1
           )
           order by position desc
         ",
-        game_id: game_id, race: race, sex: sex
+        game_id: game_id, race: race_id, sex: sex
       ]
     ).map{ |s| s.syllable }.sum
   end
