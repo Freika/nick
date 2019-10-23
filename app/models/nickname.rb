@@ -1,11 +1,11 @@
 class Nickname < ApplicationRecord
-  WOW_RACES = %w(
+  WOW_RACES = %w[
     human gnome dwarf pandaren draenei worgen nightelf orc troll tauren
     undead bloodelf goblin
-  ).freeze
-  GW_RACES = %w(human-of-tyria charr asura norn sylvari).freeze
-  SAMP_RACES = %w(english german french italian danish swedish spanish).freeze
-  SEX = %w(male female).freeze
+].freeze
+  GW_RACES = %w[human-of-tyria charr asura norn sylvari].freeze
+  SAMP_RACES = %w[english german french italian danish swedish spanish].freeze
+  SEX = %w[male female].freeze
 
   def self.generate_wow(race, sex)
     { name: get_nick(race, sex) }
