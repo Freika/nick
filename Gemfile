@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.4.1'
+ruby '2.5.1'
 
 gem 'rails', '5.0.2'
 gem 'pg'
@@ -12,12 +12,10 @@ gem 'jquery-rails'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
-gem 'mini_racer'
+gem 'mini_racer', '0.2.6'
 gem 'turbolinks'
 gem 'globalize', github: 'globalize/globalize'
-gem 'activemodel-serializers-xml'
 gem 'figaro'
-gem 'capistrano-rails-console', require: false
 gem 'newrelic_rpm'
 
 gem 'puma'
@@ -34,14 +32,3 @@ group :production do
   gem 'rollbar', '~> 2.13.2'
 end
 
-group :development do
-  gem 'capistrano'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano-rake', require: false
-  gem 'capistrano-rvm', github: 'capistrano/rvm'
-end
-
-group :test do
-  gem 'codeclimate-test-reporter'
-end
