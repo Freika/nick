@@ -18,7 +18,7 @@ gem 'globalize', github: 'globalize/globalize'
 gem 'figaro'
 gem 'newrelic_rpm'
 
-gem 'puma'
+gem 'puma', '>= 3.12.4'
 
 group :development, :test do
   gem 'byebug'
