@@ -6,8 +6,8 @@
 
 .card
   .card-horizontal
-    .img-square-wrapper
-      = image_pack_tag("media/images/#{@game.slug}-background-#{@race.slug}.jpg", class: 'race-image')
+    / .img-square-wrapper
+    /   = image_pack_tag("media/images/#{@game.slug}-background-#{@race.slug}.jpg", class: 'race-image')
     .card-body
       h1.h3.card-title.text-center = @race.name
       p.card-text = render 'layouts/nickbox'
