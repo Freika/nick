@@ -1,4 +1,4 @@
-Nick::Application.routes.draw do
+Rails.application.routes.draw do
   get '/wow', to: redirect('/ru/wow')
   get '/samp', to: redirect('/ru/samp')
   get '/gw2', to: redirect('/ru/gw2')

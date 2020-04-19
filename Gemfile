@@ -1,20 +1,22 @@
 source 'https://rubygems.org'
 ruby '2.7.1'
 
-gem 'rails', '5.0.2'
+gem 'bootsnap', require: false
+gem 'rails', '5.2.4.2'
 gem 'pg'
 
-gem 'sassc-rails', '~> 1.3.0'
-gem 'bootstrap-sass', '~> 3.1.1'
-gem 'zeroclipboard-rails'
+# gem 'sassc-rails', '~> 1.3.0'
+# gem 'bootstrap-sass', '~> 3.1.1'
+# gem 'zeroclipboard-rails'
 gem 'slim-rails'
 gem 'jquery-rails'
+gem 'webpacker', '~> 4.0'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
 gem 'mini_racer', '0.2.6'
 gem 'turbolinks'
-gem 'globalize', github: 'globalize/globalize'
+gem 'globalize', '5.3.0'
 gem 'figaro'
 gem 'newrelic_rpm'
 

@@ -1,12 +1,19 @@
 require_relative 'boot'
-require 'rails/all'
+
+require "rails"
+# Pick the frameworks you want:
+require "active_model/railtie"
+require "active_record/railtie"
+require "action_controller/railtie"
+require "action_view/railtie"
+require "action_cable/engine"
+
 Bundler.require(*Rails.groups)
 
 module Nick
   class Application < Rails::Application
-    config.assets.precompile += ['jquery.js']
-    config.cache_expires_in = 24*60*60
-    # config.force_ssl = true if Rails.env.production?
+    config.load_defaults 5.0
+
     config.i18n.available_locales = [:en, :ru]
     config.i18n.default_locale = :ru
   end
