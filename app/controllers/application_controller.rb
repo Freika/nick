@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  layout 'bootstrap/application'
   before_action :set_locale
 
   def set_locale
