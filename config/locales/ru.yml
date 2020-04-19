@@ -37,8 +37,8 @@ ru:
       graph: График
       statistics: Статистика
     nickbox:
-      male: Мужское
-      female: Женское
+      male: Мужское ♂
+      female: Женское ♀
       name: Имя
       generate_name: Придумать имя
     skin_nickbox:

@@ -1,1 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
+
+.card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.race-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.img-square-wrapper {
+  background-color: #000;
+}

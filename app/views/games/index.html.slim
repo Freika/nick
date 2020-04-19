@@ -1,0 +1,12 @@
+= javascript_tag do
+  game = "#{j @game.slug}"
+
+.card
+  .card-horizontal
+    .img-square-wrapper
+      img alt=(@game.name) src="http://via.placeholder.com/300x180"
+    .card-body
+      h4.card-title = @game.name
+      p.card-text = @game.content
+
+- content_for :title, 'Онлайн генератор ников для игр, какой ник придумать? SAMP, Minecraft, WoW, Guild Wars'

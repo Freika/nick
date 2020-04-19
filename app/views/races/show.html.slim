@@ -1,0 +1,16 @@
+= javascript_tag do
+  race = "#{j @race.slug}"
+  game = "#{j @race.game.slug}"
+
+- content_for :title do @race.title end
+
+.card
+  .card-horizontal
+    .img-square-wrapper
+      = image_pack_tag("media/images/#{@game.slug}-background-#{@race.slug}.jpg", class: 'race-image')
+    .card-body
+      h1.h3.card-title.text-center = @race.name
+      p.card-text = render 'layouts/nickbox'
+      p.card-text = render 'layouts/above_nickbox_ads'
+      p.card-text = @race.content
+      = render 'layouts/body_ads'

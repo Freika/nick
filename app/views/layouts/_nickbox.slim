@@ -1,11 +1,9 @@
-- cache do
-  .row
-    .col-md-offset-3.col-md-6.nickbox data-toggle='tooltip' data-placement='top' title='Нажми на имя, чтобы скопировать'
+.row.text-center
+  .col-12
+    div data-toggle='tooltip' data-placement='top' title='Нажми на имя, чтобы скопировать'
       .tooltip-to-copy
-        <div data-pjax-container data-clipboard-target='yournameishere' id='yournameishere' >
-          = t('.name')
-        </div>
+        p = t('.name')
         = "#{t('.generate_name')}:"
       #sexybuttons
-        = link_to t('.male'), '#', name: 'male', class: 'just_nick'
-        = link_to t('.female'), '#', name: 'female', class: 'just_nick'
+        => link_to t('.male'), '#', name: 'male', class: 'btn btn-success btn-small'
+        = link_to t('.female'), '#', name: 'female', class: 'btn btn-success btn-small'
