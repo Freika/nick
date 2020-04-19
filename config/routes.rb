@@ -17,8 +17,6 @@ Rails.application.routes.draw do
   end
 
   scope '/:locale', locale: /en|ru/ do
-
-    resources :statistics, only: [:index]
     resources :games, path: '', only: :show do
       resources :races, path: '', only: :show
     end

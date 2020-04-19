@@ -1,9 +1,9 @@
 nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  = link_to 'Nickshaker', root_path, class: 'navbar-brand'
+  = link_to 'Nickshaker', "/#{I18n.locale}/", class: 'navbar-brand'
   button.navbar-toggler aria-controls="navbar_toggler" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbar_toggler" data-toggle="collapse" type="button"
     span.navbar-toggler-icon
   #navbar_toggler.collapse.navbar-collapse
-    ul.navbar-nav
+    ul.navbar-nav.mr-auto
       li.nav-item.dropdown
         a#wow_dropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#"
           | World of Warcraft
@@ -42,4 +42,8 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
           = link_to t('.danish'), game_race_path('samp', 'danish'), class: 'dropdown-item'
           = link_to t('.swedish'), game_race_path('samp', 'swedish'), class: 'dropdown-item'
           = link_to t('.spanish'), game_race_path('samp', 'spanish'), class: 'dropdown-item'
-
+    ul.navbar-nav.ml-auto
+      li.nav-item
+        = link_to '🇷🇺', '/ru/', class: 'nav-link'
+      li.nav-item
+        = link_to '🇬🇧', '/en/', class: 'nav-link'
