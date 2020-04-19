@@ -4,30 +4,42 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
     span.navbar-toggler-icon
   #navbar_toggler.collapse.navbar-collapse
     ul.navbar-nav
-      li.nav-item.active
-        a.nav-link href="#"
-          | Home
-          span.sr-only (current)
-      li.nav-item
-        a.nav-link href="#"  Features
-      li.nav-item
-        a.nav-link href="#"  Pricing
       li.nav-item.dropdown
         a#wow_dropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#"
           | World of Warcraft
         .dropdown-menu aria-labelledby="wow_dropdown"
-          = link_to 'Человек', game_race_path('wow', 'human'), class: 'dropdown-item'
-          = link_to 'Гном', game_race_path('wow', 'gnome'), class: 'dropdown-item'
-          = link_to 'Дворф', game_race_path('wow', 'dwarf'), class: 'dropdown-item'
-          = link_to 'Ночной эльф', game_race_path('wow', 'nightelf'), class: 'dropdown-item'
-          = link_to 'Дреней', game_race_path('wow', 'draenei'), class: 'dropdown-item'
-          = link_to 'Ворген', game_race_path('wow', 'worgen'), class: 'dropdown-item'
-          = link_to 'Пандарен', game_race_path('wow', 'pandaren'), class: 'dropdown-item'
+          = link_to t('.human'), game_race_path('wow', 'human'), class: 'dropdown-item'
+          = link_to t('.gnome'), game_race_path('wow', 'gnome'), class: 'dropdown-item'
+          = link_to t('.dwarf'), game_race_path('wow', 'dwarf'), class: 'dropdown-item'
+          = link_to t('.nightelf'), game_race_path('wow', 'nightelf'), class: 'dropdown-item'
+          = link_to t('.draenei'), game_race_path('wow', 'draenei'), class: 'dropdown-item'
+          = link_to t('.worgen'), game_race_path('wow', 'worgen'), class: 'dropdown-item'
+          = link_to t('.pandaren'), game_race_path('wow', 'pandaren'), class: 'dropdown-item'
           .dropdown-divider
-          = link_to 'Орк', game_race_path('wow', 'orc'), class: 'dropdown-item'
-          = link_to 'Тролль', game_race_path('wow', 'troll'), class: 'dropdown-item'
-          = link_to 'Таурен', game_race_path('wow', 'tauren'), class: 'dropdown-item'
-          = link_to 'Нежить', game_race_path('wow', 'undead'), class: 'dropdown-item'
-          = link_to 'Эльф крови', game_race_path('wow', 'bloodelf'), class: 'dropdown-item'
-          = link_to 'Гоблин', game_race_path('wow', 'goblin'), class: 'dropdown-item'
-          = link_to 'Пандарен', game_race_path('wow', 'pandaren'), class: 'dropdown-item'
+          = link_to t('.orc'), game_race_path('wow', 'orc'), class: 'dropdown-item'
+          = link_to t('.troll'), game_race_path('wow', 'troll'), class: 'dropdown-item'
+          = link_to t('.tauren'), game_race_path('wow', 'tauren'), class: 'dropdown-item'
+          = link_to t('.undead'), game_race_path('wow', 'undead'), class: 'dropdown-item'
+          = link_to t('.bloodelf'), game_race_path('wow', 'bloodelf'), class: 'dropdown-item'
+          = link_to t('.goblin'), game_race_path('wow', 'goblin'), class: 'dropdown-item'
+          = link_to t('.pandaren'), game_race_path('wow', 'pandaren'), class: 'dropdown-item'
+      li.nav-item.dropdown
+        a#gw_dropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#"
+          | Guild Wars 2
+        .dropdown-menu aria-labelledby="gw_dropdown"
+          = link_to t('.human-of-tyria'), game_race_path('gw2', 'human-of-tyria'), class: 'dropdown-item'
+          = link_to t('.charr'), game_race_path('gw2', 'charr'), class: 'dropdown-item'
+          = link_to t('.norn'), game_race_path('gw2', 'norn'), class: 'dropdown-item'
+          = link_to t('.sylvari'), game_race_path('gw2', 'sylvari'), class: 'dropdown-item'
+          = link_to t('.asura'), game_race_path('gw2', 'asura'), class: 'dropdown-item'
+      li.nav-item.dropdown
+        a#samp_dropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#"
+          | San Andreas
+        .dropdown-menu aria-labelledby="samp_dropdown"
+          = link_to t('.english'), game_race_path('samp', 'english'), class: 'dropdown-item'
+          = link_to t('.german'), game_race_path('samp', 'german'), class: 'dropdown-item'
+          = link_to t('.french'), game_race_path('samp', 'french'), class: 'dropdown-item'
+          = link_to t('.danish'), game_race_path('samp', 'danish'), class: 'dropdown-item'
+          = link_to t('.swedish'), game_race_path('samp', 'swedish'), class: 'dropdown-item'
+          = link_to t('.spanish'), game_race_path('samp', 'spanish'), class: 'dropdown-item'
+

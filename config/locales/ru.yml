@@ -1,5 +1,38 @@
 ru:
+  meta_description: Онлайн генератор имен и ников, ники для Minecraft, ники по скинам для Minecraft, генератор ников для Wow, ники для Доты, генератор ников для SAMP, генератор имен для Guild Wars 2
+  title_which_nick: какой ник придумаешь ты?
+  title_basic: Генератор ников для игр, какой ник придумать?
+
   layouts:
+    bootstrap: # new layout
+      shared:
+        navbar:
+          human: Человек
+          gnome: Гном
+          dwarf: Дворф
+          nightelf: Ночной
+          draenei: Дреней
+          worgen: Ворген
+          pandaren: Пандарен
+          orc: Орк
+          troll: Тролль
+          tauren: Таурен
+          undead: Нежить
+          bloodelf: Эльф крови
+          goblin: Гоблин
+          human-of-tyria: Человек
+          charr: Чарр
+          norn: Норн
+          sylvari: Сильвари
+          asura: Асура
+          english: Англичане
+          german: Немцы
+          french: Французы
+          danish: Датчане
+          swedish: Шведы
+          spanish: Испанцы
+
+
     header:
       graph: График
       statistics: Статистика
@@ -16,7 +49,3 @@ ru:
 
     sidebar:
       history: История
-
-  meta_description: Онлайн генератор имен и ников, ники для Minecraft, ники по скинам для Minecraft, генератор ников для Wow, ники для Доты, генератор ников для SAMP, генератор имен для Guild Wars 2
-  title_which_nick: какой ник придумаешь ты?
-  title_basic: Генератор ников для игр, какой ник придумать?
