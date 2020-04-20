@@ -23,3 +23,5 @@ end
 
 
 gem "stimulus_reflex", "~> 2.2"
+gem 'actioncable'
+gem 'redis'

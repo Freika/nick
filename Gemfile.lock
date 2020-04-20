@@ -142,6 +142,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.1.3)
     request_store (1.5.0)
       rack (>= 1.4)
     semantic_range (2.3.0)
@@ -189,6 +190,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actioncable
   bootsnap
   byebug
   coffee-rails
@@ -198,6 +200,7 @@ DEPENDENCIES
   pg
   puma
   rails (= 6.0.2.2)
+  redis
   slim-rails
   stimulus_reflex (~> 2.2)
   turbolinks

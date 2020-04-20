@@ -10,3 +10,8 @@
       p.card-text = @game.content
 
 - content_for :title, 'Онлайн генератор ников для игр, какой ник придумать? SAMP, Minecraft, WoW, Guild Wars'
+
+
+a href="#" data-reflex="click->NickReflex#generate"  data-nickname="#{@count}" data-sex="female" data-race="gnome"
+  ' Generate
+  = @count

@@ -1,24 +1,51 @@
-// Visit The Stimulus Handbook for more details
-// https://stimulusjs.org/handbook/introduction
-//
-// This example controller works with specially annotated HTML like:
-//
-// <div data-controller="hello">
-//   <h1 data-target="hello.output"></h1>
-// </div>
+import ApplicationController from './application_controller'
 
-import { Controller } from "stimulus"
+/* This is the custom StimulusReflex controller for NickReflex.
+ * Learn more at: https://docs.stimulusreflex.com
+ */
+export default class extends ApplicationController {
+  static targets = ["output"]
 
-import Rails from "@rails/ujs";
-
-export default class extends Controller {
-  static targets = [ "output" ]
-
-  makeRequest() {
-    Rails.ajax({
-      type: "post",
-      url: this.data.get('url'),
-      data: new FormData(this.element)
-    })
+  connect() {
+    // alert(1)
   }
+
+  generate(event) {
+    event.preventDefault()
+    // alert(1)
+    console.log(this.target)
+    // document.getElementById('bla').innerHTML = 'NickReflex#generate'
+    // this.target = 'blabla'
+    // this.document.getElementById("bla").innerHTML = "someContent";
+  }
+  /* Reflex specific lifecycle methods.
+   * Use methods similar to this example to handle lifecycle concerns for a specific Reflex method.
+   * Using the lifecycle is optional, so feel free to delete these stubs if you don't need them.
+   *
+   * Example:
+   *
+   *   <a href="#" data-reflex="NickReflex#example">Example</a>
+   *
+   * Arguments:
+   *
+   *   element - the element that triggered the reflex
+   *             may be different than the Stimulus controller's this.element
+   *
+   *   reflex - the name of the reflex e.g. "NickReflex#example"
+   *
+   *   error - error message from the server
+   */
+
+  // beforeUpdate(element, reflex) {
+  //  element.innerText = 'Updating...'
+  // }
+
+  // updateSuccess(element, reflex) {
+  //   element.innerText = 'Updated Successfully.'
+  // }
+
+  // updateError(element, reflex, error) {
+  //   console.error('updateError', error);
+  //   element.innerText = 'Update Failed!'
+  // }
 }

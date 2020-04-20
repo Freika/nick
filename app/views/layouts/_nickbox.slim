@@ -1,9 +1,0 @@
-.row.text-center
-  .col-12
-    div data-toggle='tooltip' data-placement='top' title='Нажми на имя, чтобы скопировать'
-      .tooltip-to-copy
-        p = t('.name')
-        = t('.generate_name') + ':'
-      div
-        => link_to t('.male'), '#', name: 'male', class: 'btn btn-success btn-small'
-        = link_to t('.female'), '#', name: 'female', class: 'btn btn-success btn-small'
