@@ -12,11 +12,11 @@ export default class extends ApplicationController {
 
   generate(event) {
     event.preventDefault()
-    // alert(1)
-    console.log(this.target)
-    // document.getElementById('bla').innerHTML = 'NickReflex#generate'
-    // this.target = 'blabla'
-    // this.document.getElementById("bla").innerHTML = "someContent";
+    var nick = document.getElementById("nick").innerHTML
+    var history_line = document.createElement("div")
+    history_line.innerHTML = nick
+
+    document.getElementById("history").prepend(history_line)
   }
   /* Reflex specific lifecycle methods.
    * Use methods similar to this example to handle lifecycle concerns for a specific Reflex method.
