@@ -3,7 +3,7 @@
 .card
   .card-horizontal
     / .img-square-wrapper
-    /   = image_pack_tag("media/images/#{@game.slug}-background-#{@race.slug}.jpg", class: 'race-image')
+    /   = image_pack_tag("media/images/#{@race.game.slug}-background-#{@race.slug}.jpg", class: 'race-image')
     .card-body
       h1.h3.card-title.text-center = @race.name
       p.card-text
@@ -18,8 +18,8 @@
                   data: { reflex: 'click->NickReflex#generate', action: 'nick#generate', nick: @nick, sex: 'male', race: @race.slug }
                 => link_to t('.female'), '#', class: 'btn btn-success btn-small',
                   data: { reflex: 'click->NickReflex#generate', action: 'nick#generate', nick: @nick, sex: 'female', race: @race.slug }
-
-      p.card-text = render 'layouts/above_nickbox_ads'
-      p.card-text = @race.content
-      = render 'layouts/body_ads'
+      div  data-reflex-permanent=""
+        p.card-text = render 'layouts/above_nickbox_ads'
+        p.card-text = @race.content
+        = render 'layouts/body_ads'
 
