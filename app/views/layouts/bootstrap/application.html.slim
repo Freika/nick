@@ -11,7 +11,8 @@ html lang=(I18n.locale)
     = stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
-    = favicon_link_tag 'favicon.ico'
+    = render 'application/favicon'
+    / = favicon_link_tag 'favicon.ico'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = action_cable_meta_tag
     meta charset="utf-8"

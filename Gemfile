@@ -19,6 +19,7 @@ gem 'puma'
 group :development, :test do
   gem 'byebug'
   gem 'listen'
+  gem 'rails_real_favicon'
 end
 
 
