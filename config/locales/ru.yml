@@ -2,6 +2,14 @@ ru:
   meta_description: Онлайн генератор имен и ников, ники для Minecraft, ники по скинам для Minecraft, генератор ников для Wow, ники для Доты, генератор ников для SAMP, генератор имен для Guild Wars 2
   title_which_nick: какой ник придумаешь ты?
   title_basic: Генератор ников для игр, какой ник придумать?
+  races:
+    show:
+      name: Имя
+      generate_name: Придумать имя
+      male: Мужское ♂
+      female: Женское ♀
+      click_to_copy: 'Нажми, чтобы скопировать'
+
 
   layouts:
     bootstrap: # new layout
@@ -37,15 +45,8 @@ ru:
       graph: График
       statistics: Статистика
     nickbox:
-      male: Мужское ♂
-      female: Женское ♀
       name: Имя
       generate_name: Придумать имя
-    skin_nickbox:
-      name: Имя
-      generate_name: Сгенерировать
-      get_nick: Получить ник
-      click_to_copy: 'Нажми, чтобы скопировать'
 
     sidebar:
       history: История
