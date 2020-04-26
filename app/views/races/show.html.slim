@@ -18,8 +18,8 @@
                 data: { reflex: 'click->NickReflex#generate', action: 'nick#generate', nick: @nick, sex: 'male', race: @race.slug }
               => link_to t('.female'), '#', class: 'btn btn-success btn-small text-white',
                 data: { reflex: 'click->NickReflex#generate', action: 'nick#generate', nick: @nick, sex: 'female', race: @race.slug }
-      div  data-reflex-permanent=""
-        p.card-text = render 'layouts/above_nickbox_ads'
+      div data-reflex-permanent=""
+        / p.card-text = render 'layouts/above_nickbox_ads'
         p.card-text = @race.content
-        = render 'layouts/body_ads'
+        / = render 'layouts/body_ads'
 
