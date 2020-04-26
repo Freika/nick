@@ -1,5 +1,5 @@
 ru:
-  meta_description: Онлайн генератор имен и ников, ники для Minecraft, ники по скинам для Minecraft, генератор ников для Wow, ники для Доты, генератор ников для SAMP, генератор имен для Guild Wars 2
+  meta_description: Онлайн генератор имен и ников, генератор ников для Wow, генератор ников для SAMP, генератор имен для Guild Wars 2
   title_which_nick: какой ник придумаешь ты?
   title_basic: Генератор ников для игр, какой ник придумать?
   races:
@@ -9,6 +9,9 @@ ru:
       male: Мужское ♂
       female: Женское ♀
       click_to_copy: 'Нажми, чтобы скопировать'
+  games:
+    index:
+      title_main: 'Онлайн генератор ников для игр, какой ник придумать? SAMP, WoW, Guild Wars'
 
 
   layouts:

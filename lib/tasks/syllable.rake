@@ -23,7 +23,5 @@ namespace :syllable do
       .update_all(race_id: gw2_humans.id)
 
     p 'GW2 human syllables updated'
-
-    # TODO: rework dota game and relations
   end
 end

@@ -14,12 +14,13 @@ en:
       get_nick: Get nick
       click_to_copy: 'Click to copy'
 
-    sidebar:
-      history: History
-
-  meta_description: Online nickname generator for Minecraft, nicknames by skins for minecraft, Dota nickname generator, SAMP nickname generator, Guild Wars 2 nickname generator, World of Warcraft nickname generator
+  meta_description: Online nickname generator for World of Warcraft, nicknames by skins for SAMP nickname generator, Guild Wars 2 nickname generator
   title_which_nick: which nickname will you choose?
   title_basic: Nickname generator for online fantasy games
+
+  games:
+    index:
+      title_main: 'Nickname generator for World of Warcraft, SAMP, and Guild Wars'
 
   races:
     show:
@@ -59,13 +60,5 @@ en:
           swedish: Sweden
           spanish: Spanish
 
-
-    header:
-      graph: График
-      statistics: Статистика
-    nickbox:
-      name: Имя
-      generate_name: Придумать имя
-
     sidebar:
-      history: История
+      history: History
