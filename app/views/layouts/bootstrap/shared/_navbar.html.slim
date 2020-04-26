@@ -1,5 +1,7 @@
-nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  = link_to 'Nickshaker', "/#{I18n.locale}/", class: 'navbar-brand'
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.rounded-bottom
+  = link_to "/#{I18n.locale}/", class: 'navbar-brand' do
+    span.text-warning Nick
+    span.text-danger shaker
   button.navbar-toggler aria-controls="navbar_toggler" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbar_toggler" data-toggle="collapse" type="button"
     span.navbar-toggler-icon
   #navbar_toggler.collapse.navbar-collapse
@@ -7,7 +9,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
       li.nav-item.dropdown
         a#wow_dropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#"
           | World of Warcraft
-        .dropdown-menu aria-labelledby="wow_dropdown"
+        .dropdown-menu.bg-dark aria-labelledby="wow_dropdown"
           = link_to t('.human'), game_race_path('wow', 'human'), class: 'dropdown-item'
           = link_to t('.gnome'), game_race_path('wow', 'gnome'), class: 'dropdown-item'
           = link_to t('.dwarf'), game_race_path('wow', 'dwarf'), class: 'dropdown-item'
@@ -26,7 +28,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
       li.nav-item.dropdown
         a#gw_dropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#"
           | Guild Wars 2
-        .dropdown-menu aria-labelledby="gw_dropdown"
+        .dropdown-menu.bg-dark aria-labelledby="gw_dropdown"
           = link_to t('.human-of-tyria'), game_race_path('gw2', 'human-of-tyria'), class: 'dropdown-item'
           = link_to t('.charr'), game_race_path('gw2', 'charr'), class: 'dropdown-item'
           = link_to t('.norn'), game_race_path('gw2', 'norn'), class: 'dropdown-item'
@@ -35,7 +37,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
       li.nav-item.dropdown
         a#samp_dropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#"
           | San Andreas
-        .dropdown-menu aria-labelledby="samp_dropdown"
+        .dropdown-menu.bg-dark aria-labelledby="samp_dropdown"
           = link_to t('.english'), game_race_path('samp', 'english'), class: 'dropdown-item'
           = link_to t('.german'), game_race_path('samp', 'german'), class: 'dropdown-item'
           = link_to t('.french'), game_race_path('samp', 'french'), class: 'dropdown-item'

@@ -13,3 +13,31 @@
 .img-square-wrapper {
   background-color: #000;
 }
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #000;
+  font-family: 'Georgia'!important;
+  a {
+    color: gray!important;
+    &:hover {
+      text-decoration: none!important;
+    }
+  }
+}
+
+.sidebar, .sidebar-card {
+  height: 100%;
+}
+
+.footer {
+  flex-shrink: none;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}

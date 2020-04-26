@@ -17,6 +17,5 @@ class NickReflex < ApplicationReflex
       elsif Nickname::SAMP_RACES.include?(race)
         Nickname.generate_samp(race, sex)
       end[:name]
-    # @nick = Nickname.generate_wow(race, sex)[:name]
   end
 end
