@@ -19,6 +19,14 @@ body {
   height: 100%;
 }
 
+.dropdown-item {
+  img {
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+  }
+}
+
 body {
   background-color: #000;
   font-family: 'Georgia'!important;
@@ -32,6 +40,13 @@ body {
 
 .sidebar, .sidebar-card {
   height: 100%;
+  max-height: 600px;
+}
+
+#history {
+  height: 100%;
+  max-height: 500px;
+  overflow: scroll;
 }
 
 .footer {
