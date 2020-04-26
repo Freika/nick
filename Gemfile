@@ -22,7 +22,6 @@ group :development, :test do
   gem 'rails_real_favicon'
 end
 
-
-gem "stimulus_reflex", "~> 2.2"
+gem 'stimulus_reflex', '~> 2.2'
 gem 'actioncable'
 gem 'redis'

@@ -15,6 +15,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   config.action_cable.allowed_request_origins = ['http://nickshaker.com', 'https://nickshaker.com']
+  config.action_cable.worker_pool_size = 4
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).

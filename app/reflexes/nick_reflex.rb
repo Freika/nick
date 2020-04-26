@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class NickReflex < ApplicationReflex
+  delegate :current_user, to: :connection
+
   def generate
     race = element.dataset[:race]
     sex = element.dataset[:sex]
