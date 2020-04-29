@@ -12,7 +12,7 @@ Bundler.require(*Rails.groups)
 
 module Nick
   class Application < Rails::Application
-    config.load_defaults 5.0
+    config.load_defaults 6.0
 
     config.i18n.available_locales = [:en, :ru]
     config.i18n.default_locale = :ru

@@ -30,14 +30,7 @@ html lang=(I18n.locale)
             = yield
           .col-lg-3.col-md-3.col-sm-12.col-xs-12
             = render 'shared/sidebar'
-      .container
-        .col-md-12
 
     .container
-      footer.footer.mt-auto.py-3.bg-dark.rounded-top
-        .container
-          .text-muted.text-center
-            => link_to 'Frey', 'https://frey.su/'
-            = "2014 — #{Time.now.year}"
-
+      = render 'shared/footer'
     = render 'shared/scripts'
