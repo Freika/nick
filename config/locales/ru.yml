@@ -13,43 +13,31 @@ ru:
     index:
       title_main: 'Онлайн генератор ников для игр, какой ник придумать? SAMP, WoW, Guild Wars'
 
-
-  layouts:
-    bootstrap: # new layout
-      shared:
-        navbar:
-          human: Человек
-          gnome: Гном
-          dwarf: Дворф
-          nightelf: Ночной эльф
-          draenei: Дреней
-          worgen: Ворген
-          pandaren: Пандарен
-          orc: Орк
-          troll: Тролль
-          tauren: Таурен
-          undead: Нежить
-          bloodelf: Эльф крови
-          goblin: Гоблин
-          human-of-tyria: Человек
-          charr: Чарр
-          norn: Норн
-          sylvari: Сильвари
-          asura: Асура
-          english: Англичане
-          german: Немцы
-          french: Французы
-          danish: Датчане
-          swedish: Шведы
-          spanish: Испанцы
-
-
-    header:
-      graph: График
-      statistics: Статистика
-    nickbox:
-      name: Имя
-      generate_name: Придумать имя
-
+  shared:
+    navbar:
+      human: Человек
+      gnome: Гном
+      dwarf: Дворф
+      nightelf: Ночной эльф
+      draenei: Дреней
+      worgen: Ворген
+      pandaren: Пандарен
+      orc: Орк
+      troll: Тролль
+      tauren: Таурен
+      undead: Нежить
+      bloodelf: Эльф крови
+      goblin: Гоблин
+      human-of-tyria: Человек
+      charr: Чарр
+      norn: Норн
+      sylvari: Сильвари
+      asura: Асура
+      english: Англичане
+      german: Немцы
+      french: Французы
+      danish: Датчане
+      swedish: Шведы
+      spanish: Испанцы
     sidebar:
       history: История

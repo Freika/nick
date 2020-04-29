@@ -25,35 +25,31 @@ en:
       female: Female ♀
       click_to_copy: 'Click to copy'
 
-
-  layouts:
-    bootstrap: # new layout
-      shared:
-        navbar:
-          human: Human
-          gnome: Gnome
-          dwarf: Dwarf
-          nightelf: Night Elf
-          draenei: Draenei
-          worgen: Worgen
-          pandaren: Pandaren
-          orc: Orc
-          troll: Troll
-          tauren: Tauren
-          undead: Undead
-          bloodelf: Blood Elf
-          goblin: Goblin
-          human-of-tyria: Human
-          charr: Charr
-          norn: Norn
-          sylvari: Sylvari
-          asura: Asura
-          english: English
-          german: German
-          french: French
-          danish: Dutch
-          swedish: Sweden
-          spanish: Spanish
-
+  shared:
+    navbar:
+      human: Human
+      gnome: Gnome
+      dwarf: Dwarf
+      nightelf: Night Elf
+      draenei: Draenei
+      worgen: Worgen
+      pandaren: Pandaren
+      orc: Orc
+      troll: Troll
+      tauren: Tauren
+      undead: Undead
+      bloodelf: Blood Elf
+      goblin: Goblin
+      human-of-tyria: Human
+      charr: Charr
+      norn: Norn
+      sylvari: Sylvari
+      asura: Asura
+      english: English
+      german: German
+      french: French
+      danish: Dutch
+      swedish: Sweden
+      spanish: Spanish
     sidebar:
       history: History
