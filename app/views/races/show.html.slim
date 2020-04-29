@@ -1,0 +1,26 @@
+- content_for :title do @race.title end
+
+.card.text-white.bg-dark
+  .card-horizontal
+    / .img-square-wrapper
+    /   = image_pack_tag("media/images/#{@race.game.slug}-background-#{@race.slug}.jpg", class: 'race-image')
+    .card-body
+      h1.h3.card-title.text-center = @race.name
+      p.card-text
+        .row.text-center data-controller="nick" data-reflex-root="#nick"
+          .col-12
+            / div data-toggle='tooltip' data-placement='top' title='Нажми на имя, чтобы скопировать'
+            .tooltip-to-copy
+              h3#nick = @nick || t('.name')
+              = t('.generate_name') + ':'
+            div
+              => link_to t('.male'), '#', class: 'btn btn-success btn-small text-white',
+                data: { reflex: 'click->NickReflex#generate', action: 'nick#generate', nick: @nick, sex: 'male', race: @race.slug }
+              => link_to t('.female'), '#', class: 'btn btn-success btn-small text-white',
+                data: { reflex: 'click->NickReflex#generate', action: 'nick#generate', nick: @nick, sex: 'female', race: @race.slug }
+      div data-reflex-permanent=""
+        p.card-text = render 'layouts/above_nickbox_ads'
+        - cache do
+          p.card-text = @race.content
+        = render 'layouts/body_ads'
+

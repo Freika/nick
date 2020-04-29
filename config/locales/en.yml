@@ -8,15 +8,48 @@ en:
       female: Female
       name: Name
       generate_name: Generate name
-    skin_nickbox:
-      name: Name
-      generate_name: Generate
-      get_nick: Get nick
-      click_to_copy: 'Click to copy'
 
-    sidebar:
-      history: History
-
-  meta_description: Online nickname generator for Minecraft, nicknames by skins for minecraft, Dota nickname generator, SAMP nickname generator, Guild Wars 2 nickname generator, World of Warcraft nickname generator
+  meta_description: Online nickname generator for World of Warcraft, nicknames by skins for SAMP nickname generator, Guild Wars 2 nickname generator
   title_which_nick: which nickname will you choose?
   title_basic: Nickname generator for online fantasy games
+
+  games:
+    index:
+      title_main: 'Nickname generator for World of Warcraft, SAMP, and Guild Wars'
+
+  races:
+    show:
+      name: Name
+      generate_name: Generate name
+      male: Male ♂
+      female: Female ♀
+      click_to_copy: 'Click to copy'
+
+  shared:
+    navbar:
+      human: Human
+      gnome: Gnome
+      dwarf: Dwarf
+      nightelf: Night Elf
+      draenei: Draenei
+      worgen: Worgen
+      pandaren: Pandaren
+      orc: Orc
+      troll: Troll
+      tauren: Tauren
+      undead: Undead
+      bloodelf: Blood Elf
+      goblin: Goblin
+      human-of-tyria: Human
+      charr: Charr
+      norn: Norn
+      sylvari: Sylvari
+      asura: Asura
+      english: English
+      german: German
+      french: French
+      danish: Dutch
+      swedish: Sweden
+      spanish: Spanish
+    sidebar:
+      history: History

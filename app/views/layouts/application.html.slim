@@ -1,0 +1,36 @@
+doctype html
+html lang=(I18n.locale)
+  head
+    meta charset="utf-8"
+    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
+    title
+      - if content_for(:title)
+        = "#{yield(:title)}, #{t('title_which_nick')}"
+      - else
+        = t('title_basic')
+    = csrf_meta_tags
+    = stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = render 'shared/favicon'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = action_cable_meta_tag
+    meta charset="utf-8"
+    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
+    meta name='description' content=(t('meta_description'))
+    meta content="width=device-width, initial-scale=1" name="viewport"
+    meta content="gu0D3yx2t7CPbgYC7aswGKAGxTj84SVb_Sg7fjZfEMQ" name="google-site-verification"
+
+  body.d-flex.flex-column
+    #page-content
+      .container
+        .row
+          .col-12
+            = render 'shared/navbar'
+        .row.mt-4
+          .col-lg-9.col-md-9.col-sm-12.col-xs-12
+            = yield
+          .col-lg-3.col-md-3.col-sm-12.col-xs-12
+            = render 'shared/sidebar'
+
+    .container
+      = render 'shared/footer'
+    = render 'shared/scripts'

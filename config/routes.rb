@@ -1,4 +1,4 @@
-Nick::Application.routes.draw do
+Rails.application.routes.draw do
   get '/wow', to: redirect('/ru/wow')
   get '/samp', to: redirect('/ru/samp')
   get '/gw2', to: redirect('/ru/gw2')
@@ -17,8 +17,6 @@ Nick::Application.routes.draw do
   end
 
   scope '/:locale', locale: /en|ru/ do
-
-    resources :statistics, only: [:index]
     resources :games, path: '', only: :show do
       resources :races, path: '', only: :show
     end

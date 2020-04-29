@@ -1,17 +1,11 @@
-<div class="index col-md-offset-3 col-md-7">
-    <%= javascript_tag do %>
-      game = "<%=j @game.slug %>"
-    <% end %>
+<div class="col-md-offset-3 col-md-7">
   <h1><%= @game.name %></h1>
   <p>
     <%= @game.content %>
   </p>
 
-  <script>
-    $('.the-tabs li.'+game).addClass('active');
-    $('.tab-pane#'+game).addClass('active')
-  </script>
   <% content_for :title, @game.title %>
 </div>
 
 <%= render 'layouts/body_ads' %>
+

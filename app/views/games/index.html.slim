@@ -1,0 +1,10 @@
+- content_for :title, t('.title_main')
+
+- cache do
+  .card.text-white.bg-dark
+    .card-horizontal
+      / .img-square-wrapper
+      /   img alt=(@game.name) src="http://via.placeholder.com/300x180"
+      .card-body
+        h4.card-title = @game.name
+        p.card-text = @game.content

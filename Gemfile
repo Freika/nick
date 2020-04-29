@@ -1,34 +1,25 @@
 source 'https://rubygems.org'
-ruby '2.5.1'
+ruby '2.7.1'
 
-gem 'rails', '5.0.2'
+gem 'bootsnap', require: false
+gem 'rails', '6.0.2.2'
 gem 'pg'
 
-gem 'sassc-rails', '~> 1.3.0'
-gem 'bootstrap-sass', '~> 3.1.1'
-gem 'zeroclipboard-rails'
 gem 'slim-rails'
-gem 'jquery-rails'
+gem 'webpacker', '~> 5'
 
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails'
-gem 'mini_racer', '0.2.6'
 gem 'turbolinks'
-gem 'globalize', github: 'globalize/globalize'
-gem 'figaro'
-gem 'newrelic_rpm'
+gem 'globalize', '5.3.0'
 
+gem 'stimulus_reflex', '~> 2.2'
+gem 'actioncable'
+gem 'redis'
 gem 'puma'
 
 group :development, :test do
   gem 'byebug'
-  gem 'rspec-rails', '~> 3.0'
-  gem 'capybara'
-  gem 'factory_girl_rails', '>= 4.7.0'
-  gem 'guard-rspec', require: false
-end
-
-group :production do
-  gem 'rollbar', '~> 2.13.2'
+  gem 'listen'
+  gem 'rails_real_favicon'
 end
 

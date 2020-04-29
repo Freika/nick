@@ -1,0 +1,58 @@
+@import '~bootstrap/scss/bootstrap';
+
+.card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.race-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.img-square-wrapper {
+  background-color: #000;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.dropdown-item {
+  img {
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+  }
+}
+
+body {
+  background-color: #000;
+  font-family: 'Georgia'!important;
+  a {
+    color: gray!important;
+    &:hover {
+      text-decoration: none!important;
+    }
+  }
+}
+
+.sidebar, .sidebar-card {
+  height: 100%;
+  max-height: 550px;
+}
+
+#history {
+  height: 100%;
+  max-height: 470px;
+  overflow: scroll;
+}
+
+.footer {
+  flex-shrink: none;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}

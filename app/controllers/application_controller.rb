@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
+  before_action :set_action_cable_identifier
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
@@ -24,5 +25,11 @@ class ApplicationController < ActionController::Base
 
   def check_gender
     render_500 unless Nickname::SEX.include?(params[:sex])
+  end
+
+  private
+
+  def set_action_cable_identifier
+    cookies.encrypted[:user_id] = session[:session_id]
   end
 end
