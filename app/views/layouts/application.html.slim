@@ -9,6 +9,7 @@ html lang=(I18n.locale)
       - else
         = t('title_basic')
     = csrf_meta_tags
+    = stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = render 'shared/favicon'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = action_cable_meta_tag
