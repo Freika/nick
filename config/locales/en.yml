@@ -8,11 +8,6 @@ en:
       female: Female
       name: Name
       generate_name: Generate name
-    skin_nickbox:
-      name: Name
-      generate_name: Generate
-      get_nick: Get nick
-      click_to_copy: 'Click to copy'
 
   meta_description: Online nickname generator for World of Warcraft, nicknames by skins for SAMP nickname generator, Guild Wars 2 nickname generator
   title_which_nick: which nickname will you choose?

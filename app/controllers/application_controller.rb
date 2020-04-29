@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  layout 'bootstrap/application'
   before_action :set_locale
   before_action :set_action_cable_identifier
 

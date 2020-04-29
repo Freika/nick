@@ -20,6 +20,7 @@
                 data: { reflex: 'click->NickReflex#generate', action: 'nick#generate', nick: @nick, sex: 'female', race: @race.slug }
       div data-reflex-permanent=""
         p.card-text = render 'layouts/above_nickbox_ads'
-        p.card-text = @race.content
+        - cache do
+          p.card-text = @race.content
         = render 'layouts/body_ads'
 

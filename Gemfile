@@ -9,11 +9,12 @@ gem 'slim-rails'
 gem 'webpacker', '~> 5'
 
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails'
-gem 'mini_racer', '0.2.6'
 gem 'turbolinks'
 gem 'globalize', '5.3.0'
 
+gem 'stimulus_reflex', '~> 2.2'
+gem 'actioncable'
+gem 'redis'
 gem 'puma'
 
 group :development, :test do
@@ -22,6 +23,3 @@ group :development, :test do
   gem 'rails_real_favicon'
 end
 
-gem 'stimulus_reflex', '~> 2.2'
-gem 'actioncable'
-gem 'redis'

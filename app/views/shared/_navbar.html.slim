@@ -1,0 +1,102 @@
+- cache do
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.rounded-bottom
+    = link_to "/#{I18n.locale}/", class: 'navbar-brand' do
+      span.text-warning Nick
+      span.text-danger shaker
+    button.navbar-toggler aria-controls="navbar_toggler" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbar_toggler" data-toggle="collapse" type="button"
+      span.navbar-toggler-icon
+    #navbar_toggler.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+        li.nav-item.dropdown
+          a#wow_dropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#"
+            | World of Warcraft
+          .dropdown-menu.bg-dark aria-labelledby="wow_dropdown"
+            = link_to game_race_path('wow', 'human'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-human.png')
+              = t('.human')
+            = link_to game_race_path('wow', 'gnome'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-gnome.png')
+              = t('.gnome')
+            = link_to game_race_path('wow', 'dwarf'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-dwarf.png')
+              = t('.dwarf')
+            = link_to game_race_path('wow', 'nightelf'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-nightelf.png')
+              = t('.nightelf')
+            = link_to game_race_path('wow', 'draenei'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-draenei.png')
+              = t('.draenei')
+            = link_to game_race_path('wow', 'worgen'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-worgen.png')
+              = t('.worgen')
+            = link_to game_race_path('wow', 'pandaren'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-pandaren.png')
+              = t('.pandaren')
+            .dropdown-divider
+            = link_to game_race_path('wow', 'orc'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-orc.png')
+              = t('.orc')
+            = link_to game_race_path('wow', 'troll'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-troll.png')
+              = t('.troll')
+            = link_to game_race_path('wow', 'tauren'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-tauren.png')
+              = t('.tauren')
+            = link_to game_race_path('wow', 'undead'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-undead.png')
+              = t('.undead')
+            = link_to game_race_path('wow', 'bloodelf'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-bloodelf.png')
+              = t('.bloodelf')
+            = link_to game_race_path('wow', 'goblin'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-goblin.png')
+              = t('.goblin')
+            = link_to game_race_path('wow', 'pandaren'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-pandaren.png')
+              = t('.pandaren')
+        li.nav-item.dropdown
+          a#gw_dropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#"
+            | Guild Wars 2
+          .dropdown-menu.bg-dark aria-labelledby="gw_dropdown"
+            = link_to game_race_path('gw2', 'human-of-tyria'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/gw2-human-of-tyria.png')
+              = t('.human-of-tyria')
+            = link_to game_race_path('gw2', 'charr'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/gw2-charr.png')
+              = t('.charr')
+            = link_to game_race_path('gw2', 'norn'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/gw2-norn.png')
+              = t('.norn')
+            = link_to game_race_path('gw2', 'sylvari'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/gw2-sylvari.png')
+              = t('.sylvari')
+            = link_to game_race_path('gw2', 'asura'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/gw2-asura.png')
+              = t('.asura')
+        li.nav-item.dropdown
+          a#samp_dropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#"
+            | San Andreas
+          .dropdown-menu.bg-dark aria-labelledby="samp_dropdown"
+            = link_to game_race_path('samp', 'english'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/samp-english.png')
+              = t('.english')
+            = link_to game_race_path('samp', 'german'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/samp-german.png')
+              = t('.german')
+            = link_to game_race_path('samp', 'french'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/samp-french.png')
+              = t('.french')
+            = link_to game_race_path('samp', 'danish'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/samp-danish.png')
+              = t('.danish')
+            = link_to game_race_path('samp', 'swedish'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/samp-swedish.png')
+              = t('.swedish')
+            = link_to game_race_path('samp', 'spanish'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/samp-spanish.png')
+              = t('.spanish')
+      ul.navbar-nav.ml-auto
+        li.nav-item
+          = link_to '🇷🇺', '/ru/', class: 'nav-link'
+        li.nav-item
+          = link_to '🇬🇧', '/en/', class: 'nav-link'

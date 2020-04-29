@@ -8,9 +8,8 @@ html lang=(I18n.locale)
         = "#{yield(:title)}, #{t('title_which_nick')}"
       - else
         = t('title_basic')
-    = stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = csrf_meta_tags
-    = render 'application/favicon'
+    = render 'shared/favicon'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = action_cable_meta_tag
     meta charset="utf-8"
@@ -24,12 +23,12 @@ html lang=(I18n.locale)
       .container
         .row
           .col-12
-            = render 'layouts/bootstrap/shared/navbar'
+            = render 'shared/navbar'
         .row.mt-4
           .col-lg-9.col-md-9.col-sm-12.col-xs-12
             = yield
           .col-lg-3.col-md-3.col-sm-12.col-xs-12
-            = render 'layouts/sidebar'
+            = render 'shared/sidebar'
       .container
         .col-md-12
 
@@ -40,4 +39,4 @@ html lang=(I18n.locale)
             => link_to 'Frey', 'https://frey.su/'
             = "2014 — #{Time.now.year}"
 
-    = render 'layouts/scripts'
+    = render 'shared/scripts'
