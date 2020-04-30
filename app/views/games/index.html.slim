@@ -8,3 +8,97 @@
       .card-body
         h4.card-title = @game.name
         p.card-text = @game.content
+
+  .row.mt-4.mb-4
+    .col-sm-4
+      .card.text-white.bg-dark
+        .card-body
+          h5.card-title.h4 Guild Wars 2
+          p.card-text
+            = link_to game_race_path('gw2', 'human-of-tyria'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/gw2-human-of-tyria.png')
+              = t('shared.navbar.human-of-tyria')
+            = link_to game_race_path('gw2', 'charr'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/gw2-charr.png')
+              = t('shared.navbar.charr')
+            = link_to game_race_path('gw2', 'norn'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/gw2-norn.png')
+              = t('shared.navbar.norn')
+            = link_to game_race_path('gw2', 'sylvari'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/gw2-sylvari.png')
+              = t('shared.navbar.sylvari')
+            = link_to game_race_path('gw2', 'asura'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/gw2-asura.png')
+              = t('shared.navbar.asura')
+    .col-sm-4
+      .card.text-white.bg-dark
+        .card-body
+          h5.card-title.h4 World of Warcraft
+          p.card-text
+            = link_to game_race_path('wow', 'human'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-human.png')
+              = t('shared.navbar.human')
+            = link_to game_race_path('wow', 'gnome'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-gnome.png')
+              = t('shared.navbar.gnome')
+            = link_to game_race_path('wow', 'dwarf'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-dwarf.png')
+              = t('shared.navbar.dwarf')
+            = link_to game_race_path('wow', 'nightelf'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-nightelf.png')
+              = t('shared.navbar.nightelf')
+            = link_to game_race_path('wow', 'draenei'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-draenei.png')
+              = t('shared.navbar.draenei')
+            = link_to game_race_path('wow', 'worgen'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-worgen.png')
+              = t('shared.navbar.worgen')
+            = link_to game_race_path('wow', 'pandaren'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-pandaren.png')
+              = t('shared.navbar.pandaren')
+            .dropdown-divider
+            = link_to game_race_path('wow', 'orc'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-orc.png')
+              = t('shared.navbar.orc')
+            = link_to game_race_path('wow', 'troll'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-troll.png')
+              = t('shared.navbar.troll')
+            = link_to game_race_path('wow', 'tauren'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-tauren.png')
+              = t('shared.navbar.tauren')
+            = link_to game_race_path('wow', 'undead'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-undead.png')
+              = t('shared.navbar.undead')
+            = link_to game_race_path('wow', 'bloodelf'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-bloodelf.png')
+              = t('shared.navbar.bloodelf')
+            = link_to game_race_path('wow', 'goblin'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-goblin.png')
+              = t('shared.navbar.goblin')
+            = link_to game_race_path('wow', 'pandaren'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/wow-pandaren.png')
+              = t('shared.navbar.pandaren')
+    .col-sm-4
+      .card.text-white.bg-dark
+        .card-body
+          h5.card-title.h4 GTA: San Andreas Multiplayer
+          p.card-text
+            = link_to game_race_path('samp', 'english'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/samp-english.png')
+              = t('shared.navbar.english')
+            = link_to game_race_path('samp', 'german'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/samp-german.png')
+              = t('shared.navbar.german')
+            = link_to game_race_path('samp', 'french'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/samp-french.png')
+              = t('shared.navbar.french')
+            = link_to game_race_path('samp', 'danish'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/samp-danish.png')
+              = t('shared.navbar.danish')
+            = link_to game_race_path('samp', 'swedish'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/samp-swedish.png')
+              = t('shared.navbar.swedish')
+            = link_to game_race_path('samp', 'spanish'), class: 'dropdown-item' do
+              => image_pack_tag('media/images/samp-spanish.png')
+              = t('shared.navbar.spanish')
+

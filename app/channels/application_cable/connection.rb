@@ -1,10 +1,9 @@
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
-    identified_by :current_user
+    identified_by :session_id
 
     def connect
-      user_id = cookies.encrypted[:user_id]
-      self.current_user = user_id
+      self.session_id = request.session.id
     end
   end
 end
