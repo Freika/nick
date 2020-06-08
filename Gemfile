@@ -12,14 +12,14 @@ gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks'
 gem 'globalize', '5.3.0'
 
-gem 'stimulus_reflex', '~> 2.2'
-gem 'actioncable'
+gem 'stimulus_reflex', '~> 2.2', '>= 2.2.3'
+gem 'actioncable', '>= 6.0.2.2'
 gem 'redis'
 gem 'puma'
 
 group :development, :test do
   gem 'byebug'
   gem 'listen'
-  gem 'rails_real_favicon'
+  gem 'rails_real_favicon', '>= 0.1.0'
 end
 
