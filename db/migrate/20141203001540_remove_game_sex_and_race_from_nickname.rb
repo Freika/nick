@@ -1,4 +1,4 @@
-class RemoveGameSexAndRaceFromNickname < ActiveRecord::Migration
+class RemoveGameSexAndRaceFromNickname < ActiveRecord::Migration[4.2]
   def change
     remove_column :nicknames, :game
     remove_column :nicknames, :sex

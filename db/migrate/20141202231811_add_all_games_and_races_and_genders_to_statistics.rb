@@ -1,4 +1,4 @@
-class AddAllGamesAndRacesAndGendersToStatistics < ActiveRecord::Migration
+class AddAllGamesAndRacesAndGendersToStatistics < ActiveRecord::Migration[4.2]
   def change
     add_column :statistics, :wow, :integer
     add_column :statistics, :gw, :integer

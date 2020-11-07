@@ -1,4 +1,4 @@
-class CreateSyllables < ActiveRecord::Migration
+class CreateSyllables < ActiveRecord::Migration[4.2]
   def change
     create_table :syllables do |t|
       t.string :game

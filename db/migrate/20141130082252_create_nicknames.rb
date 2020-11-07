@@ -1,4 +1,4 @@
-class CreateNicknames < ActiveRecord::Migration
+class CreateNicknames < ActiveRecord::Migration[4.2]
   def change
     create_table :nicknames do |t|
       t.string :game
