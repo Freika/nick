@@ -15,7 +15,7 @@ gem 'globalize', '5.3.0'
 gem 'stimulus_reflex', '~> 2.2'
 gem 'actioncable'
 gem 'redis'
-gem 'puma'
+gem 'puma', '>= 4.3.12'
 
 group :development, :test do
   gem 'byebug'
